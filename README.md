@@ -12,8 +12,8 @@ Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. 
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
-* Você deve possuir uma máquina `<Windows/Linux/Mac>`. (Deixe claro qual SO é possível rodar a aplicação, Linux é obrigatório).
+* Você deve possuir a última versão do `docker` instalado.
+* Em qualquer maquina que tenha o docker instalado corretamente.
 * Você deve ler o `<guia/link/documentação>` dos termos de uso.
 * (outros ...)
 
@@ -23,22 +23,19 @@ Para fazer o deploy da aplicação siga os seguintes passos:
 
 Linux e/ou macOS:
 ```
-<commando 1>
-<commando 2>
-....
-<commando n>
+docker-compose up -d
 ```
 
 Windows (opcional):
 ```
-<commandos>
+docker-compose up -d
 ```
 
 ## Usando Nome_da_Aplicação
 
 Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
-* Abra o navegador e digite o seguinte endereço: `http://localhost/....`
+* Abra o navegador e digite o seguinte endereço: `http://localhost:3000/....`
 * Ao abrir a aplicação você poderá:
   * Navegar pelo conteúdo público, ou
   * Entrar com usuário e senha para ....
@@ -50,8 +47,10 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
+* [Vinicius Espindola](https://github.com/Vinny1892)
 * [Meu nome](https://github.com/meu_nome)
 * *.... (liste todos os membros da equipe)*
+
 
 ## Licença de uso
 
