@@ -1,8 +1,8 @@
 # Nome_da_Aplicação
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
-![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
-![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
+![GitHub repo size](https://img.shields.io/github/repo-size/dennervidal/progweb-template)
+![GitHub contributors](https://img.shields.io/github/contributors/dennervidal/progweb-template)
 
 Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc .... 
 
@@ -53,10 +53,9 @@ As seguintes pessoas contribuiram para este projeto:
 * [Denner](https://github.com/dennervidal)
 * [Jean](https://github.com/Growx)
 * [Guilherme](https://github.com/chiquito27)
+* [Larissa](https://github.com/LarissaFraga)
+* [Lucas](https://github.com/ichriecheblutx)
 
 ## Licença de uso
 
-<!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
-Este projeto usa a seguinte licença: [<nome_da_licenca>](<link>).
-*Você também deve criar um arquivo chamado LICENSE no projeto*
-
+Este projeto usa a seguinte licença: [MIT License](https://opensource.org/licenses/MIT).
