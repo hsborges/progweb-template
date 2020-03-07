@@ -3,6 +3,7 @@
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
 ![GitHub repo size](https://img.shields.io/github/repo-size/dennervidal/progweb-template)
 ![GitHub contributors](https://img.shields.io/github/contributors/dennervidal/progweb-template)
+![GitHub license](https://img.shields.io/github/license/dennervidal/progweb-template)
 
 Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc .... 
 
@@ -50,11 +51,11 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Denner](https://github.com/dennervidal)
-* [Jean](https://github.com/Growx)
-* [Guilherme](https://github.com/chiquito27)
-* [Larissa](https://github.com/LarissaFraga)
-* [Lucas](https://github.com/ichriecheblutx)
+* [Denner Vidal](https://github.com/dennervidal)
+* [Jean Ortiz](https://github.com/Growx)
+* [Guilherme Chiquito](https://github.com/chiquito27)
+* [Larissa Fraga](https://github.com/LarissaFraga)
+* [Lucas Benevides](https://github.com/ichriecheblutx)
 
 ## Licença de uso
 
