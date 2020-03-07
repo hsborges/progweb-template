@@ -23,10 +23,24 @@ Para fazer o deploy da aplicação siga os seguintes passos:
 
 Linux e/ou macOS:
 ```
+clone <project>
+```
+```
+cd  <project>
+```
+
+```
 docker-compose up -d
 ```
 
 Windows (opcional):
+```
+clone <project>
+```
+```
+cd  <project>
+```
+
 ```
 docker-compose up -d
 ```
