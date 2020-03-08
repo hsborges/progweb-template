@@ -62,8 +62,10 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 As seguintes pessoas contribuiram para este projeto:
 
 * [Vinicius Espindola](https://github.com/Vinny1892)
-* [Meu nome](https://github.com/meu_nome)
-* *.... (liste todos os membros da equipe)*
+* [Kaio Mitsuharu](https://github.com/kaiomudkt)
+* [Gustavo Candido](https://github.com/meu_nome*********)
+* [Lucas Sandim](https://github.com/meu_nome************)
+* [Mateus Ragazzi](https://github.com/meu_nome**********)
 
 
 ## Licença de uso
