@@ -1,0 +1,175 @@
+*{margin:10px;padding:0px;}
+	
+
+body{
+	font-family:arial, helvetica, sans-serif;
+	background-color:#ddd;
+	
+	}
+
+.topo{
+	background:#2da099;
+	width:100%;
+	height:100px;
+}
+img.logo{
+	width:50px;
+}
+
+.wrap{
+	width:1280px;
+	margin:0 auto;
+}
+
+h1{
+	font-size:50px;
+	text-align:center;
+	position:absolute;
+	left:35%;
+	top:100px;;
+	color:green;
+	margin:0px;
+	
+	
+}
+
+
+.logo{
+
+	float:left;
+	color:white;
+	
+	
+}
+
+.buscar{
+	top: 110px;; /* posição inicial de cima*/
+	right: 2px;/* posição inicial da esquerda*/
+	position: absolute; /* da a posição controle absoluto*/
+	float: bottom;	
+	}
+
+
+#menu{
+	width:100%;	
+	height:40px;	
+	background:#333;	
+}
+#menu  ul{
+	list-style:outside none;	
+}
+#menu ul li{
+	float:left;
+	margin:5px;	
+}
+#menu  ul li{
+	font-size:15px;
+	/*line-height:20px;  */
+	color:#ddd;
+	padding:4px 0px;
+	text-decoration:none;	
+}
+#menu  ul li:hover{
+	background: white;
+	border-left: 1px #aaa solid;
+	border-right: 1px #aaa solid;
+	color:black;
+}
+.login{
+	position:absolute;
+	right:10px;
+	top:10px;
+	color:white;
+}
+
+
+.tabela{
+	background:#2da099;
+	
+}
+
+
+
+#funcao{
+	width:100%;	
+	height:68px;	
+	background:#333;	
+}
+#funcao  ul{
+	list-style:outside none;	
+	
+	
+}
+#funcao ul li{
+	float:left;
+	margin:26px;
+	
+}
+#funcao  ul li{
+	font-size:15px;
+	/*line-height:20px;       ?????????????*/
+	color:white;
+	padding:24px 0px;
+	text-decoration:none;
+	
+	margin-left:5px;
+	margin-top:0px;
+	
+	
+}
+#funcao  ul li.active{
+	background: black;
+}
+#funcao  ul li:hover{
+	background: white;
+	border-left: 1px #aaa solid;
+	border-right: 1px #aaa solid;
+	color:black;	
+}
+
+.conteudo{
+	width:90%;
+	height:auto;
+	margin-left:5%;/*alinha conteudo no centro*/ 
+}
+.esquerda{
+	width:600px;;
+	height:400px;
+	float: left;
+	text-align: center;
+	padding:100px;
+}
+.direita{
+	width:600px;;
+	height:400px;
+	float: right;
+	text-align: center;
+	padding:100px;
+}
+.direita, .esquerda{
+	background:white;
+	margin: 50px;
+	padding:50px;
+}
+.direita img, .esquerda img{
+	height:300px;
+	width:500px;
+}
+
+
+
+
+img{
+	width:100%;
+	}
+.rodape{	
+	width:100%;
+	height:15px;
+	padding:0px;
+	margin:0px;
+	background:#;
+	font-style:italic;
+	color:black;
+	text-align:center;
+	bottom:0px;
+}
