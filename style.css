@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 0.5fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 0%;
+}
+.square {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+  width: 48px;
+  height: 48px;
+}
