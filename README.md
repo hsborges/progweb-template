@@ -64,7 +64,7 @@ As seguintes pessoas contribuiram para este projeto:
 * [Vinicius Espindola](https://github.com/Vinny1892)
 * [Kaio Mitsuharu](https://github.com/kaiomudkt)
 * [Gustavo Candido](https://github.com/meu_nome*********)
-* [Lucas Sandim](https://github.com/meu_nome************)
+* [Lucas Sandim](https://github.com/sandiml)
 * [Mateus Ragazzi](https://github.com/meu_nome**********)
 
 
