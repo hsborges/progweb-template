@@ -1,7 +1,12 @@
+let counter = 0;
+
 function createSquare() {
   let square = document.createElement("div");
   square.innerText = "";
-  square.className = `square`;
+  square.className = "square";
+  square.addEventListener('click', squareClicked)
+  square.id = counter++
+
   return square;
 }
 
@@ -13,8 +18,7 @@ function createBoard() {
   }
 }
 
-function handleClick(e) {
-  alert(e);
+function squareClicked(e) {
+  console.log(e.target.id)
 }
-
 window.onload = createBoard();
