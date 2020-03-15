@@ -1,0 +1,17 @@
+
+1. Fazer um fork (cópia) do repositório modelo disponibilizado pelo professor;
+	Feito
+
+2. Adicionar todos os membros do grupo como colaboradores do projeto;
+	Feito
+
+3. Modificar o repositório copiado de acordo com o indicado no modelo;
+	Feito?
+
+4. Criar um backlog do produto com as funcionalidades propostas para o projeto;
+	Tema: Plataforma online para organização de encontros de praticas esportivas
+	Requisitos:
+
+5. E enviar o endereço do projeto para avaliação nesta atividade.
+	https://github.com/Vinny1892/progweb-template
+
