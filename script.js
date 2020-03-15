@@ -1,7 +1,7 @@
 function createSquare() {
   let square = document.createElement("div");
   square.innerText = "";
-  square.className = "square";
+  square.className = `square`;
   return square;
 }
 
@@ -11,6 +11,10 @@ function createBoard() {
       root.appendChild(createSquare());
     }
   }
+}
+
+function handleClick(e) {
+  alert(e);
 }
 
 window.onload = createBoard();
