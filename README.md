@@ -1,4 +1,4 @@
-# Nome_da_Aplicação
+# Calendário
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
 ![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
@@ -34,7 +34,7 @@ Windows (opcional):
 <commandos>
 ```
 
-## Usando Nome_da_Aplicação
+## Usando Calendário
 
 Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
@@ -51,9 +51,9 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 As seguintes pessoas contribuiram para este projeto:
 
 * [Jéssica Abe de Almeida](https://github.com/Abejyou)
-* [Flavio Augusto Corrêa de Souza](https://github.com/flaviocsouza)*
+* [Flavio Augusto Corrêa de Souza](https://github.com/flaviocsouza)
 * [Fábio Shiniti Nakazato](https://github.com/Fabnaka)
-* [Helionardo Pereira Justi](https://github.com/)
+* [Helionardo Pereira Justi](https://github.com/helionardo)
 
 ## Licença de uso
 
