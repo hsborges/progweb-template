@@ -47,10 +47,10 @@ Para usar CookBook, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Lucas Oliveira](https://github.com/meu_nome)
-* [Leonardo Oliveira](https://github.com/meu_nome)
-* [Lucas Avila](https://github.com/meu_nome)
-* [Gabriel Borges](https://github.com/meu_nome)
+* [Lucas Oliveira](https://github.com/Lucas0liveira)
+* [Leonardo Oliveira](https://github.com/Leozaru)
+* [Lucas Avila](https://github.com/Lblaster)
+* [Gabriel Borges](https://github.com/GabrielBG0)
 
 ## Licença de uso
 
