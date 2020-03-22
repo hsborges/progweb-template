@@ -42,7 +42,7 @@ As seguintes pessoas contribuiram para este projeto:
 * [Jean Ortiz](https://github.com/Growx)
 * [Guilherme Chiquito](https://github.com/chiquito27)
 * [Larissa Fraga](https://github.com/LarissaFraga)
-* [Lucas Benevides](https://github.com/ichriecheblutx)
+* [Lucas Benevides](https://github.com/lbenevides-s)
 
 ## Licença de uso
 
