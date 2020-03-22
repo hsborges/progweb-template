@@ -3,6 +3,8 @@ NOME: Grupos Traing
 
 TEMA: Plataforma de comunicação, para realizar encontros com o objetivo de práticas esportivas.
 
+Proposta de trabalho: 
+
 REQUISITOS
 R1: CRUD de usuários;
 R2: CRUD de salas de bate papo;
