@@ -50,7 +50,7 @@ As seguintes pessoas contribuiram para este projeto:
 * [Lucas Oliveira](https://github.com/meu_nome)
 * [Leonardo Oliveira](https://github.com/meu_nome)
 * [Lucas Avila](https://github.com/meu_nome)
-* [Gabriel Borges](https://github.com/meu_nome)]
+* [Gabriel Borges](https://github.com/meu_nome)
 
 ## Licença de uso
 
