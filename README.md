@@ -1,8 +1,8 @@
 # Nome_da_Aplicação
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
-![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
-![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
+![GitHub repo size](https://img.shields.io/github/repo-size/igorbgalvan/progweb13)
+![GitHub contributors](https://img.shields.io/github/contributors/igorbgalvan/progweb13)
 
 Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc .... 
 
