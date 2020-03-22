@@ -24,7 +24,7 @@ Para fazer o deploy da aplicação siga os seguintes passos:
 
 Linux e/ou Windows:
 
-Basta fazer a clonagem deste repositório em sua máquina.
+* Basta fazer a clonagem deste repositório em sua máquina.
 
 
 
@@ -37,7 +37,7 @@ Para usar CookBook, siga os seguintes passos (exemplos):
   * Navegar pelo feed da página inicial
   * Fazer login com usuário e senha
   * Cadastrar-se no site
-* *Uma vez que seu login seja efetuado você poderá:
+* Uma vez que seu login seja efetuado você poderá:
   * Navegar pelo feed e encontrar receitas
   * Salvar receitas em um 'livro de receitas'
   * Encontrar outros usuários e seguí-los
