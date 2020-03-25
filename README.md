@@ -8,11 +8,22 @@ O objetivo do trabalho é desenvolver uma plataforma de comunicação para auxil
 
 ## Pré-requisitos
 
-A definir
+```docker```
+
+```docker-compose```
 
 ## Como executar
+```
+git clone https://github.com/Vinny1892/Group-Training.git 
+```
 
-A definir
+```cd Group-Training/```
+
+```docker-compose up```
+
+```abre seu navegador localhost:8080```
+
+
 
 ## Contribuidores
 
