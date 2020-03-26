@@ -1,60 +1,88 @@
-let counter = 0;
+let coordinates
+let ships  = []
 
-function createSquare(filled) {
+function createSquare(i, j) {
   let square = document.createElement("div");
 
   square.innerText = "";
 
-  if (filled) {
-    square.innerText = "x";
-  }
   square.className = "square";
   square.addEventListener("click", squareClicked);
-  square.id = counter++;
+  square.id = String.fromCharCode(65 + i) + j;
 
   return square;
-}
-
-function populateSquares() {
-  let start = {
-    row: Math.floor(Math.random() * Math.floor(100)),
-    col: Math.floor(Math.random() * Math.floor(100))
-  };
-
-  let end = {
-    row: Math.floor(Math.random() * Math.floor(100)),
-    col: Math.floor(Math.random() * Math.floor(100))
-  };
-
-  /** Posição inválida: Mesmas coordenadas */
-  if (start.row === end.row && start.col === end.row) {
-    return false;
-  }
-  /** Posição inválida: Coordenada diagonal*/
-  if (start.row !== end.row && start.col !== end.row) {
-    return false;
-  }
-
-  return [start, end];
 }
 
 function createBoard() {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
-      let populate = populateSquares()
-      if(populate && populate[0].row === i && populate[0].col === j) {
-        root.appendChild(createSquare(true));
-        console.log('filled');
-
-        continue;
-      }
-      root.appendChild(createSquare());
+      root.appendChild(createSquare(i, j));
     }
   }
 }
 
 function squareClicked(e) {
-  console.log(e.target.id)
+  let { id } = e.target
+  console.log(ships);
+
+  // if(coordinates.includes(id)) {
+  //   let node = document.getElementById(id)
+  //   node.style.backgroundColor = 'black'
+  // }
 }
 
-window.onload = createBoard();
+function getStartingPoints() {
+  const startingPoints = []
+  const shipsNumber = random(6, 4)
+
+  for(let i = 0; i < shipsNumber; i++){
+    let y  = random(10, 0)
+    let x = String.fromCharCode(random(74, 65))
+
+    startingPoints.push(x + y)
+  }
+
+  return startingPoints
+}
+
+function setShipsPosition() {
+  const startingPoints = getStartingPoints()
+  console.log(startingPoints);
+
+  startingPoints.map(point => {
+    let direction = Math.random() // 0 - Vertical, 1 - Horizontal
+    let ship = []
+    let x = point[0]
+    let y = point[1]
+
+    let size = 0
+
+    if(direction === 0) {
+      size = random(y, 1)
+    } else {
+      size = random(10 -(x.charCodeAt(0) - 65), 1)
+    }
+
+    for(let i = 0; i < size; i++) {
+      if(direction === 0) {
+        ship.push(x + (y += i))
+      } else {
+        ship.push((x += i), y)
+      }
+    }
+    ships.push(ship)
+  })
+}
+
+/**
+ *
+ * @param {number} max Inclusive max value
+ * @param {number} min
+ */
+function random(max, min) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+window.onload = (function() {
+  createBoard();
+  setShipsPosition()
+})()
