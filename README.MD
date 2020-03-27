@@ -33,7 +33,7 @@ Para usar Batalha Naval, siga os seguintes passos:
 As seguintes pessoas contribuiram para este projeto:
 
 - [Gabriel Costa](https://github.com/gabcostasilva)
-- _.... (liste todos os membros da equipe)_
+- [Altair Aquino Alves Junior](https://github.com/Zaltair-alves)
 
 ## Licença de uso
 
