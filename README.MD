@@ -5,62 +5,36 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
 ![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
 
-Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc ....
+Batalha Naval é um jogo de estratégia popular no mundo todo, conhecido pela possibilidade de jogá-lo somente com papel e caneta (e um oponente). Agora em sua versão século XXI. [Saiba mais sobre a história deste jogo](https://en.wikipedia.org/wiki/Battleship_(game)).
 
-Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo.
+## Planning
+
+- Você pode ver nosso projeto no [Trello](https://trello.com/b/H6AJ4LP3/batalha-naval-multiplayer)
 
 ## Pré-requisitos
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 
-<!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-
-- Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
-- Você deve possuir uma máquina `<Windows/Linux/Mac>`. (Deixe claro qual SO é possível rodar a aplicação, Linux é obrigatório).
-- Você deve ler o `<guia/link/documentação>` dos termos de uso.
-- (outros ...)
+- Um web browser atualizado, como Google Chrome ou Mozilla Firefox.
 
 ## Como executar
 
-Para fazer o deploy da aplicação siga os seguintes passos:
+- Abra o arquivo `index.html` no seu browser.
 
-Linux e/ou macOS:
+## Usando Batalha Naval
 
-```
-<commando 1>
-<commando 2>
-....
-<commando n>
-```
+Para usar Batalha Naval, siga os seguintes passos:
 
-Windows (opcional):
-
-```
-<commandos>
-```
-
-## Usando Nome_da_Aplicação
-
-Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
-
-- Abra o navegador e digite o seguinte endereço: `http://localhost/....`
-- Ao abrir a aplicação você poderá:
-  - Navegar pelo conteúdo público, ou
-  - Entrar com usuário e senha para ....
-- _Continua ..._
-
-_Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação._
+- Clique em qualquer célula disponível na tela.
+- Procure acertar posições ocupadas por navios
 
 ## Contribuidores
 
 As seguintes pessoas contribuiram para este projeto:
 
-- [Meu nome](https://github.com/meu_nome)
+- [Gabriel Costa](https://github.com/gabcostasilva)
 - _.... (liste todos os membros da equipe)_
 
 ## Licença de uso
 
-<!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
-
-Este projeto usa a seguinte licença: [<nome_da_licenca>](link).
-_Você também deve criar um arquivo chamado LICENSE no projeto_
+todo
