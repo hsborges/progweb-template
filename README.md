@@ -41,11 +41,18 @@ Windows (opcional):
 ## Usando Nome_da_Aplicação
 
 Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
-
-* Abra o navegador e digite o seguinte endereço: `http://localhost/....`
+* Abra o navegador e digite o seguinte endereço: http://manancial.net/preservsign ou https://localhost .
 * Ao abrir a aplicação você poderá:
-  * Navegar pelo conteúdo público, ou
-  * Entrar com usuário e senha para ....
+ * Navegar pelo conteúdo público
+ * Entrar com usuário e senha
+ * Cadastrar novo usuário e senha
+ * Realizar assinatura
+ * Cancelar assinatura
+ * Fazer upgrade da assinatura
+ * Fazer downgrade da assinatura
+ * Alterar informações de usuário
+ * Deletar conta
+
 * *Continua ...*  
 
 *Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
