@@ -1,12 +1,12 @@
-# Nome_da_Aplicação
+# Íbex
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
 ![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
 ![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
 
-Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc .... 
+Íbex é um site de compra e venda de produtos usados, que permite que usuários comprem e vendam produtos usados, anunciados no site.
 
-Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo.
+O site Íbex possibilita que usuários anunciem seus produtos e comprem produtos de outros vendedores cadastrados, com a aplicação como intermédio de pagamento.
 
 ## Pré-requisitos
 
@@ -34,7 +34,7 @@ Windows (opcional):
 <commandos>
 ```
 
-## Usando Nome_da_Aplicação
+## Usando Íbex
 
 Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
@@ -50,8 +50,10 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Meu nome](https://github.com/meu_nome)
-* *.... (liste todos os membros da equipe)*
+* [Bruno Monteiro de Andrade](https://github.com/brunomond)
+* [Letízia Pereira Silva](https://github.com/letiziapsilva)
+* [Yasmin Borella Lied Melo Medeiros](https://github.com/yaslied)
+
 
 ## Licença de uso
 
