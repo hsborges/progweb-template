@@ -46,12 +46,12 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
   * Navegar pelo conteúdo público
   * Entrar com usuário e senha
   * Cadastrar novo usuário e senha
- * Realizar assinatura
- * Cancelar assinatura
- * Fazer upgrade da assinatura
- * Fazer downgrade da assinatura
- * Alterar informações de usuário
- * Deletar conta
+  * Realizar assinatura
+  * Cancelar assinatura
+  * Fazer upgrade da assinatura
+  * Fazer downgrade da assinatura
+  * Alterar informações de usuário
+  * Deletar conta
 
 * *Continua ...*  
 
