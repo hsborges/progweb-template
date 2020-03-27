@@ -5,7 +5,8 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
 
  CalendarioProgWeb é uma aplicação que tem por objetivo inserir eventos em uma agenda. 
- O evento é um acontecimento com data, hora e local.
+ 
+ O evento é um acontecimento com nome, data, hora, duração e local.
  
 ## Pré-requisitos
 
@@ -33,26 +34,25 @@ Windows (opcional):
 <commandos>
 ```
 
-## Usando Calendário
+## Usando CalendarioProgWeb
 
-Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
+Para usar CalendarioProgWeb, siga os seguintes passos (exemplos):
 
 * Abra o navegador e digite o seguinte endereço: `http://localhost/....`
-* Ao abrir a aplicação você poderá:
-  * Navegar pelo conteúdo público, ou
-  * Entrar com usuário e senha para ....
-* *Continua ...*  
-
+* Ao abrir a aplicação você deve:
+  * Entrar com usuário e senha para conectar no sistema e ver a própria agenda.
+* Clique em inserir um novo evento e configure escolhendo o nome, data, hora, duração e local.
+* Um evento pode ser excluído ou alterado de acordo com a necessidade do usuário.
 *Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
 
 ## Contribuidores
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Jéssica Abe de Almeida](https://github.com/Abejyou)
-* [Flavio Augusto Corrêa de Souza](https://github.com/flaviocsouza)
 * [Fábio Shiniti Nakazato](https://github.com/Fabnaka)
+* [Flavio Augusto Corrêa de Souza](https://github.com/flaviocsouza)
 * [Helionardo Pereira Justi](https://github.com/helionardo)
+* [Jéssica Abe de Almeida](https://github.com/Abejyou)
 
 ## Licença de uso
 
