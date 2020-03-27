@@ -1,0 +1,9 @@
+﻿* Sistema de login;
+* Sistema de pagamento;
+* Sistema de cadastro;
+* Especificação do produto (fotos, medidas, material, marca);
+* Perfil do usuário;
+* Divisão dos produtos por categoria;
+* Carrinho de compra;
+* Sistema de pesquisa;
+* Área de anúncio de produto;
