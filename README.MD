@@ -34,6 +34,7 @@ As seguintes pessoas contribuiram para este projeto:
 
 - [Gabriel Costa](https://github.com/gabcostasilva)
 - [Altair Aquino Alves Junior](https://github.com/Zaltair-alves)
+- [Cleriston Nantes Petrikic](http://github.com/petrikic)
 
 ## Licença de uso
 
