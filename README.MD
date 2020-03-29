@@ -39,4 +39,4 @@ As seguintes pessoas contribuiram para este projeto:
 
 ## Licença de uso
 
-todo
+[MIT](https://github.com/GabCostaSilva/batalha-naval/blob/master/LICENSE)
