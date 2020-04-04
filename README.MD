@@ -1,4 +1,4 @@
-# Batalha Naval Multiplayer
+﻿# Batalha Naval Multiplayer
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
 
@@ -36,6 +36,9 @@ As seguintes pessoas contribuiram para este projeto:
 - [Altair Aquino Alves Junior](https://github.com/Zaltair-alves)
 - [Cleriston Nantes Petrikic](http://github.com/petrikic)
 - [Anna Carollyne Pereira da Silva](http://github.com/MoshGirl)
+
+- [Kemer Wander Souza Tomas](https://github.com/Kemer-Souza)
+
 
 ## Licença de uso
 
