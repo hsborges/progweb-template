@@ -16,11 +16,13 @@ routes.delete('/categories/:id', CategoryController.delete)
 routes.post('/recipes', RecipeController.create)
 routes.get('/recipes', RecipeController.index)
 routes.delete('/recipes/:id', RecipeController.delete)
+routes.get('/recipes/:category', RecipeController.filtered)
 
 routes.post('/folders', FolderController.create)
 routes.get('/folders', FolderController.index)
 routes.delete('/folders/:id', FolderController.delete)
-routes.push('folder_content', FolderController.recipeOnFolder)
+routes.post('/folder/content', FolderController.recipeOnFolder)
+routes.get('/recipies/folder', FolderController)
 
 
 module.exports = routes

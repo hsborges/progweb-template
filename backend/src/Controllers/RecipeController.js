@@ -23,6 +23,13 @@ module.exports = {
         return response.json(categories)
     },
 
+    async filtered(request, response) {
+        const { category } = request.params
+
+        const categories = await connection('recipes').select('*').where('category_id', category)
+        return response.json(categories)
+    },
+
     async delete(request, response) {
         const { id } = request.params
 
