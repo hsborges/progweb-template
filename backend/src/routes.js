@@ -2,7 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const UserController = require('./Controllers/UserController')
 const CategoryController = require('./Controllers/CategoryController')
-const RecipeController = require('./Controllers/RecipeController')
+const FolderController = require('./Controllers/FolderController')
 
 
 routes.post('/signin', UserController.create)
@@ -17,6 +17,10 @@ routes.post('/recipes', RecipeController.create)
 routes.get('/recipes', RecipeController.index)
 routes.delete('/recipes/:id', RecipeController.delete)
 
+routes.post('/folders', FolderController.create)
+routes.get('/folders', FolderController.index)
+routes.delete('/folders/:id', FolderController.delete)
+routes.push('folder_content', FolderController.recipeOnFolder)
 
 
 module.exports = routes
