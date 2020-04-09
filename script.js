@@ -1,4 +1,3 @@
-let coordinates
 let ships  = []
 
 function createSquare(i, j) {
@@ -23,12 +22,12 @@ function createBoard() {
 
 function squareClicked(e) {
   let { id } = e.target
-  console.log(ships);
-
-  // if(coordinates.includes(id)) {
-  //   let node = document.getElementById(id)
-  //   node.style.backgroundColor = 'black'
-  // }
+  ships.map((ship) => {
+    if (ship.includes(id)) {
+        let node = document.getElementById(id)
+        node.style.backgroundColor = 'black'
+    }
+  })
 }
 
 function getStartingPoints() {
@@ -45,15 +44,14 @@ function getStartingPoints() {
   return startingPoints
 }
 
-function setShipsPosition() {
+function setShipsPositions() {
   const startingPoints = getStartingPoints()
-  console.log(startingPoints);
 
   startingPoints.map(point => {
-    let direction = Math.random() // 0 - Vertical, 1 - Horizontal
+    let direction = Math.round(Math.random()) // 0 - Vertical, 1 - Horizontal
     let ship = []
     let x = point[0]
-    let y = point[1]
+    let y = Number(point[1])
 
     let size = 0
 
@@ -65,9 +63,11 @@ function setShipsPosition() {
 
     for(let i = 0; i < size; i++) {
       if(direction === 0) {
-        ship.push(x + (y += i))
+        y  = (y + 1) % 10
+        ship.push([x, y].join(''))
       } else {
-        ship.push((x += i), y)
+        let asciiCodeX = String.fromCharCode(x.charCodeAt(0) + i)
+        ship.push([asciiCodeX, y].join(''))
       }
     }
     ships.push(ship)
@@ -84,5 +84,5 @@ function random(max, min) {
 }
 window.onload = (function() {
   createBoard();
-  setShipsPosition()
+  setShipsPositions()
 })()
