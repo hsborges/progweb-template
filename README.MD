@@ -17,9 +17,19 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 
 - Um web browser atualizado, como Google Chrome ou Mozilla Firefox.
 
+- yarn ou npm
+
 ## Como executar
 
-- Abra o arquivo `index.html` no seu browser.
+Execute os comandos<br>
+
+`yarn`<br>
+`yarn start`<br>
+
+ou<br>
+
+`npm install`<br>
+`npm run start`
 
 ## Usando Batalha Naval
 
