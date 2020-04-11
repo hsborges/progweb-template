@@ -29,8 +29,10 @@ Execute os comandos<br>
 ou<br>
 
 `npm install`<br>
-`npm run start`
+`npm run start`<br>
 
+Após instalar as dependências e rodar o server, game estará rodando em <br><br>
+[http://localhost:8080](http://localhost:8080)
 ## Usando Batalha Naval
 
 Para usar Batalha Naval, siga os seguintes passos:
