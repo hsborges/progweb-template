@@ -1,0 +1,17 @@
+{
+  "name": "batalha-naval",
+  "version": "1.0.0",
+  "description": "A simple Sea Battleships multiplayer and AI game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": "https://github.com/GabCostaSilva/batalha-naval.git",
+  "author": "gabcostasilva <gabcostadeveloper@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
