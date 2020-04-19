@@ -1,7 +1,8 @@
-import MenuItem from "@material-ui/core/MenuItem";
 import React from "react";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
 
-export const Menu = ({ anchorEl, handleMenuClose }) => {
+export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const isMenuOpen = Boolean(anchorEl);
   return (
     <Menu
