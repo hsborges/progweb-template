@@ -36,15 +36,12 @@ export default function Template() {
                             </NavDropdown>
 
                         </Nav>
-                        <Form inline>
-                            <Button id="login" variant="flat">
-                                Login
+                        <Button id="login" variant="flat">
+                            Login
                             </Button>
-                            <Button id="login" variant="flat">
-                                Cadastro
+                        <Button id="login" variant="flat">
+                            Cadastro
                             </Button>
-
-                        </Form>
                     </Navbar.Collapse>
                 </Navbar>
 
