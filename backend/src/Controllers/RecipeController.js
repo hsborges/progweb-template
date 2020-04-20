@@ -1,10 +1,13 @@
 const connection = require('../Database/conection')
 
 module.exports = {
+
+    //função para criar uma nova receita
     async create(request, response) {
         const { name, description, qtt, msr, ingr, prepare, image, video, category_id } = request.body
 
         try {
+            //nova receita é adiciaonada ao banco
             const [id] = await connection('recipes').insert({
                 name,
                 description,
@@ -35,6 +38,7 @@ module.exports = {
         }
     },
 
+    //função que retorna todas as receitas do banco
     async index(request, response) {
 
         try {
@@ -61,6 +65,15 @@ module.exports = {
 
     },
 
+    //função que retorna receitas fintradas por uma caregoria
+    async filtered(request, response) {
+        const { category } = request.params
+
+        const categories = await connection('recipes').select('*').where('category_id', category)
+        return response.json(categories)
+    },
+
+    //função que deleta uma receita do banco
     async delete(request, response) {
         const { id } = request.params
 
