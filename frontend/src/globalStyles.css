@@ -24,18 +24,19 @@ body {
 
 .btn-flat#login {
     width: 100px;
-    margin-left: 50px;
+    margin-left: 30px;
     border-radius: 30px;
 }
 
-.btn-flat#search {
-    background-color: white;
+.btn-flat#search{
+    width: 50px;
+  background-color: white;
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: white;
     font: normal 13pt Arial;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 
 .navbar-dark {
@@ -50,4 +51,4 @@ body {
 
 .form-control .placeHolder {
     color: #ff0000;
-}
+ }
