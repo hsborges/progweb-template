@@ -29,7 +29,7 @@ routes.post('/folders', FolderController.create)
 routes.get('/folders', FolderController.index)
 routes.delete('/folders/:id', FolderController.delete)
 routes.post('/folder/content', FolderController.recipeOnFolder)
-routes.get('/recipies/folder', FolderController)
+routes.get('/recipies/folder', FolderController.recipeOfFolder)
 
 //lista de rotas para comentarios
 routes.post('/comments', CommentsController.addComment)
