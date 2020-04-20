@@ -1,9 +1,10 @@
-body{
+body {
     background-color: #ebebeb;
 }
+
 .container {
     height: 200vh;
-    width: 100vh;
+    width: 100vw;
     padding-top: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -14,39 +15,39 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
-
 }
-.btn-flat{
+
+.btn-flat {
     background-color: red;
     color: white;
 }
-.btn-flat#login{
+
+.btn-flat#login {
     width: 100px;
     margin-left: 50px;
     border-radius: 30px;
 }
 
-.btn-flat#search{
+.btn-flat#search {
     background-color: white;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color:white;
+    color: white;
     font: normal 13pt Arial;
     margin-left: 50px;
 }
 
-.navbar-dark{
+.navbar-dark {
     background-color: rgba(0, 0, 0, 0.212);
     border-radius: 10px;
 }
 
-.form-control{
+.form-control {
     color: #ffffff;
     background-color: #fff0;
 }
 
-.form-control .placeHolder{
+.form-control .placeHolder {
     color: #ff0000;
 }
-
