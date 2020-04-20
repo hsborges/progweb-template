@@ -9,7 +9,7 @@ import { FaSearch } from 'react-icons/fa'
 
 
 
-export default function SubmitRecipe() {
+export default function Login() {
     {
         return (
             <>

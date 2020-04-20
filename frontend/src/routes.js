@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './pages/Home'
 import SubmitRecipe from './pages/SubmitRecipe'
+import Template from './pages/Template'
+import Login from './pages/Login'
 
 //switch garante que apenas uma rota sera chamada por momento
 //exact faz com que entre no rota só se for exatamente essa a url
@@ -13,6 +15,8 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact component={Home}></Route>
                 <Route path="/recipes" component={SubmitRecipe}></Route>
+                <Route path="/template" component={Template}></Route>
+                <Route path="/login" component={Login}></Route>
             </Switch>
         </BrowserRouter>
     )
