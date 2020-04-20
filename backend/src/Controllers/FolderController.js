@@ -1,10 +1,7 @@
 const connection = require('../Database/conection')
 
 module.exports = {
-
-    //função para criar novas pastas
     async create(request, response) {
-        //essa função precisa de um nome para a pasta e o id do usuario que esta criando a pasta
         const { name } = request.body
         const user_id = require.headers.authorization
 

@@ -4,6 +4,7 @@ const UserController = require('./Controllers/UserController')
 const CategoryController = require('./Controllers/CategoryController')
 const FolderController = require('./Controllers/FolderController')
 const CommentsController = require('./Controllers/CommentsController')
+const RecipeController = require('./Controllers/RecipeController')
 
 
 //lista de rotas reacianoada a loguin e usuários
@@ -33,6 +34,7 @@ routes.get('/recipies/folder', FolderController)
 //lista de rotas para comentarios
 routes.post('/comments', CommentsController.addComment)
 routes.get('/comments/:id', CommentsController.getComments)
+routes.post('/folder_content', FolderController.recipeOnFolder)
 
 
 module.exports = routes
