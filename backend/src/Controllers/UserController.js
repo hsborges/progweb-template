@@ -30,6 +30,8 @@ module.exports = {
             return response.json({ erro: "não foi possivel registrar o usuario" })
         }
 
+        //TODO read later
+
         //caso não haja problemas é retornado o id no novo usuário
         return response.json({ id })
 
