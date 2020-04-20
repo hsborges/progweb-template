@@ -3,6 +3,7 @@ const routes = express.Router()
 const UserController = require('./Controllers/UserController')
 const CategoryController = require('./Controllers/CategoryController')
 const FolderController = require('./Controllers/FolderController')
+const CommentsController = require('./Controllers/CommentsController')
 
 
 //lista de rotas reacianoada a loguin e usuários
@@ -28,6 +29,10 @@ routes.get('/folders', FolderController.index)
 routes.delete('/folders/:id', FolderController.delete)
 routes.post('/folder/content', FolderController.recipeOnFolder)
 routes.get('/recipies/folder', FolderController)
+
+//lista de rotas para comentarios
+routes.post('/comments', CommentsController.addComment)
+routes.get('/comments/:id', CommentsController.getComments)
 
 
 module.exports = routes

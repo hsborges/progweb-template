@@ -5,25 +5,33 @@ module.exports = {
     //função que adiciona um nov usuario ao banco
     async create(request, response) {
         //necessita de nome email e senha
-        const { name, email, password } = request.body
+        const { name, email, password, professional } = request.body
 
-        //gera um id aleatório para o usuario
-        const id = crypto.randomBytes(4).toString('HEX')
 
         try {
             //adiciona o novo usuario ao banco
             await connection('users').insert({
-                    id,
-                    name,
-                    email,
-                    password
-                })
-                //caso não haja problemas é retornado o id no novo usuário
-            return response.json({ id })
+                name,
+                email,
+                password,
+                professional
+            })
+
+            //busca id do usuario
+            const id = await connection('users').select('id').where({
+                email: email,
+                password: password
+            }).first()
+
+
+
         } catch (e) {
             //caso haja algum erro é retornado uma mensagem informando que não foi possivel adiconar o usuario
             return response.json({ erro: "não foi possivel registrar o usuario" })
         }
+
+        //caso não haja problemas é retornado o id no novo usuário
+        return response.json({ id })
 
 
     },
