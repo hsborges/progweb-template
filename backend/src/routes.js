@@ -8,7 +8,7 @@ const RecipeController = require('./Controllers/RecipeController')
 
 
 //lista de rotas reacianoada a loguin e usuários
-routes.post('/signin', UserController.create)
+routes.post('/singin', UserController.create)
 routes.post('/login', UserController.login)
 routes.get('/users', UserController.index)
 
