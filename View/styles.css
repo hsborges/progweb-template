@@ -14,12 +14,6 @@ body {
   background-color: #424242;
 }
 
-.logo {
-    float: left;
-}
-
-.logo a {
-}
 
 .topnav a {
   font-size: 30px;
@@ -29,6 +23,14 @@ body {
   text-decoration: none;
   float: right;
   padding-top: 1ch;
+}
+
+.logo {
+  float: left;
+}
+
+.logo a {
+  
 }
 
 .topnav a:hover {
