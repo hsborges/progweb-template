@@ -11,7 +11,7 @@ body {
 .topnav {
   height: 15vh;
   max-height: 75px;
-  background-color: rgba(156, 234, 177, 100%);
+  background-color: #424242;
 }
 
 .logo {
@@ -32,42 +32,45 @@ body {
 }
 
 .topnav a:hover {
-  color: #5cbf2a;
+  color: #A4A4A4;
 }
 
 .text-content {
   height: 40vh;
   max-height: 400px;
+  width: 100%;
   text-align: center;
   display: inline-block;
+  background-image: url("5.png");
 }
 
 .text-about {
   height: 120px;
   max-height: 400px;
   text-align: center;
-  background-color:#FAFAFA;
+  background-color: #E6E6E6;
+  
 }
 
 .about-title {
-  font-size: 30px;
-  color: rgba(156, 234, 177, 100%);
-  font-family: "Baloo Tamma 2", cursive;
+  font-size: 50px;
+  color: #424242;
+  font-family: "Cookie", cursive;
   vertical-align: middle;
   margin-top: 2%;  
 }
 
 .about-description {
-  font-size: 30px;
+  font-size: 35px;
   color: #6E6E6E;
-  font-family: "Baloo Tamma 2", cursive;
+  font-family: "Cookie", cursive;
   vertical-align: middle;
   margin-top: 5%;  
 }
 
 .description-text {
   font-size: 30px;
-  color: rgba(156, 234, 177, 100%);
+  color: #ffffff;
   font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
   margin-top: 80px;
@@ -75,9 +78,9 @@ body {
 }
 
 .myButton {
-  background-color: rgba(156, 234, 177, 100%);
+  background-color: #424242;
   border-radius: 28px;
-  border: 1px solid rgba(156, 234, 177, 100%);
+  border: 1px solid #424242;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -87,7 +90,7 @@ body {
   text-decoration: none;
 }
 .myButton:hover {
-  background-color: #5cbf2a;
+  background-color: #848484;
 }
 .myButton:active {
   position: relative;
@@ -132,16 +135,16 @@ body {
 }
 
 .basic-plan {
-  background-color: rgba(156, 234, 177, 80%);
+  background-color: #585858;
   width: 33%;
 }
 
 .premium-plan {
-  background-color: rgba(156, 234, 177, 65%);
+  background-color: #2F0B3A;
   width: 34%;
 }
 
 .exxxtra-plan {
-  background-color: rgba(156, 234, 177, 80%);
+  background-color: #585858;
   width: 33%;
 }
