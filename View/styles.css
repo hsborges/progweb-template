@@ -29,8 +29,10 @@ body {
   float: left;
 }
 
-.logo a {
-  
+.logo a { 
+  font-size: 60px; 
+  font-family: "Cookie", cursive; 
+  margin-top: -10%;
 }
 
 .topnav a:hover {
@@ -109,7 +111,7 @@ body {
 .plan-title {
   font-size: 30px;
   color: #ffffff;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, cursive;
+  font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
   margin-top: 80px;
   text-align: center;
