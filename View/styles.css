@@ -11,18 +11,11 @@ body {
 .topnav {
   height: 15vh;
   max-height: 75px;
-  background-color: #424242;
-}
-
-.logo {
-    float: left;
-}
-
-.logo a {
+  background-color: rgb(86, 102, 122);
 }
 
 .topnav a {
-  font-size: 30px;
+  font-size: 28px;
   padding: 14px 10px;
   font-family: "Baloo Tamma 2", cursive;
   color: #ffffff;
@@ -31,17 +24,27 @@ body {
   padding-top: 1ch;
 }
 
+.logo {
+  float: left;
+}
+
+.logo a {
+  font-size: 60px;
+  font-family: "Cookie", cursive;
+  margin-top: -10%;
+}
+
 .topnav a:hover {
   color: #A4A4A4;
 }
 
-.text-content {
+.body-text {
   height: 40vh;
   max-height: 400px;
   width: 100%;
   text-align: center;
   display: inline-block;
-  background-image: url("5.png");
+  background-color: rgb(135, 151, 175);
 }
 
 .text-about {
@@ -73,7 +76,7 @@ body {
   color: #ffffff;
   font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
-  margin-top: 80px;
+  margin-top: 5%;
 
 }
 
@@ -107,7 +110,7 @@ body {
 .plan-title {
   font-size: 30px;
   color: #ffffff;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, cursive;
+  font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
   margin-top: 80px;
   text-align: center;
@@ -124,27 +127,32 @@ body {
 
 }
 
-.button-space{
-  margin-top: 50px;
+.button-space {
+  margin-top: 105px;
   text-align: center;
 }
 
-.button-space-exxxtra{
-  margin-top: 40px;
+.button-space-premium {
+  margin-top: 83px;
+  text-align: center;
+}
+
+.button-space-exxxtra {
+  margin-top: 60px;
   text-align: center;
 }
 
 .basic-plan {
-  background-color: #585858;
+background-color: rgb(167, 173, 198);
   width: 33%;
 }
 
 .premium-plan {
-  background-color: #2F0B3A;
+  background-color: rgb(95, 75, 102);
   width: 34%;
 }
 
 .exxxtra-plan {
-  background-color: #585858;
+  background-color: rgb(44, 19, 32);
   width: 33%;
 }
