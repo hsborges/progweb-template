@@ -1,0 +1,147 @@
+body {
+  margin: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.topnav {
+  height: 15vh;
+  max-height: 75px;
+  background-color: rgba(156, 234, 177, 100%);
+}
+
+.logo {
+    float: left;
+}
+
+.logo a {
+}
+
+.topnav a {
+  font-size: 30px;
+  padding: 14px 10px;
+  font-family: "Baloo Tamma 2", cursive;
+  color: #ffffff;
+  text-decoration: none;
+  float: right;
+  padding-top: 1ch;
+}
+
+.topnav a:hover {
+  color: #5cbf2a;
+}
+
+.text-content {
+  height: 40vh;
+  max-height: 400px;
+  text-align: center;
+  display: inline-block;
+}
+
+.text-about {
+  height: 120px;
+  max-height: 400px;
+  text-align: center;
+  background-color:#FAFAFA;
+}
+
+.about-title {
+  font-size: 30px;
+  color: rgba(156, 234, 177, 100%);
+  font-family: "Baloo Tamma 2", cursive;
+  vertical-align: middle;
+  margin-top: 2%;  
+}
+
+.about-description {
+  font-size: 30px;
+  color: #6E6E6E;
+  font-family: "Baloo Tamma 2", cursive;
+  vertical-align: middle;
+  margin-top: 5%;  
+}
+
+.description-text {
+  font-size: 30px;
+  color: rgba(156, 234, 177, 100%);
+  font-family: "Baloo Tamma 2", cursive;
+  vertical-align: middle;
+  margin-top: 80px;
+
+}
+
+.myButton {
+  background-color: rgba(156, 234, 177, 100%);
+  border-radius: 28px;
+  border: 1px solid rgba(156, 234, 177, 100%);
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Cookie", cursive;
+  font-size: 35px;
+  padding: 16px 31px;
+  text-decoration: none;
+}
+.myButton:hover {
+  background-color: #5cbf2a;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.plan-footer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.plan-title {
+  font-size: 30px;
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, cursive;
+  vertical-align: middle;
+  margin-top: 80px;
+  text-align: center;
+
+}
+
+.plan-description {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  vertical-align: middle;
+  margin-top: 40px;
+  text-align: center;
+
+}
+
+.button-space{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.button-space-exxxtra{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.basic-plan {
+  background-color: rgba(156, 234, 177, 80%);
+  width: 33%;
+}
+
+.premium-plan {
+  background-color: rgba(156, 234, 177, 65%);
+  width: 34%;
+}
+
+.exxxtra-plan {
+  background-color: rgba(156, 234, 177, 80%);
+  width: 33%;
+}
