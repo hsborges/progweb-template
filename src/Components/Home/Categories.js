@@ -19,6 +19,7 @@ export const Categories = () => {
     alignItems: "center",
     flexDirection: "column",
   };
+
   return (
     <div
       style={{
