@@ -51,13 +51,13 @@ body {
   height: 120px;
   max-height: 400px;
   text-align: center;
-  background-color: #E6E6E6;
+  background-color: rgb(135, 151, 175);
   
 }
 
 .about-title {
   font-size: 50px;
-  color: #424242;
+  color: #ffffff;
   font-family: "Cookie", cursive;
   vertical-align: middle;
   margin-top: 2%;  
