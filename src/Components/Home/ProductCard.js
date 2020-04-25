@@ -1,5 +1,5 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -19,13 +19,26 @@ export const ProductCard = ({ data: { title, description, image } }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root} style={{ margin: "8px" }}>
-      <CardActionArea>
+      <CardActionArea style={{ height: "100%", flexDirection: "column" }}>
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            gutterBottom
+            variant="h5"
+            style={{
+              overflow: "hidden",
+              //textOverflow: "ellipsis",
+              //whiteSpace: "nowrap",
+              maxHeight: 65,
+            }}
+          >
             {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            style={{ overflow: "hidden", maxHeight: 60 }}
+          >
             {description}
           </Typography>
         </CardContent>
