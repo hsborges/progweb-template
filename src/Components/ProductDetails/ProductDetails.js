@@ -4,6 +4,11 @@ import { Grid, Paper, Typography, ButtonBase, Container, Divider, Button } from 
 import ProductSpec from './ProductSpec';
 import { green } from '@material-ui/core/colors';
 import SellerInfo from './SellerInfo';
+import Icon from "@mdi/react";
+import {
+  mdiCart 
+} from "@mdi/js";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,7 +96,7 @@ export const ProductDetails = () => {
                 </Typography>
                   </Grid>
                   <Grid item style={{ marginTop: "12px" }}>
-                    <Button variant="contained" color="white" className={classes.button}>Comprar</Button>
+                    <Button variant="contained" color="white" className={classes.button} startIcon={<Icon path={mdiCart } size={1.5} />}>Comprar</Button>
                   </Grid>
                 </Grid>
               </Grid>
