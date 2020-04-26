@@ -58,5 +58,5 @@ As seguintes pessoas contribuiram para este projeto:
 ## Licença de uso
 
 <!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
-Este projeto usa a seguinte licença: [<nome_da_licenca>](<link>).
+Este projeto usa a seguinte licença: [BY-NC 3.0](<https://creativecommons.org/licenses/by-nc/3.0/br/>).
 *Você também deve criar um arquivo chamado LICENSE no projeto*
