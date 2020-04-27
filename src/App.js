@@ -1,15 +1,11 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import {Appbar} from "./Components/AppBar/Appbar";
-import {Home} from "./Components/Home/Home";
+import { makeStyles } from "@material-ui/core/styles";
+import { Appbar } from "./Components/AppBar/Appbar";
+import { Home } from "./Components/Home/Home";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   grow: {
     flexGrow: 1,
-  },
-  home: {
-    paddingLeft: "5%",
-    paddingRight: "5%",
   },
 }));
 
@@ -19,7 +15,7 @@ function App() {
   return (
     <div className={classes.grow}>
       <Appbar />
-      <div className={classes.home}>
+      <div>
         <Home />
       </div>
     </div>

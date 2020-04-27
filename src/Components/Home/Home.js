@@ -3,7 +3,6 @@ import { TextField } from "@material-ui/core";
 import { mdiMagnify } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Categories } from "./Categories";
-import Divider from "@material-ui/core/Divider";
 import {
   audioVideo,
   books,
@@ -16,22 +15,36 @@ import {
 } from "./mock";
 import { categories } from "./enums";
 import { ViewProducts } from "./ViewProducts";
+import { makeStyles } from "@material-ui/styles";
+
+const inputStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: "#fff",
+  },
+  focused: {},
+  notchedOutline: {
+    border: "none",
+  },
+}));
 
 export const Home = () => {
+  const inputClasses = inputStyles();
   const [categoria, setCategoria] = useState(categories.RECENTES);
 
   return (
-    <div style={{ marginTop: "24px" }}>
-      <TextField
-        variant="outlined"
-        placeholder="Buscar produto"
-        fullWidth
-        InputProps={{
-          endAdornment: <Icon path={mdiMagnify} size={1} />,
-        }}
-      />
-      <Categories changeCategory={setCategoria} />
-      <Divider style={{ marginTop: "12px" }} />
+    <div>
+      <div style={{ backgroundColor: "#e33b5d", padding: "24px" }}>
+        <TextField
+          variant="outlined"
+          placeholder="Buscar produto"
+          fullWidth
+          InputProps={{
+            endAdornment: <Icon path={mdiMagnify} size={1} />,
+            classes: inputClasses,
+          }}
+        />
+        <Categories changeCategory={setCategoria} />
+      </div>
       {categoria === categories.RECENTES && (
         <ViewProducts products={recentProducts} title="Anúncios recentes" />
       )}

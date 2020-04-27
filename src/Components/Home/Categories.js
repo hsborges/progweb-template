@@ -19,55 +19,77 @@ export const Categories = ({ changeCategory }) => {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    color: "#fff",
   };
 
   return (
     <div
       style={{
-        marginTop: "12px",
+        marginTop: "24px",
         display: "flex",
         justifyContent: "space-around",
       }}
     >
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.CELULARES)}>
-          <Icon path={mdiCellphoneIphone} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.CELULARES)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiCellphoneIphone} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Celulares</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.INFORMATICA)}>
-          <Icon path={mdiLaptop} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.INFORMATICA)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiLaptop} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Informática</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.AUDIO_VIDEO)}>
-          <Icon path={mdiTelevision} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.AUDIO_VIDEO)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiTelevision} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Áudio e Vídeo</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.VESTUARIO)}>
-          <Icon path={mdiHanger} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.VESTUARIO)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiHanger} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Vestuário</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.ELETRODOMESTICOS)}>
-          <Icon path={mdiWashingMachine} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.ELETRODOMESTICOS)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiWashingMachine} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Eletrodomésticos</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.FERRAMENTAS)}>
-          <Icon path={mdiHammerScrewdriver} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.FERRAMENTAS)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiHammerScrewdriver} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Ferramentas</Typography>
       </div>
       <div style={iconLabel}>
-        <IconButton onClick={() => changeCategory(categories.LIVROS)}>
-          <Icon path={mdiBookshelf} size={2} />
+        <IconButton
+          onClick={() => changeCategory(categories.LIVROS)}
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Icon path={mdiBookshelf} size={1.5} color="#e33b5d" />
         </IconButton>
         <Typography>Livros</Typography>
       </div>

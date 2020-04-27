@@ -5,11 +5,8 @@ import Grid from "@material-ui/core/Grid";
 
 export const ViewProducts = ({ title, products }) => {
   return (
-    <>
-      <Typography
-        style={{ marginTop: "12px", marginBottom: "12px" }}
-        variant="h5"
-      >
+    <div style={{ margin: "24px" }}>
+      <Typography style={{ marginBottom: "12px" }} variant="h5">
         {title}
       </Typography>
       <Grid container style={{ display: "flex" }}>
@@ -19,6 +16,6 @@ export const ViewProducts = ({ title, products }) => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </div>
   );
 };
