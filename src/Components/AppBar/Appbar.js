@@ -52,7 +52,11 @@ export const Appbar = () => {
     <>
       <AppBar
         position="static"
-        style={{ margin: "0px", backgroundColor: "#fff" }}
+        style={{
+          margin: "0px",
+          backgroundColor: "#fff",
+          borderBottom: "1px solid #e8e8e8",
+        }}
         elevation={0}
       >
         <Toolbar>
