@@ -8,54 +8,73 @@
         <link rel="stylesheet" href="style/home.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     </head>
     <body>
         
         <!--Cabeçalho-->
-        <header id="header">
+        <header id="header-index">
             <!--Barra de usuario-->
             <nav id="menu">
                 <ul>
                     <li><a href="cadastro.html">Crie sua conta</a></li>
-                    <li><a href="#"><i class="medium material-icons">person_outline</i></a></li>
-                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="#" style="display: flex; align-items: center;"><i class="medium material-icons mr-2">person_outline</i> Entrar</a></li>
                 </ul>
             </nav>
             <!--Barra de pesquisa-->
-            <div class="container-fluid d-flex flex-row align-items-center ml-2 mr-5">
+            <div class="container-fluid d-flex flex-row align-items-center p-0">
                 <img class="img-index" src="images/logo.png"/>
-                <div class="input-group input-group-lg mb-3 ml-5 mr-4 flex-fill" id="barra-pesquisa">
+                <div class="input-group input-group-lg mb-3 ml-5 mr-4 flex-fill">
                     <input type="text" class="form-control" placeholder="O que você procura?" aria-label="O que você procura?" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                      <button class="btn btn-lg btn-info" type="button" id="button-addon2"><i class="large material-icons white">search</i></button>
+                      <button class="btn btn-lg btn-info" type="button" id="button-addon2"><i class="large material-icons">search</i></button>
                     </div>
                   </div>
                 </div>
             
         </header>
         <!--Barra de tarefas-->
-        <ul>
-            <li>
-                <ul>
-                    <li>Categorias</li>
-                    <li>Categoria A</li>
-                    <li>Categoria B</li>
-                    <li>Categoria C</li>
+        <div id="task-bar">
+            <div class="container-fluid d-flex ">
+                <ul class="nav nav-pills">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Ação</a>
+                        <a class="dropdown-item" href="#">Outra ação</a>
+                        <a class="dropdown-item" href="#">Algo mais aqui</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Comprar</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Vender</a>
+                    </li>
                 </ul>
-            </li>
-            <li>Compras</li>
-            <li>Vendas</li>
-            <li><img src="images/cart.png"/></li>
-            <li>Carrinho</li>
-        </ul>
+            </div>
+            <div class="d-flex flex-row mr-4 align-items-center">
+                    <i class="medium material-icons">shopping_cart</i>
+                    <a class="nav-link" href="#">Carrinho</a>
+               
+                
+            </div>
+        </div>
         <!--Rodapé-->
-        <footer>
-            <ul>
-                <li>Ajuda e Contato</li>
-                <li>Termos e condições</li>
-                <li>Política de privacidade</li>
-            </ul>
+        <footer id="footer">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="login.html">Ajuda e Contratos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Termos e condições</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Política de privacidade</a>
+                </li>
+              </ul>
         </footer>
     </body>
 </html>

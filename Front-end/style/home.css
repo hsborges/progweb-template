@@ -3,18 +3,19 @@ body {
     padding: 0px;
     border: 0px;
 }
-#header {
+#header-index {
     display: flex;
     flex-direction: column;
-    background-color: #1775CC;
+    background-color: #1775cc;
     justify-content: start;
 }
 
-.white{
-    color: #FFF;
-}
-#barra-pesquisa{
-    width: 70%;
+#header{
+    background-color: #1775CC;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #menu ul {
@@ -50,4 +51,33 @@ body {
 .img-index {
     height: 15rem;
     width: 10rem;
+}
+
+.img-header{
+    height: 9rem;
+    width: 5rem;
+    justify-self: start;
+}
+#task-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E5E5E5;
+}
+
+#footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E5E5E5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.name{
+    justify-self: center;
+    color: #FFF;
+    font-family: 'Roboto';
+    font-weight: bold;
 }
