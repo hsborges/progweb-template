@@ -6,12 +6,12 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { AppMenu } from "./AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: "none",
+    marginLeft: "12px",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -34,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       alignItems: "center",
     },
+  },
+  link: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    textDecoration: "none",
   },
 }));
 
@@ -61,17 +68,16 @@ export const Appbar = () => {
         elevation={0}
       >
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            minha lojinha
-          </Typography>
+          <Link to="/" component="a" className={classes.link}>
+            <img
+              alt="minha lojinha"
+              src="/logo-only.png"
+              style={{ maxWidth: "45px" }}
+            />
+            <Typography className={classes.title} variant="h6" noWrap>
+              minha lojinha
+            </Typography>
+          </Link>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <div style={{ padding: "15px" }}>
