@@ -24,6 +24,7 @@ function onClick(event) {
   }
 })()
 
+
 // Catch all the `[data-toggle-sidebar]` elements on the document.
 document.querySelectorAll('[data-toggle-sidebar]').forEach(toggle => {
   // Add an event listener on those elements "click" event
