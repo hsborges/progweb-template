@@ -7,8 +7,6 @@ function ShipStruct(){
   let limit = createField();
   this.verifyShips = verifyShips;
   this.shot = shot;
-  this.field = field;
-  this.shipStruct = shipStruct;
   this.allDestroyed = allDestroyed;
 
   function createField(){

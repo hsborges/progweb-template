@@ -11,8 +11,6 @@ const PORT = process.env.PORT || '8080'
 
 let struct = new Map();
 
-let score = 0
-
 function sink(ship, socket){
   for(let i = 0; i < ship.length; i++){
     socket.emit('sink', ship[i].position);
@@ -32,32 +30,37 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('index', {title: 'Batalha Naval', score: score})
+  res.render('index', {title: 'Batalha Naval', score: 0})
 })
 
 /* Socket */
 io.on('connection', (socket) => {
+  let score = 0;
+  let multi = 1;
   struct.set(socket.id, new ShipStruct());
   console.log(`Usuário conectado: ${socket.id}`);
   socket.on('click', (id) => {
     if(struct.get(socket.id).shot(id)) {
-      score++
+      score += multi++;
       socket.emit('hit', id, score);
       verifyShips(socket.id, socket);
     } else {
+      multi = 1;
       socket.emit('miss', id);
     }
     if(struct.get(socket.id).allDestroyed()){
-      score = 0;
       socket.emit('won');
       setTimeout(function(){
         socket.disconnect();
       }, 100);
     }
   });
+  socket.on('disconnect', ()=>{
+    console.log(`Usuário desconectado: ${socket.id}`);
+  });
 });
 
 
 http.listen(PORT, () => {
-  console.log(`listening at http://localhost:${PORT}`)
+  console.log(`listening at http://localhost:${PORT}`);
 })
