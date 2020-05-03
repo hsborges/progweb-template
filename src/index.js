@@ -5,50 +5,24 @@ const express = require('express');
 const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
-const {mapShips} = require('./game/mapShips');
-const {struct} = require('./game/mapShips');
-
-const shipsMap = mapShips()
-const shipStruct = struct();
+const {ShipStruct} = require('./game/mapShips');
 
 const PORT = process.env.PORT || '8080'
 
+let struct = new Map();
+
 let score = 0
 
-function shot(id){
-  let wasHit = false;
-  let i = (id/10)|0;
-  let j = id % 10;
-  if(shipsMap[i][j] != undefined){
-    wasHit = true;
-    shipsMap[i][j].status = 'destroyed';
-  }
-  return wasHit;
-}
-
-function sink(ship){
+function sink(ship, socket){
   for(let i = 0; i < ship.length; i++){
-    io.emit('sink', ship[i].position);
+    socket.emit('sink', ship[i].position);
   }
 }
 
-function destroyed(ship){
-  isDestroyed = true;
-  for(let i = 0; i < ship.length; i++){
-    if(ship[i].status == 'ok'){
-      isDestroyed = false;
-    }
-  }
-  return isDestroyed;
-}
-
-function verifyShips(){
-  for(let i = 0; i < shipStruct.length; i++){
-    let ship = shipStruct[i];
-    if(destroyed(ship)){
-      sink(ship);
-      shipStruct.splice(i, 1);
-    }
+function verifyShips(id, socket){
+  let ship = struct.get(id).verifyShips()
+  if(ship){
+    sink(ship, socket);
   }
 }
 
@@ -63,19 +37,21 @@ app.get('/', (req, res) => {
 
 /* Socket */
 io.on('connection', (socket) => {
+  struct.set(socket.id, new ShipStruct());
+  console.log(`Usuário conectado: ${socket.id}`);
   socket.on('click', (id) => {
-    if(shot(id)) {
+    if(struct.get(socket.id).shot(id)) {
       score++
-      io.emit('hit', id, score);
-      verifyShips();
+      socket.emit('hit', id, score);
+      verifyShips(socket.id, socket);
     } else {
-      io.emit('miss', id);
+      socket.emit('miss', id);
     }
-    if(shipStruct.length == 0){
+    if(struct.get(socket.id).allDestroyed()){
       score = 0;
-      io.emit('won');
+      socket.emit('won');
       setTimeout(function(){
-        process.exit(0)
+        socket.disconnect();
       }, 100);
     }
   });
