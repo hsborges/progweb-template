@@ -1,11 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 
 const useStyles = makeStyles({
   root: {
@@ -21,7 +21,10 @@ export const ProductCard = ({ data: { title, description, image } }) => {
   const history = useHistory();
   return (
     <Card className={classes.root} style={{ margin: "8px" }}>
-      <CardActionArea style={{ height: "100%", flexDirection: "column" }} onClick={() => history.push('/produto/')}>
+      <CardActionArea
+        style={{ height: "100%", flexDirection: "column" }}
+        onClick={() => history.push("/produto/")}
+      >
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
           <Typography
