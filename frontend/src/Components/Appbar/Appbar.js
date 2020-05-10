@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-import {
-  Badge,
-  IconButton,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
+import React, {useState} from "react";
+import {Badge, IconButton, makeStyles, Toolbar, Typography,} from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import { AppMenu } from "./AppMenu";
+import {AppMenu} from "./AppMenu/AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {

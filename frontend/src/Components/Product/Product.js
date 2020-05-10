@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {Appbar} from "../AppBar/Appbar";
+import {Appbar} from "../Appbar/Appbar";
 import {ProductDetails} from "./ProductDetails/ProductDetails";
 
 const useStyles = makeStyles((theme) => ({

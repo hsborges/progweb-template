@@ -13,15 +13,26 @@ A vitrine virtual mostrará o preço dos produtos a venda, e cada usuário dever
 
 Antes de iniciar o desenvolvimento, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a versão 12 do NodeJS instalado.
-* O sistema é multiplataforma, basta seguir as instruções de acordo com seu SO.
+* NodeJS v12.
+* Yarn
+* mongoDB.
+
+O sistema é multiplataforma, basta seguir as instruções de acordo com seu SO.
 
 ## Como executar
 
 Para fazer o deploy do frontend da aplicação siga os seguintes passos:
 
 ```
+cd frontend
 yarn install && yarn start
+```
+
+Para fazer o deploy do backend da aplicação, siga as instruções no arquivo `README.md` da pasta backend, e depois execute:
+
+```
+cd backend
+yarn install && yarn dev
 ```
 
 ## Usando Minha Lojinha
