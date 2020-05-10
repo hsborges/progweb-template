@@ -11,7 +11,7 @@ import {
 } from "@mdi/js";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import { categories } from "./enums";
+import {categories} from "../../../utils/enums";
 
 export const Categories = ({ changeCategory }) => {
   const iconLabel = {

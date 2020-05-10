@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import Products from "./Components/ProductDetails/Product";
+import Products from "./Components/Product/Product";
 import "./root.css";
-import { Router, Route } from "react-router";
-import { createBrowserHistory } from "history";
+import {Route, Router} from "react-router";
+import {createBrowserHistory} from "history";
 
 const history = createBrowserHistory();
 

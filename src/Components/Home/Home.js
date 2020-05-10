@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-import { TextField } from "@material-ui/core";
-import { mdiMagnify } from "@mdi/js";
+import React, {useState} from "react";
+import {TextField} from "@material-ui/core";
+import {mdiMagnify} from "@mdi/js";
 import Icon from "@mdi/react";
-import { Categories } from "./Categories";
-import {
-  audioVideo,
-  books,
-  clothing,
-  computers,
-  homeEletro,
-  phones,
-  recentProducts,
-  tools,
-} from "./mock";
-import { categories } from "./enums";
-import { ViewProducts } from "./ViewProducts";
-import { makeStyles } from "@material-ui/styles";
+import {Categories} from "./Categories/Categories";
+import {audioVideo, books, clothing, computers, homeEletro, phones, recentProducts, tools,} from "../../utils/mock";
+import {categories} from "../../utils/enums";
+import {ViewProducts} from "./ViewProduct/ViewProducts";
+import {makeStyles} from "@material-ui/styles";
 
 const inputStyles = makeStyles(() => ({
   root: {

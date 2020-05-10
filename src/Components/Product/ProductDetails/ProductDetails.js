@@ -1,13 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, ButtonBase, Container, Divider, Button } from '@material-ui/core';
-import ProductSpec from './ProductSpec';
-import { green } from '@material-ui/core/colors';
-import SellerInfo from './SellerInfo';
+import {makeStyles} from '@material-ui/core/styles';
+import {Button, ButtonBase, Container, Divider, Grid, Typography} from '@material-ui/core';
+import ProductSpec from '../ProductSpec/ProductSpec';
+import {green} from '@material-ui/core/colors';
+import SellerInfo from '../SellerInfo/SellerInfo';
 import Icon from "@mdi/react";
-import {
-  mdiCart
-} from "@mdi/js";
+import {mdiCart} from "@mdi/js";
 
 
 const useStyles = makeStyles(() => ({

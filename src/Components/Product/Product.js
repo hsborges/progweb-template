@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Appbar } from "../AppBar/Appbar";
-import { ProductDetails } from "./ProductDetails";
+import {makeStyles} from "@material-ui/core/styles";
+import {Appbar} from "../AppBar/Appbar";
+import {ProductDetails} from "./ProductDetails/ProductDetails";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
