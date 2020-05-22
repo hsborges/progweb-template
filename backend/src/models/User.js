@@ -20,9 +20,8 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  password: {
+  lastToken: {
     type: String,
-    required: true,
     select: false,
   },
 });

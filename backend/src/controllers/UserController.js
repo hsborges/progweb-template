@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
+const { v1: uuidv1 } = require("uuid");
 
 const User = mongoose.model("User");
 
 module.exports = {
   async show(req, res) {
-    const user = await User.findOne({ nickname: req.params.nick });
+    const user = await User.findOne({ nickname: req.params.nick }).select(
+      "-password"
+    );
 
     return res.json(user);
   },
@@ -29,8 +32,23 @@ module.exports = {
   async login(req, res) {
     try {
       const user = await User.findOne({ email: req.body.email });
-      const pwd = await user.verifyPassword(req.body.password);
-      return res.json({ isValid: pwd });
+      const isValid = await user.verifyPassword(req.body.password);
+      if (isValid) {
+        const token = `${uuidv1()}.${user.id}`;
+        user.update({ lastToken: token }).then(() => {});
+        return res.json({ token, isValid });
+      }
+      return res.json({ error: "Invalid password" });
+    } catch (e) {
+      return res.json(e);
+    }
+  },
+
+  async logout(req, res) {
+    try {
+      const user = await User.findOne({ email: req.body.email });
+      user.update({ lastToken: null }).then(() => {});
+      return res.json({ message: "Logout successful!" });
     } catch (e) {
       return res.json(e);
     }
