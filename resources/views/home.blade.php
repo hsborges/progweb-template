@@ -14,14 +14,14 @@
     
     <div class="topnav">
       <div class="logo">
-          <a href="home.html">PreservSign</a>
+          <a href="{{ route('home') }}">PreservSign</a>
       </div>
       
       <a href="">Login</a>
       <a href="">Contato</a>
-      <a href="plans.html">Planos</a>
-      <a href="about.html">Sobre</a>
-      <a href="home.html">Home</a>
+      <a href="{{ route('plans') }}">Planos</a>
+      <a href="{{ route('about') }}">Sobre</a>
+      <a href="{{ route('home') }}">Home</a>
     </div>
     <div class="sub-bar">
       <div class="description-text"><strong>
