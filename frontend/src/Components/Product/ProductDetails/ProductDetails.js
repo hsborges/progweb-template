@@ -48,6 +48,16 @@ const useStyles = makeStyles(() => ({
 
 export const ProductDetails = () => {
   const classes = useStyles();
+  var produto =  {
+    nome: 'TV LG 49 4k'
+  };
+  var idProduto = 10;
+
+  function buscarDetalhesProduto() {
+    fetch('http://localhost:3001/Products/${idProduto}')
+      .then(response => response.json())
+      .then(data => this.produto = data)
+  }
 
   return (
     <Container className={classes.root}>
