@@ -48,13 +48,14 @@ const useStyles = makeStyles(() => ({
 
 export const ProductDetails = () => {
   const classes = useStyles();
-  var produto =  {
-    nome: 'TV LG 49 4k'
-  };
-  var idProduto = 10;
+  var produto = null;
 
-  function buscarDetalhesProduto() {
-    fetch('http://localhost:3001/Products/${idProduto}')
+  // funcao para buscar do banco o id do produto
+  const buscarProduto = function buscarDetalhesProduto() {
+    let windowUrl = window.location.href.split('/');
+    let idProduto = windowUrl[4];
+
+    fetch('http://localhost:3001/Products/' + idProduto)
       .then(response => response.json())
       .then(data => this.produto = data)
   }
@@ -138,3 +139,5 @@ export const ProductDetails = () => {
     </Container>
   );
 };
+
+export default ProductDetails;

@@ -23,7 +23,8 @@ export const ProductCard = ({ data: { title, description, image } }) => {
     <Card className={classes.root} style={{ margin: "8px" }}>
       <CardActionArea
         style={{ height: "100%", flexDirection: "column" }}
-        onClick={() => history.push("/produto/")}
+        onClick={() => history.push("/produto/" + title)}
+        // passando titulo, apenas para teste. Futuramente vai passar o ID do produto
       >
         <CardMedia className={classes.media} image={image} title={title} />
         <CardContent>
