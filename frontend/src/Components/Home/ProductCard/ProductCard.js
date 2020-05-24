@@ -1,11 +1,11 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import {useHistory} from "react-router";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
   root: {
@@ -16,14 +16,21 @@ const useStyles = makeStyles({
   },
 });
 
-export const ProductCard = ({ data: { title, description, image } }) => {
+export const ProductCard = ({
+  data: {
+    _id,
+    title,
+    description,
+    image = "https://mobiphoners.com.br/wp-content/uploads/2019/03/553692_1_xnl.jpg",
+  },
+}) => {
   const classes = useStyles();
   const history = useHistory();
   return (
     <Card className={classes.root} style={{ margin: "8px" }}>
       <CardActionArea
         style={{ height: "100%", flexDirection: "column" }}
-        onClick={() => history.push("/produto/" + title)}
+        onClick={() => history.push("/produto/" + _id)}
         // passando titulo, apenas para teste. Futuramente vai passar o ID do produto
       >
         <CardMedia className={classes.media} image={image} title={title} />

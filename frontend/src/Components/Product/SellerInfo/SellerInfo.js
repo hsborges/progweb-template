@@ -1,5 +1,5 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     // minWidth: 450,
   },
 });
-export default function SellerInfo() {
+export default function SellerInfo({ name }) {
   const classes = useStyles();
 
   return (
@@ -24,7 +24,7 @@ export default function SellerInfo() {
               {" "}
               Nome{" "}
             </TableCell>
-            <TableCell align="right"> Denner Stevens </TableCell>
+            <TableCell align="right">{name}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell component="th" scope="row">

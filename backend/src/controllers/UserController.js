@@ -47,7 +47,11 @@ module.exports = {
         const tokenUpdate = await user.update({ lastToken: token });
 
         if (tokenUpdate.ok) {
-          return res.json({ token: `${token}.${user.id}`, isValid });
+          return res.json({
+            token: `${token}.${user.id}`,
+            isValid,
+            email: user.email,
+          });
         }
 
         return res.json({ error: "Error saving token" });
