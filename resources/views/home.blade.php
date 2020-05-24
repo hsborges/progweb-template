@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -40,11 +41,37 @@
     <div class="button-space"><a href="" class="myButton">Mais Detalhes!</a></div>
   </div>
 
+=======
+@extends('layouts.app')
+
+@section('content')
+<div class="sub-bar">
+  <div class="description-text"><strong>
+      <br>
+      PreservSign, um clube de assinaturas <br />
+      para você que se ama e preserva
+    </strong></div>
+  <br><br>
+  <a href="" class="myButton">Preserve-se!</a>
+</div>
+<div class="plan-footer">
+  <div class="basic-plan">
+    <div class="plan-title"><strong>Plano Básico</strong></div>
+    <div class="plan-description">Receba 15 camisinhas em qualquer lugar!</div>
+    <div class="plan-description">Por apenas R$14,99</div>
+    <div class="button-space"><a href="" class="myButton">Mais Detalhes!</a></div>
+  </div>
+
+>>>>>>> origin/back
   <div class="premium-plan">
     <div class="plan-title"><strong>Plano Premium</strong></div>
     <div class="plan-description">Receba 20 camisinhas <br> + lubrificante surpresa <br> em qualquer lugar!</div>
     <div class="plan-description">Por apenas R$24,99</div>
+<<<<<<< HEAD
     <div class="button-space-premium"><a href="" class="myButton">Mais Detalhes!</a></div>
+=======
+    <div class="button-space"><a href="" class="myButton">Mais Detalhes!</a></div>
+>>>>>>> origin/back
 
   </div>
   <div class="exxxtra-plan">
@@ -55,4 +82,10 @@
   </div>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+</html>
+@endsection
+>>>>>>> origin/back
