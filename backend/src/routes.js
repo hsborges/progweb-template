@@ -7,10 +7,10 @@ const UserController = require("./controllers/UserController");
 const User = mongoose.model("User");
 
 const isAuthenticated = async (req, res, next) => {
-  const userId = req.query.token.split(".")[1];
+  const [token, userId] = req.query.token.split(".");
   const user = await User.findById(userId).select("+lastToken");
 
-  if (req.query.token === user.lastToken) {
+  if (token === user.lastToken) {
     next();
   } else {
     res.json({

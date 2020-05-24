@@ -34,9 +34,11 @@ module.exports = {
       const user = await User.findOne({ email: req.body.email });
       const isValid = await user.verifyPassword(req.body.password);
       if (isValid) {
-        const token = `${uuidv1()}.${user.id}`;
-        user.update({ lastToken: token }).then(() => {});
-        return res.json({ token, isValid });
+        const token = uuidv1();
+        const tokenUpdate = await user.update({ lastToken: token });
+        if (tokenUpdate.ok)
+          return res.json({ token: `${token}.${user.id}`, isValid });
+        return res.json({ error: "Error saving token" });
       }
       return res.json({ error: "Invalid password" });
     } catch (e) {
