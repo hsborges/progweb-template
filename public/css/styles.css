@@ -200,3 +200,10 @@ background-color: #0b3c5d;
   float: right;
   font-family: "Baloo Tamma 2", cursive;
 }
+
+.text-color-red {
+  color: red;
+}
+.text-color-green {
+  color: green;
+}

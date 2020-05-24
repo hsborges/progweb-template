@@ -27,9 +27,8 @@ Route::get('/profile', function () {
 })->name("profile");
 
 
-Route::get('/profile/password', function () {
-    return view('auth/passwords/reset');
-})->name("profile.password");
+Route::any('/profile/password', 'ProfileController@index')->name("profile.password");
+Route::any('/profile/edit', 'ProfileController@editProfile')->name("profile.edit");
 
 Route::post('/profile/password/update', 'ProfileController@changePassword')->name("profile.pass.update");
 
