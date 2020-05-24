@@ -1,79 +1,87 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# PreservSign
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
+![GitHub repo size](https://img.shields.io/github/repo-size/igorbgalvan/progweb13)
+![GitHub contributors](https://img.shields.io/github/contributors/igorbgalvan/progweb13)
 
-## About Laravel
+PreservSign é um clube de assinatura que tem por objetivo facilitar a aquisição de preservativos, através do qual se espera difundir a cultura de uso de preservativos em uma tentativa de mitigar o crescimento exponencial dos índices de infecção por IST's.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A aplicação permitirá que o usuário receba mensalmente uma quantidade variável de preservativos e complementos. O funcionamento se dá através de planos que serão pagos mensalmente, ou anualmente com desconto.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Os planos serão divididos em 3 categorias: básico, premium, exxxtra. Cada plano dá direito a tipos diferentes de preservativos e o plano exxxtra adiciona lubrificante como complemento a ser enviado.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Pré-requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
+<!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
+* Você deve possuir a última versão do PHP, HTML, JavaScript e CSS instalado.
+* Você deve possuir uma máquina Linux e Mac.
+* Você deve ler o https://www.php.net/manual/pt_BR/ dos termos de uso do PHP.
+* Você deve ler o https://dev.w3.org/html5/html-author/ dos termos de uso do HTML 5.
+* Você deve ler o https://www.w3schools.com/cssref/ dos termos de uso do CSS 3.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Como executar
 
-## Laravel Sponsors
+Para fazer o deploy da aplicação siga os seguintes passos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Linux e/ou macOS:
+```
+<commando 1>
+<commando 2>
+....
+<commando n>
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+Windows (opcional):
+```
+<commandos>
+```
 
-## Contributing
+## Usando PreservSign
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
+* Abra o navegador e digite o seguinte endereço: http://manancial.net/preservsign ou https://localhost .
+* Ao abrir a aplicação você poderá:
+  * Navegar pelo conteúdo público
+  * Entrar com usuário e senha
+  * Cadastrar novo usuário e senha
+  * Realizar assinatura
+  * Cancelar assinatura
+  * Fazer upgrade da assinatura
+  * Fazer downgrade da assinatura
+  * Alterar informações de usuário
+  * Deletar conta
 
-## Code of Conduct
+* *Continua ...*  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+*Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
 
-## Security Vulnerabilities
+## Evolução da Aplicação
+* Primeira Sprint
+    * Protótipo das Telas
+    * Esqueleto Visual da Aplicação
+* Segunda Sprint
+    * Cadastro
+    * Login
+    * Edição de Perfil
+    * Edição de Senha
+    * Banco de Dados da Aplicação
+    * Refinamentos Visuais
+* Terceira Sprint
+    * Finalização da Aplicação 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Contribuidores
 
-## License
+As seguintes pessoas contribuiram para este projeto:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Ericca Rickli (https://github.com/ericcarickli)
+* Gabriel Matias (https://github.com/gabbmatias)
+* Guilherme Jardim (https://github.com/jardimguilherme)
+* Igor Galvan (https://github.com/igorbgalvan)
+* Ricardo Koester (https://github.com/Ricardoksp)
+
+## Licença de uso
+
+<!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
+Este projeto usa a seguinte licença: https://mit-license.org.
