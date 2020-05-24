@@ -16,13 +16,13 @@ body {
   max-height: 75px;
   top: 0;
   width: 100%;
-  background-color: rgb(86, 102, 122);
+  background-color:#1d2731;
   position: fixed;
 }
 
 .topnav a {
-  font-size: 28px;
-  padding: 14px 10px;
+  font-size: 200%;
+  padding: 3% 0.5%;
   font-family: "Baloo Tamma 2", cursive;
   color: #ffffff;
   text-decoration: none;
@@ -35,9 +35,9 @@ body {
 }
 
 .logo a {
-  font-size: 60px;
+  font-size: 350%;
   font-family: "Cookie", cursive;
-  margin-top: -10%;
+  margin-top: -13%;
 }
 
 .topnav a:hover {
@@ -50,7 +50,7 @@ body {
   width: 100%;
   text-align: center;
   display: inline-block;
-  background-color: rgb(135, 151, 175);
+  background-color: #f4f4f4;
 }
 
 .text-about {
@@ -59,19 +59,19 @@ body {
   max-height: 400px;
   width: 100%;
   text-align: center;
-  background-color: rgb(135, 151, 175);
+  background-color: #d9b310;
 }
 
 .about-title {
-  font-size: 50px;
+  font-size: 350%;
   color: #ffffff;
   font-family: "Cookie", cursive;
   vertical-align: middle;
-  margin-top: 2%;  
+  margin-top:1%;  
 }
 
 .about-description {
-  font-size: 35px;
+  font-size: 250%;
   color: #6E6E6E;
   font-family: "Cookie", cursive;
   vertical-align: middle;
@@ -79,8 +79,8 @@ body {
 }
 
 .description-text {
-  font-size: 30px;
-  color: #ffffff;
+  font-size: 200%;
+  color: #424242;
   font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
   margin-top: 5%;
@@ -88,9 +88,9 @@ body {
 }
 
 .myButton {
-  background-color: #424242;
-  border-radius: 28px;
-  border: 1px solid #424242;
+  background-color: #1d2731;
+  border-radius: 25px;
+  border: 1% solid #424242;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -98,9 +98,10 @@ body {
   font-size: 35px;
   padding: 16px 31px;
   text-decoration: none;
+  margin-top: -2%;
 }
 .myButton:hover {
-  background-color: #848484;
+  background-color: #363636;
 }
 .myButton:active {
   position: relative;
@@ -116,7 +117,7 @@ body {
 
 .plan-title {
   font-size: 30px;
-  color: #ffffff;
+  color: #000000;
   font-family: "Baloo Tamma 2", cursive;
   vertical-align: middle;
   margin-top: 80px;
@@ -132,48 +133,60 @@ body {
   text-align: center;
 }
 
+.plan-description-basic {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  vertical-align: middle;
+  margin-top: 40px;
+  text-align: center;
+}
+
 .button-space {
-  margin-top: 105px;
+  margin-top: 20%;
   text-align: center;
 }
 
 .button-space-premium {
-  margin-top: 83px;
+  margin-top: 10%;
   text-align: center;
 }
 
 .button-space-exxxtra {
-  margin-top: 80px;
+  margin-top: 5%;
   text-align: center;
 }
 
 .basic-plan {
-background-color: rgb(167, 173, 198);
+background-color: #0b3c5d;
   width: 33%;
 }
 
 .premium-plan {
-  background-color: rgb(95, 75, 102);
+  background-color: #d9b310;
   width: 34%;
 }
 
 .exxxtra-plan {
-  background-color: rgb(44, 19, 32);
+  background-color: rgba(79, 97, 81, 0.533);
   width: 33%;
+}
+.plan-content{
+  background-color: #f0f0f0;
 }
 
 .basic-plan-despcription {
   height: 40vh;
   max-height: 400px;
   width: 100%;
-  background-color: rgb(167, 173, 198);
+  
 }
 
 .premium-plan-description {
   height: 40vh;
   max-height: 400px;
   width: 100%;
-  background-color: rgb(95, 75, 102);
+  background-color: rgba(105, 129, 108, 0.533);
 }
 
 .exxxtra-plan-descritpion {
@@ -181,4 +194,9 @@ background-color: rgb(167, 173, 198);
   max-height: 400px;
   width: 100%;
   background-color: rgb(44, 19, 32);
+}
+
+.col-md-4 label{
+  float: right;
+  font-family: "Baloo Tamma 2", cursive;
 }
