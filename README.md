@@ -20,23 +20,29 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 * Você deve ler o https://www.php.net/manual/pt_BR/ dos termos de uso do PHP.
 * Você deve ler o https://dev.w3.org/html5/html-author/ dos termos de uso do HTML 5.
 * Você deve ler o https://www.w3schools.com/cssref/ dos termos de uso do CSS 3.
+* Você deve possuir o composer na versão 1.6.3 https://getcomposer.org/download/
+* Você deve possuir o Laravel installer 3.1 https://laravel.com/docs/7.x/installation
+* Você deve possuir o laravel/ui https://laravel.com/docs/7.x/authentication
+* Você deve possuir um banco de dados que deve ser especificado no arquivo ".env"
 
 ## Como executar
 
 Para fazer o deploy da aplicação siga os seguintes passos:
 
-Linux e/ou macOS:
-```
+Linux/macOS/Windows:
+``Arquivos de configuração pessoal do projeto(.env)
 <commando 1>
+composer require laravel/ui
 <commando 2>
-....
-<commando n>
-```
+php artisan migrate:fresh
+<commando 3>
+php artisan serve
 
-Windows (opcional):
-```
-<commandos>
-```
+Para fins de teste, o banco de dados utilizado foi o mySQL.
+<commando sugerido>
+(Feito em ambiente unix - Ubuntu)
+sudo apt-get install php-mysql
+
 
 ## Usando PreservSign
 

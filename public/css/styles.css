@@ -46,7 +46,7 @@ body {
 
 .sub-bar {
   height: 40vh;
-  max-height: 400px;
+  max-height: 800px;
   width: 100%;
   text-align: center;
   display: inline-block;
