@@ -27,9 +27,16 @@ Route::get('/profile', function () {
 })->name("profile");
 
 
-Route::get('/profile/password', function () {
-    return view('auth/passwords/reset');
-})->name("profile.password");
+Route::get('/profile/password', 'ProfileController@index')->name("profile.password");
+
+Route::post('/profile/email/edit', 'ProfileController@editEmail')->name("profile.email.update");
+
+Route::get('/profile/email', 'ProfileController@indexEmail')->name("profileemail");
+
+Route::post('/profile/edit/update', 'ProfileController@editProfile')->name("profile.edit.update");
+
+Route::get('/profile/edit', 'ProfileController@indexEditProfile')->name("profile.edit");
+
 
 Route::post('/profile/password/update', 'ProfileController@changePassword')->name("profile.pass.update");
 

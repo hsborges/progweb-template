@@ -9,12 +9,17 @@
                 <div class="card-header">Perfil</div>
 
                 <div class="card-body">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
+
+                        @isset($success[0])
+                        <label class="text-color-green">{{ $success[0] }}</label>
+                        @endisset
+
                         <div class="form-group row">
-                            <label for="Nome" class="col-md-4 col-form-label text-md-left">{{ __('Nome') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Nome') }}</label>
 
                             <div class="col-md-12">
-                                <input id="nome" type="text" class="form-control" name="nome" value="{{ Auth::user()->name }}" disabled>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" disabled>
                             </div>
                         </div>
 
@@ -40,9 +45,17 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row">
-                            <div class="col-md-12">
-                                <a href="#">Editar perfil</a>
+                            <div class="col-sm-auto">
+                                    <a class="btn btn-outline-primary" href="{{ route('profile.edit') }}">Editar perfil</a>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-auto">
+                                    <a href="{{ route('home') }}" class="btn btn-outline-secondary">
+                                        {{ __('Cancelar') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
