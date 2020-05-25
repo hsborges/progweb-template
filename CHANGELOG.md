@@ -1,0 +1,6 @@
+O repositório possui dois diretórios principais:
+- `backend`: Contém os arquivos referente ao servidor de backend da aplicação, em arquitetura REST para troca de informações com o frontend. Atualmente o servidor utiliza banco de dados NoSQL mongoDB, implementado em node sobre o framework express. Para armazenar os dados, há dois esquemas de dados, o primeiro chamado User onde fica armazenado os dados dos usuários/vendedores da plataforma, e o segundo se chama Product, onde fica armazenado os produtos a venda no site. Os campos email e nickname devem ser únicos, já o campo lastToken armazena apenas o token para a sessão atual do usuário (apenas uma sessão permitida por vez). O campo password é uma string que armazena o hash bcrypt da senha, não sendo visível explicitamente no esquema. Os campos createdAt em ambos os esquemas são apenas para referência interna. No produto, o campo seller armazena o nickname do usuário que pôs o mesmo a venda.
+
+![Esquema](https://i.imgur.com/mjqBSUS.png)
+
+- `frontend`: Foi feita a requisição de login e salvou no localstorage o token e e-mail, criado uma classe de serviço para execução do fetch (rotas http), ponte entre componentes de product, product card e product details. Além disso tem o logoff, que pega e tira os dados do banco e limpa o localstorage, ademais, a tela inicial faz o fetch dos produtos.
