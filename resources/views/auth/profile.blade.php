@@ -53,7 +53,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-auto">
                                     <a href="{{ route('home') }}" class="btn btn-outline-secondary">
-                                        {{ __('Cancelar') }}
+                                        {{ __('Voltar') }}
                                     </a>
                                 </div>
                             </div>
