@@ -7,7 +7,6 @@ module.exports = {
     const image = await ProductImage.findById(req.params.id);
 
     return res.json(image);
-
   },
 
   async update(req, res) {
@@ -19,7 +18,7 @@ module.exports = {
   },
 
   async destroy(req, res) {
-    await ProductImage.findByIdAndRemove(req.params.id);
+    await ProductImage.findByIdAndRemove(Wreq.params.id);
     /* TODO: Remove file from folder */
     return res.send();
   },
