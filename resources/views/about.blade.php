@@ -2,8 +2,11 @@
 
 @section('content')
 <div class="text-about">
-  <div class="about-title">Um pouco sobre a nossa história!</div>
-  <div class="about-description">
+  <div id="divContent" class="about-title">Um pouco sobre a nossa história!</div>
+  <div id="first-about" class="about-description">
+    <span class="icone-scroll">
+      <span class="scroll-next scroll"></span>
+    </span>
     <p>
       PreservSign foi criado em 2020 com o intuíto de fornecer ao nosso público mais protecão <br> e diversão na hora da realização das suas atividades sexuais,
       por um preço mais acessível.
@@ -13,10 +16,10 @@
       Nós, da PreservSign, queremos <br> sempre dar ao nosso cliente o melhor atendimento possível, permitindo assim, que acaso ele encontre algum <br> problema
       em algum dos nossos serviços, que ele contate a nossa empresa, e nós entraremos em contato o <br> mais rápido possível.
     </p>
+    
   </div>
 
 </div>
-
 
 </body>
 
