@@ -71,6 +71,12 @@ body {
   margin-top:1%;  
 }
 
+.about-background{
+  width: 75%;
+  height: 350%;
+  margin: 0 auto;
+  background: #ffffff;
+}
 .about-description {
   font-size: 250%;
   color: #6E6E6E;
@@ -143,13 +149,34 @@ body {
   text-align: center;
 }
 
+.myButton-plans {
+  background-color: #1d2731;
+  border-radius: 25px;
+  border: 1% solid #424242;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Cookie", cursive;
+  font-size: 35px;
+  padding: 16px 31px;
+  text-decoration: none;
+  margin-top: -2%;
+}
+.myButton-plans:hover {
+  background-color: #363636;
+}
+.myButton-plans:active {
+  position: relative;
+  top: 1px;
+}
+
 .button-space {
   margin-top: 20%;
   text-align: center;
 }
 
 .button-space-premium {
-  margin-top: 10%;
+  margin-top: 20%;
   text-align: center;
 }
 
@@ -197,14 +224,147 @@ background-color: #0b3c5d;
   background-color: rgb(44, 19, 32);
 }
 
-.col-md-4 label{
-  float: right;
-  font-family: "Baloo Tamma 2", cursive;
-}
 
-.text-color-red {
-  color: red;
-}
-.text-color-green {
-  color: green;
+
+@media screen and (min-width:375px) and (max-width: 667px){
+  body {
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+  } 
+
+  .topnav {
+    height: 15vh;
+    max-height: 45px;
+    top: 0;
+    width: 100%;
+    background-color:#1d2731;
+    position: fixed;
+  }
+  
+  .topnav a {
+    font-size: 100%;
+    padding: 3% 0.5%;
+    font-family: "Baloo Tamma 2", cursive;
+    color: #ffffff;
+    text-decoration: none;
+    float: right;
+    margin-top: 1%;
+    
+  }
+
+  .logo {
+    float: left;
+  }
+  
+  .logo a {
+    font-size: 180%;
+    font-family: "Cookie", cursive;
+    
+  }
+  
+  .topnav a:hover {
+    color: #A4A4A4;
+  }
+  .sub-bar {
+    height: 40vh;
+    
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background-color: #f4f4f4;
+  }
+
+  .description-text {
+    font-size: 150%;
+    color: #424242;
+    font-family: "Baloo Tamma 2", cursive;
+    vertical-align: middle;
+    margin-top: 10%;
+  }
+
+  .myButton {
+    background-color: #1d2731;
+    border-radius: 25px;
+    border: 1% solid #424242;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Cookie", cursive;
+    font-size: 20px;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin-top: -2%;
+    width: 40%;
+    height: 20%;
+  }
+
+  .plan-title {
+    font-size: 18px;
+    color: #000000;
+    font-family: "Baloo Tamma 2", cursive;
+    vertical-align: middle;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .plan-description {
+    font-size: 13px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif, cursive;
+    vertical-align: middle;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .button-space {
+    margin-top: 47%;
+    text-align: center;
+    
+  }
+  
+  .button-space-premium {
+    margin-top: 17%;
+    text-align: center;
+  }
+  
+  .button-space-exxxtra {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .myButton-plans {
+    background-color: #1d2731;
+    border-radius: 25px;
+    border: 1% solid #424242;
+    display: inline-block;
+    color: #ffffff;
+    font-family: "Cookie", cursive;
+    font-size: 13px;
+    padding: 12px 10px;
+    width: 50%;
+    height: 10vh;
+  }
+
+  .text-about {
+    margin-top: 75px;
+    height: 90px;
+    max-height: 300px;
+    width: 100%;
+    text-align: center;
+    background-color: #d9b310;
+  }
+
+  .about-title {
+    font-size: 250%;
+    color: #ffffff;
+    font-family: "Cookie", cursive;
+    vertical-align: middle;
+    margin-top:5%;  
+  }
+
 }
