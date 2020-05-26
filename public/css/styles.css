@@ -149,6 +149,21 @@ body {
   text-align: center;
 }
 
+.button-space {
+  margin-top: 22%;
+  text-align: center;
+}
+
+.button-space-premium {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.button-space-exxxtra {
+  margin-top: 12%;
+  text-align: center;
+}
+
 .myButton-plans {
   background-color: #1d2731;
   border-radius: 25px;
@@ -160,7 +175,7 @@ body {
   font-size: 35px;
   padding: 16px 31px;
   text-decoration: none;
-  margin-top: -2%;
+  
 }
 .myButton-plans:hover {
   background-color: #363636;
@@ -168,21 +183,6 @@ body {
 .myButton-plans:active {
   position: relative;
   top: 1px;
-}
-
-.button-space {
-  margin-top: 20%;
-  text-align: center;
-}
-
-.button-space-premium {
-  margin-top: 20%;
-  text-align: center;
-}
-
-.button-space-exxxtra {
-  margin-top: 5%;
-  text-align: center;
 }
 
 .basic-plan {
