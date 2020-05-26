@@ -12,6 +12,14 @@ body {
   overflow: visible;
 }
 
+.text-color-green
+{
+  color: green;
+}
+
+.text-color-red {
+  color: red;
+}
 .topnav {
   height: 15vh;
   max-height: 75px;
