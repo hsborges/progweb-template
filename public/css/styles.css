@@ -103,7 +103,7 @@ body {
 .top-nav-contact a:hover,
 .top-nav-login a:hover,
 .logo-nav-bar a:hover {
-  color: #FF7DA5;
+  color: #E54561;
 }
 
 .top-nav-about {
@@ -196,7 +196,7 @@ a {
   left: 83%;
   top: 18.79px;
 
-  background: #FF7DA5;
+  background: #E54561;
   border-radius: 3.2px;
   text-align: center;
 
@@ -236,6 +236,12 @@ a {
   color: #FFFFFF;
 }
 
+.sign-background:hover {
+    font-weight: 800;
+    background-color: rgb(226, 88, 111); 
+    cursor: pointer;
+}
+
 .image-home {
   width: 100%;
   height: auto;
@@ -260,11 +266,12 @@ box-shadow: 0px 4px 4px rgba(122, 119, 255, 0.05);
 backdrop-filter: blur(17px);
 /* Note: backdrop-filter has minimal browser support */
 
-border-radius: 75px;
+border-radius: 15px;
 }
 
 .box-join-button{
   position: absolute;
+  align-self: center;
   width: 298.59px;
   height: 83.32px;
   left: 31%;
