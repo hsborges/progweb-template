@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Cookie&display=swap" rel="stylesheet" />
@@ -26,50 +26,69 @@
 
 <body>
 
-    <div class="topnav">
-        <div class="logo">
-            <a href="{{ route('home') }}">PreservSign</a>
-        </div>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-        @guest
-        <a href="{{ route('login') }}">Login</a>
-        <a href="{{ route('register') }}">Register</a>
+    <div class="top-nav-bar">
+        <div class="top-bar" >
+            <div class="logo-nav-bar">
+                <a  href="{{ route('home') }}">PreservSign</a>
+            </div>
+            <div class="logo-line"></div>
 
-        @if (Route::has('register'))
-        @endif
-        @else
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+            <div class="top-nav-plans">
+                <a class="top-nav-plans" href="{{ route('plans') }}">PLANOS</a>
+            </div>
+            <div class="top-nav-about">
+                <a class="top-nav-about" href="{{ route('about') }}">SOBRE</a>
+            </div>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('profile') }}">
-                        {{ __('Perfil') }}
-                    </a>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Minhas Assinaturas') }}
-                    </a>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+            <div class="top-nav-contact">
+                <a class="top-nav-contact" href="">CONTATO</a>
+            </div>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+            @guest
+            <div class="top-nav-login">
+                <a class="top-nav-login" href="{{ route('login') }}">LOGIN</a>
+            </div>
+
+            <div class="sign-background">
+                <div class="top-nav-sign">
+                    <a class="top-nav-sign" href="{{ route('register') }}">ASSINE!</a>
                 </div>
-            @endguest
+            </div>
 
-        <a href="">Contato</a>
-        <a href="{{ route('plans') }}">Planos</a>
-        <a href="{{ route('about') }}">Sobre</a>
-        <a href="{{ route('home') }}">Home</a>
-        </li>
-        </ul>
+            @if (Route::has('register'))
+            @endif
+            @else
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('profile') }}">
+                            {{ __('Perfil') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                            {{ __('Minhas Assinaturas') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                @endguest
+
+            </li>
+            </ul>
+        </div>
     </div>
 
     <script src="js/bootstrap.min.js"></script>
 
     @yield('content')
+    </html>
