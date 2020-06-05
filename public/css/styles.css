@@ -274,7 +274,7 @@ border-radius: 15px;
   align-self: center;
   width: 298.59px;
   height: 83.32px;
-  left: 31%;
+  left: 30%;
   top: 70%;
 
   background: #E54561;
@@ -397,47 +397,162 @@ border-radius: 15px;
   background-color: #f4f4f4;
 }
 
-.text-about {
-  margin-top: 75px;
-  height: 120px;
-  max-height: 400px;
+/* ABOUT PAGE /////////////////////////////////////////////////////////// */
+
+.about-background {
+  height: 420px;
   width: 100%;
-  text-align: center;
-  background-color: #d9b310;
+  background-color: #6E6E6E;
 }
 
 .about-title {
+  text-align: center;
   font-size: 350%;
   color: #ffffff;
   font-family: "Cookie", cursive;
   vertical-align: middle;
-  margin-top:1%;  
+  margin-top:2.5%;  
 }
 
-.about-background{
-  width: 75%;
+.description-background{
+  width: 65%;
   height: 350%;
   margin: 0 auto;
   background: #ffffff;
 }
 .about-description {
+  margin-left: 2%;
+  text-align: 58%;
   font-size: 250%;
   color: #6E6E6E;
   font-family: "Cookie", cursive;
-  vertical-align: middle;
-  margin-top: 5%;  
+  line-height: 180%;
+  margin-top: 3%;  
 }
 
-.description-text {
-  font-size: 200%;
-  color: #424242;
-  font-family: "Baloo Tamma 2", cursive;
-  vertical-align: middle;
-  margin-top: 5%;
+/* /////////////////////////////////////////////////////////////////////// */
+
+
+/* PLANS PAGE //////////////////////////////////////////////////////////// */
+
+.bloco{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+/* COR DO BACKGROUND DAS SECTIONS */
+#basic-plan {
+  background-color: #6E6E6E;    
+}
+
+#premium-plan {
+  background-color: #E54161
+}
+
+#exxxtra-plan {
+  background-color: blueviolet;
+}
+
+/* BOX DAS SECTIONS */
+.basic-description-plan-box{
+  position: absolute;
+  height: 50%;
+  width: 40%;
+  margin-top: 11.5%;
+  margin-left: 50%;
+
+  background-color: #E54161;
+  border-radius: 25px;
 
 }
 
-.myButton {
+.premium-description-plan-box{
+  position: absolute;
+  height: 50%;
+  width: 40%;
+  margin-top: 11.5%;
+  margin-left: 10%;
+  
+
+  background-color: #6E6E6E;
+  border-radius: 25px;
+
+}
+.exxxtra-description-plan-box{
+  position: absolute;
+  height: 50%;
+  width: 40%;
+  margin-top: 11.5%;
+  margin-left: 50%;
+
+  background-color: #E54161;
+  border-radius: 25px;
+
+}
+
+/* TITULO DOS PLANOS */
+.plan-title {
+font-size: 30px;
+color: #000000;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+vertical-align: middle;
+margin-top: 80px;
+text-align: center;
+}
+
+/* TOPBAR COM OS PLANOS /////////////////////////////////// */
+.links{
+  margin-top: -90vh;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  display: flex;
+}
+
+.links label{
+  padding: 10px 0;
+  flex-grow: 1;
+  cursor: pointer;
+  transition: all .4s;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.links label:hover{
+  height: 130%;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.scroll input{
+  display: none;
+}
+
+.scroll{
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+}
+
+.sections{
+  transition: all 0.4s;
+}
+
+#rd_premium:checked ~ .sections{
+  margin-top: -100vh;
+}
+
+#rd_exxxtra:checked ~ .sections{
+  margin-top: -200vh;
+}
+ /* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+ 
+
+/* .myButton {
   background-color: #1d2731;
   border-radius: 25px;
   border: 1% solid #424242;
@@ -463,27 +578,9 @@ border-radius: 15px;
   display: flex;
   flex-direction: row;
   align-content: center;
-}
+} */
 
-.plan-title {
-  font-size: 30px;
-  color: #000000;
-  font-family: "Baloo Tamma 2", cursive;
-  vertical-align: middle;
-  margin-top: 80px;
-  text-align: center;
-}
-
-.plan-description {
-  font-size: 20px;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif, cursive;
-  vertical-align: middle;
-  margin-top: 40px;
-  text-align: center;
-}
-
-.plan-description-basic {
+/* .plan-description-basic {
   font-size: 20px;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, cursive;
@@ -565,7 +662,7 @@ background-color: #0b3c5d;
   max-height: 400px;
   width: 100%;
   background-color: rgb(44, 19, 32);
-}
+} */
 
 
 

@@ -12,7 +12,8 @@
         </div>
 
         <div class="box-message">
-            <span>O cuidado contigo e seu parceiro (a) nunca foi tão importante. <br> Você pode receber camisinhas exclusivas <br> e muito mais <br> na segurança e discrição da sua casa!</span>
+            <span>O cuidado contigo e seu parceiro(a) nunca <br> foi tão importante. Você pode receber camisinhas <br> exclusivas e muito mais na 
+            segurança <br> e discrição da sua casa!</span>
         </div>
 
         <div class="box-join-button">
