@@ -28,6 +28,36 @@ body {
   overflow: hidden;
   display: flex;
 }
+.container {
+  margin-top: 5%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px; 
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-bottom: 5px; 
+  resize: vertical 
+}
+
+input[type=submit] {
+  background-color: rgba(22, 22, 22, 0.9);;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #E54161;
+}
 
 .container-body-all {
   height: 40vh;
@@ -264,9 +294,45 @@ text-align: center;
 background: rgba(107, 107, 107, 0.15);
 box-shadow: 0px 4px 4px rgba(122, 119, 255, 0.05);
 backdrop-filter: blur(17px);
+
 /* Note: backdrop-filter has minimal browser support */
 
 border-radius: 15px;
+}
+
+.left-box-blured {
+position: absolute;
+width: 34%;
+height: 38%;
+left: 8%;
+top: 31%;
+text-align: center;
+
+background: rgba(107, 107, 107, 0.15);
+box-shadow: 0px 4px 4px rgba(122, 119, 255, 0.05);
+backdrop-filter: blur(17px);
+
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 15px;
+}
+
+.right-box-blured {
+  position: absolute;
+  width: 34%;
+  height: 38%;
+  left: 58%;
+  top: 31%;
+  text-align: center;
+  
+  background: rgba(107, 107, 107, 0.15);
+  box-shadow: 0px 4px 4px rgba(122, 119, 255, 0.05);
+  backdrop-filter: blur(17px);
+  
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 15px;
+  
 }
 
 .box-join-button{
@@ -336,7 +402,7 @@ border-radius: 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 20px;
   text-align: center;
 
@@ -415,16 +481,16 @@ border-radius: 15px;
 /* ABOUT PAGE /////////////////////////////////////////////////////////// */
 
 .about-background {
-  height: 420px;
+  height: 100%;
   width: 100%;
-  background-color: #6E6E6E;
+  background-color: #ffffff;
 }
 
 .about-title {
   text-align: center;
   font-size: 350%;
-  color: #ffffff;
-  font-family: "Cookie", cursive;
+  color: #6E6E6E;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   vertical-align: middle;
   margin-top:2.5%;  
 }
@@ -438,9 +504,9 @@ border-radius: 15px;
 .about-description {
   margin-left: 2%;
   text-align: 58%;
-  font-size: 250%;
+  font-size: 200%;
   color: #6E6E6E;
-  font-family: "Cookie", cursive;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 180%;
   margin-top: 3%;  
 }
@@ -823,7 +889,7 @@ background-color: #0b3c5d;
   .about-title {
     font-size: 250%;
     color: #ffffff;
-    font-family: "Cookie", cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     vertical-align: middle;
     margin-top:5%;  
   }
