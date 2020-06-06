@@ -41,7 +41,7 @@
             </div>
 
             <div class="top-nav-contact">
-                <a class="top-nav-contact" href="">CONTATO</a>
+                <a class="top-nav-contact" href="{{ route('contact') }}">CONTATO</a>
             </div>
 
             <ul class="navbar-nav ml-auto">

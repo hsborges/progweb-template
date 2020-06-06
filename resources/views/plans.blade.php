@@ -16,18 +16,24 @@
             <section class="bloco" id="basic-plan">
               <div class="basic-description-plan-box">
                 <div class = "plan-title">Plano Básico</div>
+                <div class="plan-description">Receba 15 camisinhas em qualquer lugar!</div>
+                <div class="plan-description">Por apenas R$14,99</div>
               </div>
             </section>
 
             <section class="bloco" id="premium-plan">
             <div class="premium-description-plan-box">
                 <div class = "plan-title">Plano Premium</div>
-              </div>
+                <div class="plan-description">Receba 20 camisinhas <br> + lubrificante surpresa <br> em qualquer lugar!</div>
+                <div class="plan-description">Por apenas R$24,99</div>
+            </div>
             </section>
 
             <section class="bloco" id="exxxtra-plan">
             <div class="exxxtra-description-plan-box">
                 <div class = "plan-title">Plano Exxxtra</div>
+                <div class="plan-description">Receba 20 camisinhas de sua preferência <br> + lubrificante surpresa <br> + sex toy surpresa diretamente <br> em qualquer lugar!</div>
+                <div class="plan-description">Por apenas R$59,99</div>
               </div>
             </section>
         </section>

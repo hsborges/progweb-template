@@ -342,6 +342,21 @@ border-radius: 15px;
 
   color: #FFF;
 }
+.box-message-contact{
+  margin-top: 12%;
+  margin-left: 10%;
+  width: 80%;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #FFF;
+}
+
 .body-without-overflow {
   overflow: visible;
 }
@@ -499,6 +514,16 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 vertical-align: middle;
 margin-top: 80px;
 text-align: center;
+}
+
+/* DESCRICAO DOS PLANOS*/
+.plan-description {
+  font-size: 20px;
+  color: #000000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  vertical-align: middle;
+  margin-top: 40px;
+  text-align: center;
 }
 
 /* TOPBAR COM OS PLANOS /////////////////////////////////// */
@@ -753,11 +778,11 @@ background-color: #0b3c5d;
   }
   
   .plan-description {
-    font-size: 13px;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif, cursive;
+    font-size: 18px;
+    color: #000000;
+    font-family: "Baloo Tamma 2", cursive;
     vertical-align: middle;
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
   }
 
