@@ -6,7 +6,7 @@
         <img src="img/body-img.jpg" class="image-home">
     </div>
 
-    <div class="center-box-blured">
+    <div class="right-box-blured-contact">
         <div class="box-title">
             <span>Contato</span>
         </div>
