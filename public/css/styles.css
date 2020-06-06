@@ -300,10 +300,10 @@ backdrop-filter: blur(17px);
 border-radius: 15px;
 }
 
-.right-box-blured {
+.left-box-blured {
 position: absolute;
 width: 34%;
-height: 40%;
+height: 38%;
 left: 8%;
 top: 31%;
 text-align: center;
@@ -317,10 +317,10 @@ backdrop-filter: blur(17px);
 border-radius: 15px;
 }
 
-.left-box-blured {
+.right-box-blured {
   position: absolute;
   width: 34%;
-  height: 40%;
+  height: 38%;
   left: 58%;
   top: 31%;
   text-align: center;
