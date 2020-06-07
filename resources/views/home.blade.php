@@ -21,7 +21,7 @@
         <div class="box-message">
             <span>O cuidado com você e seu parceiro (a) nunca foi tão importante. Você pode receber camisinhas exclusivas e muita mais na segurança e descrição da sua casa!</span>
         </div>
-        <a href="#">
+        <a href="{{ route('register') }}">
             <div class="box-join-button">
                 <div class="text-button">
                     EU QUERO!
