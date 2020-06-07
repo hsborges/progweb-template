@@ -26,6 +26,7 @@ Route::get('/profile', function () {
     return view('auth/profile');
 })->name("profile");
 
+Route::resource('address', 'AddressController');
 
 Route::get('/profile/password', 'ProfileController@index')->name("profile.password");
 

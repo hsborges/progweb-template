@@ -45,6 +45,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+
+                            <div class="col-md-12">
+                                <a href="{{ route('address.create') }}">Adicionar endereço</a>
+                            </div>
+
+                        </div>
+
 
                         <div class="form-group row">
                             <div class="col-sm-auto">
