@@ -569,53 +569,49 @@ border-radius: 15px;
 }
 
 /* COR DO BACKGROUND DAS SECTIONS */
-#basic-plan {
+.basic-plan {
   background-color: #6E6E6E;    
 }
 
-#premium-plan {
+.premium-plan {
   background-color: #E54161
 }
 
-#exxxtra-plan {
+.exxxtra-plan {
   background-color: blueviolet;
 }
 
 /* BOX DAS SECTIONS */
-.basic-description-plan-box{
-  position: absolute;
+.bloco {
+  display: flex;
+  flex-direction: row;
+}
+
+.basic-description-plan-box {
   height: 50%;
   width: 40%;
   margin-top: 11.5%;
   margin-left: 50%;
-
   background-color: #E54161;
   border-radius: 25px;
-
 }
 
-.premium-description-plan-box{
-  position: absolute;
-  height: 50%;
-  width: 40%;
-  margin-top: 11.5%;
-  margin-left: 10%;
-  
-
-  background-color: #6E6E6E;
-  border-radius: 25px;
-
-}
-.exxxtra-description-plan-box{
-  position: absolute;
+.premium-description-plan-box {
   height: 50%;
   width: 40%;
   margin-top: 11.5%;
   margin-left: 50%;
-
   background-color: #E54161;
   border-radius: 25px;
+}
 
+.exxxtra-description-plan-box {
+  height: 50%;
+  width: 40%;
+  margin-top: 11.5%;
+  margin-left: 50%;
+  background-color: #E54161;
+  border-radius: 25px;
 }
 
 /* TITULO DOS PLANOS */
