@@ -85,8 +85,10 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $request){
+            
+        $data = $request->all();
+        Address::where('address_id', $data['address_id'])->delete();
+        return redirect()->route('address.index');
     }
 }

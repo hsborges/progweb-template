@@ -26,7 +26,9 @@ Route::get('/profile', function () {
     return view('auth/profile');
 })->name("profile");
 
-Route::resource('address', 'AddressController');
+Route::post('/addresses/delete', 'AddressController@destroy')->name('address.destroy');
+Route::resource('address', 'AddressController', ['except' => ['destroy']]);
+
 
 Route::get('/profile/password', 'ProfileController@index')->name("profile.password");
 
