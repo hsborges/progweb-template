@@ -62,7 +62,7 @@
             @endif
             @else
             <div class="top-nav-dropdown top-nav-logged">
-                <button class="top-nav-dropbtn">OLÁ, <?= strtoupper('igor') . " " . "<i class='fas fa-angle-down'></i>"?></button>
+                <button class="top-nav-dropbtn">OLÁ, <?= strtoupper(explode(' ', Auth::user()->name)[0]) . " " . "<i class='fas fa-angle-down'></i>"?></button>
                 <div class="top-nav-dropdown-content">
                         <a href="{{ route('profile') }}">
                             {{ __('Perfil') }}

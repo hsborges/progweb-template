@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Address;
+use Illuminate\Support\Facades\Auth;
 
 class AddressController extends Controller
 {
@@ -14,7 +15,9 @@ class AddressController extends Controller
      */
     public function index()
     {
-        //
+        $addresses = Address::where('client_id', Auth::user()->id)->get();
+
+        return view('auth/testAddresses')->with(['addresses' => $addresses]);
     }
 
     /**
