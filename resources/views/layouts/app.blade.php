@@ -67,8 +67,7 @@
                         <a href="{{ route('profile') }}">
                             {{ __('Perfil') }}
                         </a>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                        <a href="{{ route('profile.destroy') }}">
                             {{ __('Minhas Assinaturas') }}
                         </a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

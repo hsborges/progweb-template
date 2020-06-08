@@ -32,6 +32,8 @@ Route::resource('address', 'AddressController', ['except' => ['destroy']]);
 
 Route::get('/profile/password', 'ProfileController@index')->name("profile.password");
 
+Route::get('/profile/destroy', 'ProfileController@destroy_account')->name("profile.destroy");
+
 Route::post('/profile/email/edit', 'ProfileController@editEmail')->name("profile.email.update");
 
 Route::get('/profile/email', 'ProfileController@indexEmail')->name("profileemail");

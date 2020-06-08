@@ -26,6 +26,15 @@ class ProfileController extends Controller
         return view('auth/passwords/reset');
     }
 
+    public function destroy_account()
+    {
+
+        $user = Auth::user();
+        $user->delete();
+
+        return redirect()->route('home');
+    }
+
     public function indexEditProfile()
     {
        return view('auth/editProfile');
