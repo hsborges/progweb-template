@@ -45,13 +45,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        @if(Auth::user()->groupid == 2)
+                            <div class="form-group row">
 
-                            <div class="col-md-12">
-                                <a href="{{ route('address.create') }}">Adicionar endereço</a>
+                                <div class="col-md-12">
+                                    <a href="{{ route('plan.create') }}">Adicionar plano</a>
+                                </div>
+
                             </div>
-
-                        </div>
+                        @endif
 
 
                         <div class="form-group row">

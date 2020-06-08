@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
 Route::get('/', function () {
     return view('home');
 })->name("home");
@@ -26,8 +25,13 @@ Route::get('/profile', function () {
     return view('auth/profile');
 })->name("profile");
 
+Route::post('/plan/delete', 'PlansController@destroy')->name('plan.destroy');
+Route::post('/plan/update', 'PlansController@update')->name('plan.update');
+Route::resource('plan', 'PlansController', ['except' => ['destroy', 'update']]);
+
 Route::post('/addresses/delete', 'AddressController@destroy')->name('address.destroy');
 Route::resource('address', 'AddressController', ['except' => ['destroy']]);
+
 
 
 Route::get('/profile/password', 'ProfileController@index')->name("profile.password");
@@ -45,6 +49,7 @@ Route::get('/profile/edit', 'ProfileController@indexEditProfile')->name("profile
 
 Route::post('/profile/password/update', 'ProfileController@changePassword')->name("profile.pass.update");
 
+Auth::routes();
 
 Route::get("/about", function()
 {
