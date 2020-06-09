@@ -53,7 +53,16 @@
                                 </div>
 
                             </div>
+                            
                         @endif
+
+                        <div class="form-group row">
+
+                                <div class="col-md-12">
+                                    <a href="{{ route('credit_card.index') }}">Visualizar cartão</a>
+                                </div>
+
+                            </div>
 
 
                         <div class="form-group row">

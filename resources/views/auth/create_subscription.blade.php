@@ -16,7 +16,8 @@
                             <input hidden id="client_id" type="text" class="form-control" name="client_id" value="{{ Auth::user()->id }}">
 
                             <div class="form-group row">
-                                <label for="Rua" class="col-md-0 col-form-label text-md-left">{{ __('nome do plano') }}</label>
+                                <label for="Rua" class="col-md-0 col-f
+orm-label text-md-left">{{ __('nome do plano') }}</label>
 
                                 <div class="col-md-4">
                                     <select name="plan_id" id="cars">
