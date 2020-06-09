@@ -102,7 +102,7 @@ class PlansController extends Controller
                 $plan = Plan::where('plan_id', $data['plan_id'])->update(['name' => $data['name'], 'price' => $data['price'], 'description' => $data['description']]);
 
                 return redirect()->route('plan.index');
-            } else {git
+            } else {
                 return redirect()->route('profile');
             }
         }

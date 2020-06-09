@@ -18,6 +18,7 @@ class CreateAddressesTable extends Migration
             $table->bigInteger('client_id')->unsigned();
             $table->string('street', 255);
             $table->string('country', 255);
+            $table->string('city', 255);
             $table->string('state', 255);
             $table->string('street_number', 255);
             $table->string('complement', 255);

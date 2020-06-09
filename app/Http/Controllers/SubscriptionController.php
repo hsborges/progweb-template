@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subscription;
+use App\Models\Plan;
 use App\Models\Address;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class AddressController extends Controller
+class SubscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +19,13 @@ class AddressController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $addresses = Address::where('client_id', Auth::user()->id)->get();
+            $data = DB::table('subscriptions')
+                ->join('addresses', 'addresses.address_id', '=', 'subscriptions.address_id')
+                ->join('plans', 'plans.plan_id', '=', 'subscriptions.plan_id')
+                ->where('subscriptions.client_id', '=',  Auth::user()->id)
+                ->get();
 
-            return view('auth/testAddresses')->with(['addresses' => $addresses]);
+            return view('auth/testSubscription')->with(['subscriptions' => $data]);
         }
         return redirect()->route('login');
     }
@@ -30,7 +37,14 @@ class AddressController extends Controller
      */
     public function create()
     {
-        return view('auth/create_address');
+        if (Auth::check()) {
+            $addresses = Address::where('client_id', Auth::user()->id)->get();
+
+            $plans = Plan::all();
+
+            return view('auth/create_subscription')->with(['addresses' => $addresses, 'plans' => $plans]);
+        }
+        return redirect()->route('login');
     }
 
     /**
@@ -44,9 +58,9 @@ class AddressController extends Controller
         if (Auth::check()) {
             $data = $request->all();
 
-            Address::create($data);
+            Subscription::create($data);
 
-            return redirect()->route('address.index');
+            return redirect()->route("subscription.index");
         }
         return redirect()->route('login');
     }
@@ -93,11 +107,11 @@ class AddressController extends Controller
      */
     public function destroy(Request $request)
     {
-
         if (Auth::check()) {
             $data = $request->all();
-            Address::where('address_id', $data['address_id'])->delete();
-            return redirect()->route('address.index');
+
+            Subscription::where('subscription_id', '=', $data['subscription_id'])->delete();
+            return redirect()->route('subscription.index');
         }
         return redirect()->route('login');
     }
