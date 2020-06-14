@@ -1,11 +1,17 @@
-import React, {useState} from "react";
-import {Badge, IconButton, makeStyles, Toolbar, Typography,} from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  Badge,
+  IconButton,
+  makeStyles,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import {AppMenu} from "./AppMenu/AppMenu";
+import { AppMenu } from "./AppMenu/AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,14 +60,14 @@ export const Appbar = () => {
 
   const registerProduct = () => {
     if (logado) {
-      history.push('/produto/registrar-produto');
+      history.push("/produto/registrar-produto");
     }
 
-    alert('Faça o login antes de anunciar o produto');
-    history.push('/login');
+    alert("Faça o login antes de anunciar o produto");
+    history.push("/login");
   };
 
-  let logado = localStorage.getItem('token') !== null || localStorage.getItem('token') !== undefined ? true : false;
+  const logado = !!localStorage.getItem("token");
 
   return (
     <>
@@ -75,7 +81,7 @@ export const Appbar = () => {
         elevation={0}
       >
         <Toolbar>
-          <Link to="/" component="a" className={classes.link}>
+          <Link to="/" className={classes.link}>
             <img
               alt="minha lojinha"
               src="/logo-only.png"
