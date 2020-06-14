@@ -18,4 +18,19 @@ export default class APIService {
     const email = localStorage.getItem("email");
     return customFetch(apiPath().LOGOUT, "POST", { email });
   }
+
+  static storeProduct(title, description, category, price, images) {
+    const nickNameUser = localStorage.getItem("nickname");
+    
+    const product = {
+      title: title,
+      description: description,
+      category: category,
+      price: price,
+      images: images,
+      seller: nickNameUser
+    }
+
+    return customFetch(apiPath().PRODUCTS, "POST", product);
+  }
 }
