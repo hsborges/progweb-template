@@ -16,6 +16,11 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
     });
   };
 
+  const cadastroUsuario = () => {
+    history.push("/register-user");
+    handleMenuClose();
+  };
+
   return (
     <Menu
       anchorEl={anchorEl}
@@ -27,6 +32,7 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
+      <MenuItem onClick={cadastroUsuario}>Criar conta</MenuItem>
       <MenuItem onClick={logout}>Sair</MenuItem>
     </Menu>
   );
