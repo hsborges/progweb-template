@@ -6,6 +6,7 @@ import {AppMenu} from "./AppMenu/AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export const Appbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
+  const history = useHistory();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -49,6 +51,17 @@ export const Appbar = () => {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+
+  const registerProduct = () => {
+    if (logado) {
+      history.push('/produto/registrar-produto');
+    }
+
+    alert('Faça o login antes de anunciar o produto');
+    history.push('/login');
+  };
+
+  let logado = localStorage.getItem('token') !== null || localStorage.getItem('token') !== undefined ? true : false;
 
   return (
     <>
@@ -83,6 +96,7 @@ export const Appbar = () => {
                 }}
                 variant="contained"
                 disableElevation
+                onClick={registerProduct}
               >
                 <Typography
                   variant="body2"
