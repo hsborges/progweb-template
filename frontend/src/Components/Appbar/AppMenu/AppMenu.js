@@ -16,6 +16,12 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
     });
   };
 
+  const logar = () => {
+    history.push("/login");
+  }
+
+  let logado = localStorage.getItem('token') != null || localStorage.getItem('token') != undefined ? true : false;  // pegar o token do localstore
+
   return (
     <Menu
       anchorEl={anchorEl}
@@ -26,8 +32,14 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
-      <MenuItem onClick={logout}>Sair</MenuItem>
+      { logado == false &&
+        <MenuItem onClick={logar}>Login</MenuItem>
+      }
+      { logado  &&
+        <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
+        &&
+        <MenuItem onClick={logout}>Sair</MenuItem>
+      }
     </Menu>
   );
 };
