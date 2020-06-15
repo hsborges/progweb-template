@@ -49,6 +49,7 @@ export const Appbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const history = useHistory();
+  const logado = !!localStorage.getItem("token");
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -60,14 +61,11 @@ export const Appbar = () => {
 
   const registerProduct = () => {
     if (logado) {
-      history.push("/produto/registrar-produto");
+      history.push("/produto/novo");
+    } else {
+      history.push("/login");
     }
-
-    alert("Faça o login antes de anunciar o produto");
-    history.push("/login");
   };
-
-  const logado = !!localStorage.getItem("token");
 
   return (
     <>

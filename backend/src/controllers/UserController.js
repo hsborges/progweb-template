@@ -22,7 +22,7 @@ module.exports = {
         new: true,
       });
 
-      return res.json(user);
+      return res.json({ message: "User updated!", userId: user.id });
     } catch (e) {
       return res.json(e);
     }
@@ -32,7 +32,7 @@ module.exports = {
     try {
       const user = await User.create(req.body);
 
-      return res.json(user);
+      return res.json({ message: "User created!", userId: user.id });
     } catch (e) {
       return res.json(e);
     }
@@ -49,8 +49,12 @@ module.exports = {
         if (tokenUpdate.ok) {
           return res.json({
             token: `${token}.${user.id}`,
-            isValid,
-            email: user.email,
+            profile: {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+              nickname: user.nickname,
+            },
           });
         }
 

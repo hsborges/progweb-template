@@ -1,12 +1,21 @@
-import React, {useState} from "react";
-import {TextField} from "@material-ui/core";
-import {mdiMagnify} from "@mdi/js";
+import React, { useState } from "react";
+import { TextField } from "@material-ui/core";
+import { mdiMagnify } from "@mdi/js";
 import Icon from "@mdi/react";
-import {Categories} from "./Categories/Categories";
-import {audioVideo, books, clothing, computers, homeEletro, phones, recentProducts, tools,} from "../../utils/mock";
-import {categories} from "../../utils/enums";
-import {ViewProducts} from "./ViewProduct/ViewProducts";
-import {makeStyles} from "@material-ui/styles";
+import { Categories } from "./Categories/Categories";
+import {
+  audioVideo,
+  books,
+  clothing,
+  computers,
+  homeEletro,
+  phones,
+  recentProducts,
+  tools,
+} from "../../utils/mock";
+import { CATEGORIES } from "../../utils/enums";
+import { ViewProducts } from "./ViewProduct/ViewProducts";
+import { makeStyles } from "@material-ui/styles";
 
 const inputStyles = makeStyles(() => ({
   root: {
@@ -20,7 +29,7 @@ const inputStyles = makeStyles(() => ({
 
 export const Home = () => {
   const inputClasses = inputStyles();
-  const [categoria, setCategoria] = useState(categories.RECENTES);
+  const [categoria, setCategoria] = useState(CATEGORIES.RECENTES);
 
   return (
     <div>
@@ -36,28 +45,28 @@ export const Home = () => {
         />
         <Categories changeCategory={setCategoria} />
       </div>
-      {categoria === categories.RECENTES && (
+      {categoria === CATEGORIES.RECENTES && (
         <ViewProducts products={recentProducts} title="Anúncios recentes" />
       )}
-      {categoria === categories.CELULARES && (
+      {categoria === CATEGORIES.CELULARES && (
         <ViewProducts products={phones} title="Celulares" />
       )}
-      {categoria === categories.INFORMATICA && (
+      {categoria === CATEGORIES.INFORMATICA && (
         <ViewProducts products={computers} title="Informática" />
       )}
-      {categoria === categories.AUDIO_VIDEO && (
+      {categoria === CATEGORIES.AUDIO_VIDEO && (
         <ViewProducts products={audioVideo} title="Audio e Vídeo" />
       )}
-      {categoria === categories.VESTUARIO && (
+      {categoria === CATEGORIES.VESTUARIO && (
         <ViewProducts products={clothing} title="Vestuário" />
       )}
-      {categoria === categories.ELETRODOMESTICOS && (
+      {categoria === CATEGORIES.ELETRODOMESTICOS && (
         <ViewProducts products={homeEletro} title="Eletrodomésticos" />
       )}
-      {categoria === categories.FERRAMENTAS && (
+      {categoria === CATEGORIES.FERRAMENTAS && (
         <ViewProducts products={tools} title="Ferramentas" />
       )}
-      {categoria === categories.LIVROS && (
+      {categoria === CATEGORIES.LIVROS && (
         <ViewProducts products={books} title="Livros" />
       )}
     </div>

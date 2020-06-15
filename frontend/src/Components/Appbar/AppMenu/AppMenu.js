@@ -7,6 +7,7 @@ import APIService from "../../../utils/APIService";
 export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const isMenuOpen = Boolean(anchorEl);
   const history = useHistory();
+  const logado = !!localStorage.getItem("token"); // pegar o token do localstore
 
   const logout = () => {
     APIService.logout().then(() => {
@@ -19,10 +20,9 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const logar = () => {
     history.push("/login");
   };
-  const logado = !!localStorage.getItem("token"); // pegar o token do localstore
 
   const cadastroUsuario = () => {
-    history.push("/register-user");
+    history.push("/cadastro");
     handleMenuClose();
   };
 

@@ -1,7 +1,8 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import {Appbar} from "./Components/Appbar/Appbar";
-import {Home} from "./Components/Home/Home";
+import { makeStyles } from "@material-ui/core/styles";
+import { Appbar } from "./Components/Appbar/Appbar";
+import { Home } from "./Components/Home/Home";
+import { CssBaseline } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   grow: {
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <div className={classes.grow}>
+      <CssBaseline />
       <Appbar />
       <div>
         <Home />

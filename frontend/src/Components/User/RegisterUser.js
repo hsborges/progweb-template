@@ -1,69 +1,101 @@
 import React, { useState } from "react";
-import { TextField, Grid, Button } from "@material-ui/core";
+import {
+  TextField,
+  Grid,
+  Button,
+  makeStyles,
+  Typography,
+  CssBaseline,
+} from "@material-ui/core";
 import { Appbar } from "../Appbar/Appbar";
+import APIService from "../../utils/APIService";
 import { useHistory } from "react-router";
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(20),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  form: {
+    width: "100%",
+    marginRight: "200px",
+    marginTop: theme.spacing(1),
+  },
+}));
 
 export const RegisterUser = () => {
   const [name, setName] = useState("");
-  const [nickName, setNickName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const history = useHistory();
+  const classes = useStyles();
+  const history = useHistory();
 
   const handleNameChange = (e) => setName(e.target.value);
-  const handleNickNameChange = (e) => setNickName(e.target.value);
+  const handleNickNameChange = (e) => setNickname(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
-    console.log("nome", name);
-    console.log("apelido", nickName);
-    console.log("email", email);
-    console.log("senha", password);
-    /*
-    APIService.RegisterUser(email, password).then((response) => {
-        const { token, email } = response;
-        localStorage.setItem("token", token);
-        localStorage.setItem("email", email);
-        history.push("/");
-    });
-    */
+    APIService.registerUser(name, nickname, email, password)
+      .then(() => {
+        history.push("/login");
+      })
+      .catch((error) => console.log(error)); // TODO: Adicionar tratativa
   };
 
   return (
     <>
-      <div>
-        <Appbar />
+      <Appbar />
+      <CssBaseline />
+      <div className={classes.paper}>
         <Grid
           container
           alignItems="center"
-          justifyContent="center"
+          justify="center"
           style={{ maxWidth: "500px" }}
         >
+          <Grid
+            item
+            xs={12}
+            style={{ marginBottom: "12px", justifyContent: "center" }}
+          >
+            <Typography variant="h5" align="center">
+              Fazer Cadastro
+            </Typography>
+          </Grid>
           <form style={{ width: "100%" }}>
             <Grid item xs={12} style={{ marginBottom: "12px" }}>
               <TextField
-                placeholder="Name"
+                label="Nome Completo"
+                name="full-name"
                 fullWidth
                 variant="outlined"
                 value={name}
+                required
                 onChange={handleNameChange}
               />
             </Grid>
             <Grid item xs={12} style={{ marginBottom: "12px" }}>
               <TextField
-                placeholder="NickName"
+                label="Nickname"
                 fullWidth
+                required
+                name="nickname"
                 variant="outlined"
-                value={nickName}
+                value={nickname}
                 onChange={handleNickNameChange}
               />
             </Grid>
             <Grid item xs={12} style={{ marginBottom: "12px" }}>
               <TextField
-                placeholder="Email"
+                required
+                label="Email"
+                name="email"
                 fullWidth
                 variant="outlined"
                 value={email}
@@ -72,7 +104,9 @@ export const RegisterUser = () => {
             </Grid>
             <Grid item xs={12} style={{ marginBottom: "12px" }}>
               <TextField
-                placeholder="Senha"
+                required
+                label="Senha"
+                name="password"
                 fullWidth
                 variant="outlined"
                 type="password"
@@ -80,7 +114,17 @@ export const RegisterUser = () => {
                 onChange={handlePasswordChange}
               />
             </Grid>
-            <Button type="submit" variant="contained" onClick={handleSubmit}>
+            <Button
+              color="primary"
+              type="submit"
+              variant="contained"
+              onClick={handleSubmit}
+              fullWidth
+              disableElevation
+              style={{
+                backgroundColor: "#e33b5d",
+              }}
+            >
               Fazer Cadastro
             </Button>
           </form>

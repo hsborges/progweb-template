@@ -28,10 +28,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "200px",
     marginTop: theme.spacing(1),
   },
-  subimit: {
-    borderRadius: "100px",
-    margin: theme.spacing(3, 0, 2),
-  },
 }));
 
 export const Login = () => {
@@ -46,9 +42,9 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     APIService.login(email, password).then((response) => {
-      const { token, email } = response;
+      const { token, profile } = response;
       localStorage.setItem("token", token);
-      localStorage.setItem("email", email);
+      localStorage.setItem("userProfile", JSON.stringify(profile));
       history.push("/");
     });
   };
@@ -65,7 +61,7 @@ export const Login = () => {
             style={{ maxWidth: "45px" }}
           />
         </Avatar>
-        <Typography component="h1" variant="h5" align="center">
+        <Typography variant="h5" align="center">
           Fazer Login
         </Typography>
         <Grid style={{ maxWidth: "500px" }}>

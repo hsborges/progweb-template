@@ -11,7 +11,7 @@ import {
 } from "@mdi/js";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import {categories} from "../../../utils/enums";
+import { CATEGORIES } from "../../../utils/enums";
 
 export const Categories = ({ changeCategory }) => {
   const iconLabel = {
@@ -32,7 +32,7 @@ export const Categories = ({ changeCategory }) => {
     >
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.CELULARES)}
+          onClick={() => changeCategory(CATEGORIES.CELULARES)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiCellphoneIphone} size={1.5} color="#e33b5d" />
@@ -41,7 +41,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.INFORMATICA)}
+          onClick={() => changeCategory(CATEGORIES.INFORMATICA)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiLaptop} size={1.5} color="#e33b5d" />
@@ -50,7 +50,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.AUDIO_VIDEO)}
+          onClick={() => changeCategory(CATEGORIES.AUDIO_VIDEO)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiTelevision} size={1.5} color="#e33b5d" />
@@ -59,7 +59,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.VESTUARIO)}
+          onClick={() => changeCategory(CATEGORIES.VESTUARIO)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiHanger} size={1.5} color="#e33b5d" />
@@ -68,7 +68,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.ELETRODOMESTICOS)}
+          onClick={() => changeCategory(CATEGORIES.ELETRODOMESTICOS)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiWashingMachine} size={1.5} color="#e33b5d" />
@@ -77,7 +77,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.FERRAMENTAS)}
+          onClick={() => changeCategory(CATEGORIES.FERRAMENTAS)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiHammerScrewdriver} size={1.5} color="#e33b5d" />
@@ -86,7 +86,7 @@ export const Categories = ({ changeCategory }) => {
       </div>
       <div style={iconLabel}>
         <IconButton
-          onClick={() => changeCategory(categories.LIVROS)}
+          onClick={() => changeCategory(CATEGORIES.LIVROS)}
           style={{ backgroundColor: "#fff" }}
         >
           <Icon path={mdiBookshelf} size={1.5} color="#e33b5d" />
