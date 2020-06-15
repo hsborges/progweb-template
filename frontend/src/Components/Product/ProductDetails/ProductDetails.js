@@ -1,11 +1,18 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import {Button, ButtonBase, Container, Divider, Grid, Typography,} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  Button,
+  ButtonBase,
+  Container,
+  Divider,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 import ProductSpec from "../ProductSpec/ProductSpec";
-import {green} from "@material-ui/core/colors";
+import { green } from "@material-ui/core/colors";
 import SellerInfo from "../SellerInfo/SellerInfo";
 import Icon from "@mdi/react";
-import {mdiCart} from "@mdi/js";
+import { mdiCart } from "@mdi/js";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -46,18 +53,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const ProductDetails = () => {
+export const ProductDetails = ({ data }) => {
   const classes = useStyles();
-  var produto =  {
-    nome: 'TV LG 49 4k'
-  };
-  var idProduto = 10;
-
-  function buscarDetalhesProduto() {
-    fetch('http://localhost:3001/Products/${idProduto}')
-      .then(response => response.json())
-      .then(data => this.produto = data)
-  }
 
   return (
     <Container className={classes.root}>
@@ -65,7 +62,7 @@ export const ProductDetails = () => {
         <Container>
           <Grid item xs>
             <Typography gutterBottom variant="h5">
-              LG Smart TV LG 49" 4K
+              {data && data.title}
             </Typography>
           </Grid>
         </Container>
@@ -94,7 +91,7 @@ export const ProductDetails = () => {
                   <Typography gutterBottom variant="h6">
                     Vendedor
                   </Typography>
-                  <SellerInfo />
+                  <SellerInfo name={data && data.seller} />
                 </Grid>
                 <Typography
                   gutterBottom
@@ -107,7 +104,7 @@ export const ProductDetails = () => {
                   <ProductSpec />
                 </Grid>
                 <Grid item style={{ marginTop: "12px" }}>
-                  <Typography variant="h6">R$ 1.500,00</Typography>
+                  <Typography variant="h6">R$ {data && data.price}</Typography>
                 </Grid>
                 <Grid item style={{ marginTop: "12px" }}>
                   <Button
@@ -130,11 +127,12 @@ export const ProductDetails = () => {
         <Divider />
         <Grid item>
           <Typography variant="body1" style={{ marginTop: "12px" }}>
-            HDR Ativo, NanoCell para cores mais precisas, inteligência
-            artificial ThinQ AI, imersão de som com DTS Virtual.
+            {data && data.description}
           </Typography>
         </Grid>
       </div>
     </Container>
   );
 };
+
+export default ProductDetails;
