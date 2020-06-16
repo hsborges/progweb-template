@@ -1,58 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import {
-  Button,
-  ButtonBase,
-  Container,
-  Divider,
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import {Button, ButtonBase, Container, Divider, Grid, Typography,} from "@material-ui/core";
 import ProductSpec from "../ProductSpec/ProductSpec";
-import { green } from "@material-ui/core/colors";
 import SellerInfo from "../SellerInfo/SellerInfo";
 import Icon from "@mdi/react";
-import { mdiCart } from "@mdi/js";
-import { FILES_ROOT } from "../../../utils/apiPath";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-    padding: "12px",
-  },
-  image: {
-    width: 512,
-    height: 512,
-  },
-  img: {
-    margin: "auto",
-    display: "block",
-    maxWidth: "100%",
-    maxHeight: "100%",
-  },
-  button: {
-    boxShadow: "none",
-    textTransform: "none",
-    fontSize: 24,
-    color: "white",
-    backgroundColor: green[500],
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    "&:hover": {
-      backgroundColor: green[700],
-    },
-  },
-}));
+import {mdiCart} from "@mdi/js";
+import {FILES_ROOT} from "../../../utils/apiPath";
+import {useStyles} from "./styles";
 
 export const ProductDetails = ({ data }) => {
   const classes = useStyles();

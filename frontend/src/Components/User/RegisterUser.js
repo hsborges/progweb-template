@@ -1,15 +1,8 @@
-import React, { useState } from "react";
-import {
-  TextField,
-  Grid,
-  Button,
-  makeStyles,
-  Typography,
-  CssBaseline,
-} from "@material-ui/core";
-import { Appbar } from "../Appbar/Appbar";
+import React, {useState} from "react";
+import {Button, CssBaseline, Grid, makeStyles, TextField, Typography,} from "@material-ui/core";
+import {Appbar} from "../Appbar/Appbar";
 import APIService from "../../utils/APIService";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -18,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-  },
-  form: {
-    width: "100%",
-    marginRight: "200px",
-    marginTop: theme.spacing(1),
   },
 }));
 

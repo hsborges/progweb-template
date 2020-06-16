@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
-  TextField,
-  Grid,
-  Button,
-  makeStyles,
-  CssBaseline,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Typography,
-  Select,
-  Snackbar,
+    Button,
+    CssBaseline,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    Snackbar,
+    TextField,
+    Typography,
 } from "@material-ui/core";
-import { useHistory } from "react-router";
-import { Appbar } from "../../Appbar/Appbar";
+import {useHistory} from "react-router";
+import {Appbar} from "../../Appbar/Appbar";
 import APIService from "../../../../src/utils/APIService";
-import { CATEGORIES } from "../../../utils/enums";
+import {CATEGORIES} from "../../../utils/enums";
 import Icon from "@mdi/react";
-import { mdiCashUsdOutline, mdiImageSizeSelectActual } from "@mdi/js";
+import {mdiCashUsdOutline, mdiImageSizeSelectActual} from "@mdi/js";
 import MuiAlert from "@material-ui/lab/Alert";
+import {useStyles} from "./styles";
 
-const categoriesList = [
+const CATEGORIES_LIST = [
   { label: "Celulares", value: CATEGORIES.CELULARES },
   { label: "Informática", value: CATEGORIES.INFORMATICA },
   { label: "Áudio e Video", value: CATEGORIES.AUDIO_VIDEO },
@@ -29,21 +29,6 @@ const categoriesList = [
   { label: "Ferramentas", value: CATEGORIES.FERRAMENTAS },
   { label: "Livros", value: CATEGORIES.LIVROS },
 ];
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(10),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  form: {
-    width: "100%",
-    marginRight: "200px",
-    marginTop: theme.spacing(1),
-  },
-}));
 
 export const ProductRegister = () => {
   const history = useHistory();
@@ -150,7 +135,7 @@ export const ProductRegister = () => {
                   <MenuItem value="no_category">
                     <em>Nenhuma</em>
                   </MenuItem>
-                  {categoriesList.map(({ label, value }) => (
+                  {CATEGORIES_LIST.map(({ label, value }) => (
                     <MenuItem key={value} value={value}>
                       {label}
                     </MenuItem>
