@@ -1,16 +1,35 @@
 const mongoose = require("mongoose");
-const multer = require('multer');
-const path = require('path');
+const multer = require("multer");
+const path = require("path");
+
+const ProductImage = mongoose.model("ProductImage");
 
 /** Storage Engine */
 const storageEngine = multer.diskStorage({
-  destination: './public/files',
-  filename: function (req, file, fn) {
-    fn(null, new Date().getTime().toString() + '-' + file.fieldname + path.extname(file.originalname));
-  }
+  destination: "./public/files",
+  filename: (req, file, fn) => {
+    fn(null, new Date().getTime().toString() + "-" + file.originalname);
+  },
 });
 
-const ProductImage = mongoose.model("ProductImage");
+const upload = multer({
+  storage: storageEngine,
+  fileFilter: (req, file, callback) => {
+    const allowedFileTypes = /jpeg|jpg|png|gif/;
+    const extension = allowedFileTypes.test(
+      path.extname(file.originalname).toLowerCase()
+    );
+    const mimeType = allowedFileTypes.test(file.mimetype);
+    if (extension && mimeType) {
+      callback(null, true);
+    } else {
+      return callback(
+        "Invalid file type. Only JPEG, PNG and GIF file are allowed.",
+        false
+      );
+    }
+  },
+}).single("image");
 
 module.exports = {
   async show(req, res) {
@@ -19,55 +38,35 @@ module.exports = {
     return res.json(image);
   },
 
-  async update(req, res) {
-    const image = await ProductImage.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-
-    return res.json(image);
-  },
-
   async destroy(req, res) {
-    await ProductImage.findByIdAndRemove(Wreq.params.id);
-    /* TODO: Remove file from folder */
-    return res.send();
-  },
+    try {
+      await ProductImage.findByIdAndRemove(req.params.id);
+      /* TODO: Remove file from folder */
 
-  async store(req, res) {
-    const image = await ProductImage.create(req.body);
-    var fullPath = "files/" + req.params.id + "/" + req.file.filename;
-    var document = {
-      path: fullPath,
-      caption: req.body.caption
-    };
-
-    var photo = new ProductImage(document);
-    photo.save(function (error) {
-      if (error) {
-        throw error;
-      }
-    });
-    return res.json(image);
+      return res.send({ message: "Image removed" });
+    } catch (e) {
+      return res.send(e);
+    }
   },
 
   async upload(req, res) {
-    ProductImage.upload = multer({
-      storage: storageEngine,
-      limits: { fileSize: 200000 },
-      fileFilter: function (req, file, callback) {
-        validateFile(file, callback);
+    upload(req, res, async (err) => {
+      if (err) {
+        return res.json({ error: err });
       }
-    }).single('photo');
-    var validateFile = function (file, cb) {
-      allowedFileTypes = /jpeg|jpg|png|gif/;
-      const extension = allowedFileTypes.test(path.extname(file.originalname).toLowerCase());
-      const mimeType = allowedFileTypes.test(file.mimetype);
-      if (extension && mimeType) {
-        return cb(null, true);
-      } else {
-        cb("Invalid file type. Only JPEG, PNG and GIF file are allowed.")
-      }
-    }
 
-  }
+      console.log(req.file);
+
+      try {
+        const image = await ProductImage.create({
+          path: req.file.path,
+          fileName: req.file.filename,
+        });
+
+        return res.json(image);
+      } catch (e) {
+        return res.json(e);
+      }
+    });
+  },
 };
