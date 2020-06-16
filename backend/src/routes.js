@@ -29,7 +29,7 @@ routes.delete("/products/:id", isAuthenticated, ProductController.destroy);
 routes.get("/products/image/:id", ProductImageController.show);
 
 /* Upload */
-routes.post("/upload/", isAuthenticated, ProductImageController.store);
+routes.post("/upload/", isAuthenticated, ProductImageController.upload);
 routes.put("/upload/:id", isAuthenticated, ProductImageController.update);
 routes.delete("/upload/:id", isAuthenticated, ProductImageController.destroy);
 
