@@ -57,13 +57,19 @@ Até o momento é possível operar a API do backend com os seguintes métodos:
 - `PUT` `/products/:id`: Atualiza o produto `id`
 - `PUT` `/user/:id`: Atualiza o usuário `id`
 - `DELETE` `/products/:id`: Remove o produto `id`
+- `POST` `/logout`: Encerra sessão atual
+- `POST` `/login`: Cria nova sessão
+- `POST` `/images`: Faz upload de nova imagem de produto
+- `DELETE` `/images/:id`: Apaga imagem `id` 
 
 No frontend é possível receber o token a partir da rota de login e operar as rotas protegidas (`WIP`).
 
 É possível navegar através das telas:
 - `/`: Página inicial do hotsite, com todos os produtos disponíveis através de categorias (`WIP`)
-- `/produtos/:id`: Página de detalhes de um produto `id` (`WIP`)
-- `/login`: Página de login (`WIP`)
+- `/produto/:id`: Página de detalhes de um produto `id` (`WIP`)
+- `/produto/novo`: Página de cadastro de um produto 
+- `/login`: Página de login
+- `/cadastro`: Página de registro
 
 Obs.: `WIP` significa trabalho em progresso.
 
