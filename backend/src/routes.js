@@ -14,7 +14,7 @@ const isAuthenticated = async (req, res, next) => {
   if (token === user.lastToken) {
     next();
   } else {
-    res.json({
+    res.status(403).json({
       error: "You shall not pass!",
     });
   }
@@ -26,11 +26,9 @@ routes.get("/products/:id", ProductController.show);
 routes.put("/products/:id", isAuthenticated, ProductController.update);
 routes.delete("/products/:id", isAuthenticated, ProductController.destroy);
 
-routes.get("/products/image/:id", ProductImageController.show);
-
 /* Upload */
-routes.post("/upload/", isAuthenticated, ProductImageController.upload);
-routes.delete("/upload/:id", isAuthenticated, ProductImageController.destroy);
+routes.post("/images/", isAuthenticated, ProductImageController.upload);
+routes.delete("/images/:id", isAuthenticated, ProductImageController.destroy);
 
 /* User */
 routes.post("/users", UserController.store);

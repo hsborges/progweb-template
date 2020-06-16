@@ -1,4 +1,9 @@
-export default async function customFetch(path, method = "GET", data = {}) {
+export default async function customFetch(
+  path,
+  method = "GET",
+  data = {},
+  formData = null
+) {
   const headers = new Headers({
     Accept: "application/json",
   });
@@ -11,6 +16,9 @@ export default async function customFetch(path, method = "GET", data = {}) {
   if (data && Object.keys(data).length > 0) {
     init.body = JSON.stringify(data);
     headers.append("Content-Type", "application/json");
+  } else if (formData) {
+    init.body = formData;
+    headers.append("enctype", "multipart/form-data");
   }
 
   const token = localStorage.getItem("token");

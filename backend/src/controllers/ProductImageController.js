@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs-extra");
 
 const ProductImage = mongoose.model("ProductImage");
+const FILE_PATH = "./public/files";
 
 /** Storage Engine */
 const storageEngine = multer.diskStorage({
-  destination: "./public/files",
+  destination: FILE_PATH,
   filename: (req, file, fn) => {
     fn(null, new Date().getTime().toString() + "-" + file.originalname);
   },
@@ -32,16 +34,11 @@ const upload = multer({
 }).single("image");
 
 module.exports = {
-  async show(req, res) {
-    const image = await ProductImage.findById(req.params.id);
-
-    return res.json(image);
-  },
-
   async destroy(req, res) {
     try {
-      await ProductImage.findByIdAndRemove(req.params.id);
-      /* TODO: Remove file from folder */
+      const image = await ProductImage.findById(req.params.id);
+      await fs.remove(`${FILE_PATH}/${image.fileName}`);
+      await image.remove();
 
       return res.send({ message: "Image removed" });
     } catch (e) {
@@ -51,11 +48,9 @@ module.exports = {
 
   async upload(req, res) {
     upload(req, res, async (err) => {
-      if (err) {
+      if (err || err instanceof multer.MulterError) {
         return res.json({ error: err });
       }
-
-      console.log(req.file);
 
       try {
         const image = await ProductImage.create({
@@ -63,7 +58,11 @@ module.exports = {
           fileName: req.file.filename,
         });
 
-        return res.json(image);
+        return res.json({
+          id: image.id,
+          path: image.path,
+          fileName: image.fileName,
+        });
       } catch (e) {
         return res.json(e);
       }

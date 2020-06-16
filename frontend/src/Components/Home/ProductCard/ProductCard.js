@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router";
+import { FILES_ROOT } from "../../../utils/apiPath";
 
 const useStyles = makeStyles({
   root: {
@@ -21,7 +22,7 @@ export const ProductCard = ({
     _id,
     title,
     description,
-    image = "https://mobiphoners.com.br/wp-content/uploads/2019/03/553692_1_xnl.jpg",
+    image: { fileName = "1592335000782-write.png" } = {},
   },
 }) => {
   const classes = useStyles();
@@ -33,7 +34,11 @@ export const ProductCard = ({
         onClick={() => history.push("/produto/" + _id)}
         // passando titulo, apenas para teste. Futuramente vai passar o ID do produto
       >
-        <CardMedia className={classes.media} image={image} title={title} />
+        <CardMedia
+          className={classes.media}
+          image={`${FILES_ROOT}/${fileName}`}
+          title={title}
+        />
         <CardContent>
           <Typography
             gutterBottom

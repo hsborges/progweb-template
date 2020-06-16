@@ -3,21 +3,22 @@ import {
   TextField,
   Grid,
   Button,
-  FormGroup,
   makeStyles,
   CssBaseline,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Typography,
+  Select,
+  Snackbar,
 } from "@material-ui/core";
 import { useHistory } from "react-router";
 import { Appbar } from "../../Appbar/Appbar";
 import APIService from "../../../../src/utils/APIService";
 import { CATEGORIES } from "../../../utils/enums";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Typography from "@material-ui/core/Typography";
 import Icon from "@mdi/react";
 import { mdiCashUsdOutline, mdiImageSizeSelectActual } from "@mdi/js";
+import MuiAlert from "@material-ui/lab/Alert";
 
 const categoriesList = [
   { label: "Celulares", value: CATEGORIES.CELULARES },
@@ -47,26 +48,54 @@ const useStyles = makeStyles((theme) => ({
 export const ProductRegister = () => {
   const history = useHistory();
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [alert, setAlert] = useState({ type: "", message: "" });
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
   const handleCategoryChange = (e) => setCategory(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
-  const handleImageChange = (e) => setImage(e.target.value);
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    APIService.storeProduct(title, description, category, price, image)
-      .then(() => {
-        console.log("Anúncio Cadastrado com sucesso");
-        history.push("/");
-      })
-      .catch((error) => console.log(error));
+
+    if (
+      title === "" ||
+      description === "" ||
+      category === "" ||
+      price === "" ||
+      image === ""
+    ) {
+      setAlert({ type: "error", message: "Há um ou mais campos vazios!" });
+      setOpen(true);
+      return;
+    }
+
+    try {
+      const uploadImage = await APIService.uploadImage(image);
+      await APIService.storeProduct(
+        title,
+        description,
+        category,
+        price,
+        uploadImage
+      );
+
+      setAlert({ type: "success", message: "Anúncio Cadastrado com sucesso!" });
+      setOpen(true);
+
+      setTimeout(() => history.push("/"), 3000);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -80,7 +109,7 @@ export const ProductRegister = () => {
           style={{ maxWidth: "500px", justifyContent: "center" }}
         >
           <Typography variant="h5">Cadastrar Anúncio</Typography>
-          <FormGroup style={{ width: "100%", padding: "3px" }}>
+          <form style={{ width: "100%", padding: "3px" }}>
             <Grid item xs={12} style={{ marginBottom: "12px" }}>
               <TextField
                 label="Titulo"
@@ -151,15 +180,23 @@ export const ProductRegister = () => {
                 }}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid
+              item
+              xs={12}
+              style={{
+                marginBottom: "12px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
               <TextField
-                label="URL da Imagem"
+                style={{ width: "70%" }}
+                disabled
+                label="Imagem"
                 name="image-url"
-                fullWidth
-                required
                 variant="outlined"
-                value={image}
-                onChange={handleImageChange}
+                value={image && image.name}
                 InputProps={{
                   startAdornment: (
                     <Icon
@@ -171,20 +208,62 @@ export const ProductRegister = () => {
                   ),
                 }}
               />
+              <div>
+                <input
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  id="contained-button-file"
+                  onChange={handleImageChange}
+                  type="file"
+                />
+                <label htmlFor="contained-button-file">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    component="span"
+                    size="large"
+                    style={{ height: "56px" }}
+                  >
+                    Selecionar
+                  </Button>
+                </label>
+              </div>
             </Grid>
             <Button
               type="submit"
               variant="contained"
               color="primary"
-              style={{ backgroundColor: "#e33b5d" }}
+              style={{
+                backgroundColor: "#e33b5d",
+                marginTop: "12px",
+                height: "40px",
+              }}
               onClick={handleSubmit}
               disableElevation
+              fullWidth
+              disabled={alert.type === "success"}
             >
               Cadastrar Anúncio
             </Button>
-          </FormGroup>
+          </form>
         </Grid>
       </div>
+      <Snackbar
+        open={open}
+        color="error"
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        autoHideDuration={5000}
+        onClose={() => setOpen(false)}
+      >
+        <MuiAlert
+          elevation={5}
+          variant="filled"
+          severity={alert.type}
+          onClose={() => setOpen(false)}
+        >
+          {alert.message}
+        </MuiAlert>
+      </Snackbar>
     </>
   );
 };

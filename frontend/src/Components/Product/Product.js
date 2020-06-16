@@ -21,6 +21,7 @@ function Product({ match }) {
 
   useEffect(() => {
     APIService.fetchProduct(productId).then((product) => {
+      console.log(product);
       setProductInfo(product);
     });
   }, [productId]);

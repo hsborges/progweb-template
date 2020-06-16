@@ -13,6 +13,7 @@ import { green } from "@material-ui/core/colors";
 import SellerInfo from "../SellerInfo/SellerInfo";
 import Icon from "@mdi/react";
 import { mdiCart } from "@mdi/js";
+import { FILES_ROOT } from "../../../utils/apiPath";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -74,8 +75,12 @@ export const ProductDetails = ({ data }) => {
                 <ButtonBase className={classes.image}>
                   <img
                     className={classes.img}
-                    alt=""
-                    src="https://www.lg.com/br/images/tv/md06134556/gallery/N01_d01.jpg"
+                    alt={data && data.title}
+                    src={
+                      data &&
+                      data.image &&
+                      `${FILES_ROOT}/${data.image.fileName}`
+                    }
                   />
                 </ButtonBase>
               </Grid>

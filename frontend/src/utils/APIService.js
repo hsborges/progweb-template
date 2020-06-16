@@ -21,16 +21,22 @@ export default class APIService {
 
   static storeProduct(title, description, category, price, image) {
     const { nickname } = JSON.parse(localStorage.getItem("userProfile"));
-    console.log(image); // TODO: Adicionar handler
     const product = {
       title: title,
       description: description,
       category: category,
       price: price,
       seller: nickname,
+      image: image
     };
 
     return customFetch(apiPath().PRODUCTS, "POST", product);
+  }
+
+  static uploadImage(image) {
+    const blob = new FormData();
+    blob.append("image", image);
+    return customFetch(apiPath().IMAGES, "POST", {}, blob);
   }
 
   static registerUser(name, nickname, email, password) {
