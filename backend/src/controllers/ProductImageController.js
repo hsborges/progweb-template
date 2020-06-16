@@ -42,14 +42,14 @@ module.exports = {
 
       return res.send({ message: "Image removed" });
     } catch (e) {
-      return res.send(e);
+      return res.status(500).send(e);
     }
   },
 
   async upload(req, res) {
     upload(req, res, async (err) => {
       if (err || err instanceof multer.MulterError) {
-        return res.json({ error: err });
+        return res.status(500).json({ error: err });
       }
 
       try {
@@ -64,7 +64,7 @@ module.exports = {
           fileName: image.fileName,
         });
       } catch (e) {
-        return res.json(e);
+        return res.status(500).json(e);
       }
     });
   },

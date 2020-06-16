@@ -16,7 +16,7 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -28,7 +28,7 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -38,7 +38,7 @@ module.exports = {
 
       return res.send({ message: "Product removed" });
     } catch (e) {
-      return res.send(e);
+      return res.status(500).send(e);
     }
   },
 
@@ -48,7 +48,7 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 };

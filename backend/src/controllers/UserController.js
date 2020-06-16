@@ -12,7 +12,7 @@ module.exports = {
 
       return res.json(user);
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -24,7 +24,7 @@ module.exports = {
 
       return res.json({ message: "User updated!", userId: user.id });
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -34,7 +34,7 @@ module.exports = {
 
       return res.json({ message: "User created!", userId: user.id });
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -58,12 +58,12 @@ module.exports = {
           });
         }
 
-        return res.json({ error: "Error saving token" });
+        return res.status(500).json({ error: "Error saving token" });
       }
 
-      return res.json({ error: "Invalid password" });
+      return res.json({ error: "Invalid password" }); // TODO: Devo retornar 403?
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 
@@ -76,9 +76,9 @@ module.exports = {
         return res.json({ message: "Logout successful" });
       }
 
-      return res.json({ error: "Error removing token" });
+      return res.status(500).json({ error: "Error removing token" });
     } catch (e) {
-      return res.json(e);
+      return res.status(500).json(e);
     }
   },
 };
