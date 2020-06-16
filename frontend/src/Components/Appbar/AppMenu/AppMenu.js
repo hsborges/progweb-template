@@ -12,8 +12,8 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const logout = () => {
     APIService.logout().then(() => {
       localStorage.clear();
-      history.push("/");
       handleMenuClose();
+      history.push("/");
     });
   };
 

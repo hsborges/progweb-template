@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import {Appbar} from "../Appbar/Appbar";
-import {ProductDetails} from "./ProductDetails/ProductDetails";
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Appbar } from "../Appbar/Appbar";
+import { ProductDetails } from "./ProductDetails/ProductDetails";
 import APIService from "../../utils/APIService";
 
 const useStyles = makeStyles((theme) => ({

@@ -15,17 +15,7 @@ import {
 } from "../../utils/mock";
 import { CATEGORIES } from "../../utils/enums";
 import { ViewProducts } from "./ViewProduct/ViewProducts";
-import { makeStyles } from "@material-ui/styles";
-
-const inputStyles = makeStyles(() => ({
-  root: {
-    backgroundColor: "#fff",
-  },
-  focused: {},
-  notchedOutline: {
-    border: "none",
-  },
-}));
+import { inputStyles } from "./styles";
 
 export const Home = () => {
   const inputClasses = inputStyles();

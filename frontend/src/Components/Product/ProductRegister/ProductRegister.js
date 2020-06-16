@@ -1,24 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
-    Button,
-    CssBaseline,
-    FormControl,
-    Grid,
-    InputLabel,
-    MenuItem,
-    Select,
-    Snackbar,
-    TextField,
-    Typography,
+  Button,
+  CssBaseline,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+  TextField,
+  Typography,
 } from "@material-ui/core";
-import {useHistory} from "react-router";
-import {Appbar} from "../../Appbar/Appbar";
+import { useHistory } from "react-router";
+import { Appbar } from "../../Appbar/Appbar";
 import APIService from "../../../../src/utils/APIService";
-import {CATEGORIES} from "../../../utils/enums";
+import { CATEGORIES } from "../../../utils/enums";
 import Icon from "@mdi/react";
-import {mdiCashUsdOutline, mdiImageSizeSelectActual} from "@mdi/js";
+import { mdiCashUsdOutline, mdiImageSizeSelectActual } from "@mdi/js";
 import MuiAlert from "@material-ui/lab/Alert";
-import {useStyles} from "./styles";
+import { useStyles } from "./styles";
 
 const CATEGORIES_LIST = [
   { label: "Celulares", value: CATEGORIES.CELULARES },

@@ -2,20 +2,8 @@ import Typography from "@material-ui/core/Typography";
 import { ProductCard } from "../ProductCard/ProductCard";
 import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/styles";
 import APIService from "../../../utils/APIService";
-
-const useStyles = makeStyles(() => ({
-  rootDiv: {
-    margin: "24px",
-  },
-  title: {
-    marginBottom: "12px",
-  },
-  displayFlex: {
-    display: "flex",
-  },
-}));
+import { useStyles } from "./styles";
 
 export const ViewProducts = ({ title, products }) => {
   const [allProducts, setAllProducts] = useState([]);

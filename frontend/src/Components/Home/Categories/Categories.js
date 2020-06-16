@@ -12,25 +12,14 @@ import {
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import { CATEGORIES } from "../../../utils/enums";
+import { useStyles } from "./styles";
 
 export const Categories = ({ changeCategory }) => {
-  const iconLabel = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    color: "#fff",
-  };
+  const classes = useStyles();
 
   return (
-    <div
-      style={{
-        marginTop: "24px",
-        display: "flex",
-        justifyContent: "space-around",
-      }}
-    >
-      <div style={iconLabel}>
+    <div className={classes.rootDiv}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.CELULARES)}
           style={{ backgroundColor: "#fff" }}
@@ -39,7 +28,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Celulares</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.INFORMATICA)}
           style={{ backgroundColor: "#fff" }}
@@ -48,7 +37,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Informática</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.AUDIO_VIDEO)}
           style={{ backgroundColor: "#fff" }}
@@ -57,7 +46,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Áudio e Vídeo</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.VESTUARIO)}
           style={{ backgroundColor: "#fff" }}
@@ -66,7 +55,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Vestuário</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.ELETRODOMESTICOS)}
           style={{ backgroundColor: "#fff" }}
@@ -75,7 +64,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Eletrodomésticos</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.FERRAMENTAS)}
           style={{ backgroundColor: "#fff" }}
@@ -84,7 +73,7 @@ export const Categories = ({ changeCategory }) => {
         </IconButton>
         <Typography>Ferramentas</Typography>
       </div>
-      <div style={iconLabel}>
+      <div className={classes.iconLabel}>
         <IconButton
           onClick={() => changeCategory(CATEGORIES.LIVROS)}
           style={{ backgroundColor: "#fff" }}

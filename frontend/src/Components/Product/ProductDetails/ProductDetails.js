@@ -1,11 +1,18 @@
 import React from "react";
-import {Button, ButtonBase, Container, Divider, Grid, Typography,} from "@material-ui/core";
+import {
+  Button,
+  ButtonBase,
+  Container,
+  Divider,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 import ProductSpec from "../ProductSpec/ProductSpec";
 import SellerInfo from "../SellerInfo/SellerInfo";
 import Icon from "@mdi/react";
-import {mdiCart} from "@mdi/js";
-import {FILES_ROOT} from "../../../utils/apiPath";
-import {useStyles} from "./styles";
+import { mdiCart } from "@mdi/js";
+import { FILES_ROOT } from "../../../utils/apiPath";
+import { useStyles } from "./styles";
 
 export const ProductDetails = ({ data }) => {
   const classes = useStyles();

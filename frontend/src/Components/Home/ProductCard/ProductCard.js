@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -7,15 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router";
 import { FILES_ROOT } from "../../../utils/apiPath";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
+import { useStyles } from "./styles";
 
 export const ProductCard = ({
   data: {
@@ -27,6 +18,7 @@ export const ProductCard = ({
 }) => {
   const classes = useStyles();
   const history = useHistory();
+
   return (
     <Card className={classes.root} style={{ margin: "8px" }}>
       <CardActionArea

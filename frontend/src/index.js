@@ -7,7 +7,7 @@ import { Route, Router, Switch } from "react-router";
 import { createBrowserHistory } from "history";
 import { Login } from "./Components/Login/Login";
 import { ProductRegister } from "./Components/Product/ProductRegister/ProductRegister";
-import { RegisterUser } from "./Components/User/RegisterUser";
+import { RegisterUser } from "./Components/RegisterUser/RegisterUser";
 
 const history = createBrowserHistory();
 

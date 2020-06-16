@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Badge,
-  IconButton,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
+import { Badge, IconButton, Toolbar, Typography } from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { AppMenu } from "./AppMenu/AppMenu";
@@ -13,37 +7,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    color: "#000",
-  },
-  title: {
-    display: "none",
-    marginLeft: "12px",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-    color: "#000",
-  },
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      alignItems: "center",
-    },
-  },
-  link: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    textDecoration: "none",
-  },
-}));
+import { useStyles } from "./styles";
 
 export const Appbar = () => {
   const classes = useStyles();

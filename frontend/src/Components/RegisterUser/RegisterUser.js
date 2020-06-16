@@ -1,18 +1,15 @@
-import React, {useState} from "react";
-import {Button, CssBaseline, Grid, makeStyles, TextField, Typography,} from "@material-ui/core";
-import {Appbar} from "../Appbar/Appbar";
+import React, { useState } from "react";
+import {
+  Button,
+  CssBaseline,
+  Grid,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { Appbar } from "../Appbar/Appbar";
 import APIService from "../../utils/APIService";
-import {useHistory} from "react-router";
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(20),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-}));
+import { useHistory } from "react-router";
+import { useStyles } from "./styles";
 
 export const RegisterUser = () => {
   const [name, setName] = useState("");
