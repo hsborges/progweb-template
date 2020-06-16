@@ -15,7 +15,31 @@ export default class APIService {
   }
 
   static logout() {
-    const email = localStorage.getItem("email");
+    const { email } = JSON.parse(localStorage.getItem("userProfile"));
     return customFetch(apiPath().LOGOUT, "POST", { email });
+  }
+
+  static storeProduct(title, description, category, price, image) {
+    const { nickname } = JSON.parse(localStorage.getItem("userProfile"));
+    console.log(image); // TODO: Adicionar handler
+    const product = {
+      title: title,
+      description: description,
+      category: category,
+      price: price,
+      seller: nickname,
+    };
+
+    return customFetch(apiPath().PRODUCTS, "POST", product);
+  }
+
+  static registerUser(name, nickname, email, password) {
+    const user = {
+      name,
+      nickname,
+      email,
+      password,
+    };
+    return customFetch(apiPath().USERS, "POST", user);
   }
 }

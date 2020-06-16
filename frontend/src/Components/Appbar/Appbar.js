@@ -1,11 +1,18 @@
-import React, {useState} from "react";
-import {Badge, IconButton, makeStyles, Toolbar, Typography,} from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  Badge,
+  IconButton,
+  makeStyles,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import {AppMenu} from "./AppMenu/AppMenu";
+import { AppMenu } from "./AppMenu/AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -41,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 export const Appbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
+  const history = useHistory();
+  const logado = !!localStorage.getItem("token");
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -48,6 +57,14 @@ export const Appbar = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const registerProduct = () => {
+    if (logado) {
+      history.push("/produto/novo");
+    } else {
+      history.push("/login");
+    }
   };
 
   return (
@@ -62,7 +79,7 @@ export const Appbar = () => {
         elevation={0}
       >
         <Toolbar>
-          <Link to="/" component="a" className={classes.link}>
+          <Link to="/" className={classes.link}>
             <img
               alt="minha lojinha"
               src="/logo-only.png"
@@ -83,6 +100,7 @@ export const Appbar = () => {
                 }}
                 variant="contained"
                 disableElevation
+                onClick={registerProduct}
               >
                 <Typography
                   variant="body2"

@@ -1,13 +1,40 @@
 import React, { useState } from "react";
-import { TextField, Grid, Button } from "@material-ui/core";
+import {
+  TextField,
+  Grid,
+  Button,
+  makeStyles,
+  Typography,
+  CssBaseline,
+  Avatar,
+} from "@material-ui/core";
 import { Appbar } from "../Appbar/Appbar";
 import APIService from "../../utils/APIService";
 import { useHistory } from "react-router";
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(20),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+  },
+  form: {
+    width: "100%",
+    marginRight: "200px",
+    marginTop: theme.spacing(1),
+  },
+}));
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const classes = useStyles();
 
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
@@ -15,9 +42,9 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     APIService.login(email, password).then((response) => {
-      const { token, email } = response;
+      const { token, profile } = response;
       localStorage.setItem("token", token);
-      localStorage.setItem("email", email);
+      localStorage.setItem("userProfile", JSON.stringify(profile));
       history.push("/");
     });
   };
@@ -25,37 +52,62 @@ export const Login = () => {
   return (
     <>
       <Appbar />
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="center"
-        style={{ maxWidth: "500px" }}
-      >
-        <form style={{ width: "100%" }}>
-          <Grid item xs={12} style={{ marginBottom: "12px" }}>
-            <TextField
-              placeholder="Email"
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <img
+            alt="minha lojinha"
+            src="/logo-only.png"
+            style={{ maxWidth: "45px" }}
+          />
+        </Avatar>
+        <Typography variant="h5" align="center">
+          Fazer Login
+        </Typography>
+        <Grid style={{ maxWidth: "500px" }}>
+          <form className={classes.form}>
+            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+              <TextField
+                margin="normal"
+                required
+                autoComplete="email"
+                autoFocus
+                placeholder="Email"
+                fullWidth
+                variant="outlined"
+                value={email}
+                onChange={handleEmailChange}
+              />
+            </Grid>
+            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+              <TextField
+                margin="normal"
+                required
+                autoComplete="current-password"
+                placeholder="Senha"
+                fullWidth
+                variant="outlined"
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </Grid>
+            <Button
+              style={{
+                backgroundColor: "#e33b5d",
+              }}
+              type="submit"
               fullWidth
-              variant="outlined"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          </Grid>
-          <Grid item xs={12} style={{ marginBottom: "12px" }}>
-            <TextField
-              placeholder="Senha"
-              fullWidth
-              variant="outlined"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </Grid>
-          <Button type="submit" variant="contained" onClick={handleSubmit}>
-            Fazer login
-          </Button>
-        </form>
-      </Grid>
+              disableElevation
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+            >
+              Fazer login
+            </Button>
+          </form>
+        </Grid>
+      </div>
     </>
   );
 };

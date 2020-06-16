@@ -134,5 +134,3 @@ export const ProductDetails = ({ data }) => {
     </Container>
   );
 };
-
-export default ProductDetails;

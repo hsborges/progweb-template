@@ -7,6 +7,7 @@ import APIService from "../../../utils/APIService";
 export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const isMenuOpen = Boolean(anchorEl);
   const history = useHistory();
+  const logado = !!localStorage.getItem("token"); // pegar o token do localstore
 
   const logout = () => {
     APIService.logout().then(() => {
@@ -14,6 +15,15 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
       history.push("/");
       handleMenuClose();
     });
+  };
+
+  const logar = () => {
+    history.push("/login");
+  };
+
+  const cadastroUsuario = () => {
+    history.push("/cadastro");
+    handleMenuClose();
   };
 
   return (
@@ -26,8 +36,18 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
-      <MenuItem onClick={logout}>Sair</MenuItem>
+      {!logado && (
+        <div>
+          <MenuItem onClick={cadastroUsuario}>Criar conta</MenuItem>
+          <MenuItem onClick={logar}>Login</MenuItem>
+        </div>
+      )}
+      {logado && (
+        <div>
+          <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
+          <MenuItem onClick={logout}>Sair</MenuItem>
+        </div>
+      )}
     </Menu>
   );
 };

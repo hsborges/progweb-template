@@ -45,6 +45,30 @@ Para usar Minha Lojinha, siga os seguintes passos:
 * É possível utilizar a busca no site e navegar pelas categorias disponíveis.
 * É possível entrar em contato com um vendedor demonstrando interesse.
 
+## Changelog
+Até o momento é possível operar a API do backend com os seguintes métodos:
+- `GET` `/users/:nickname`: Retorna os dados do usuário correspondente ao `nickname`
+- `GET` `/products`: Retorna todos os produtos disponíveis
+- `GET` `/products/:id`: Retorna os dados do produto correspondente ao `id`
+- `POST` `/users`: Cria um novo usuário
+- `POST` `/products`: Cria um novo produto
+- `POST` `/login`: Faz o login de um usuário
+- `POST` `/logout`: Faz o logout de um usuário
+- `PUT` `/products/:id`: Atualiza o produto `id`
+- `PUT` `/user/:id`: Atualiza o usuário `id`
+- `DELETE` `/products/:id`: Remove o produto `id`
+
+No frontend é possível receber o token a partir da rota de login e operar as rotas protegidas (`WIP`).
+
+É possível navegar através das telas:
+- `/`: Página inicial do hotsite, com todos os produtos disponíveis através de categorias (`WIP`)
+- `/produtos/:id`: Página de detalhes de um produto `id` (`WIP`)
+- `/login`: Página de login (`WIP`)
+
+Obs.: `WIP` significa trabalho em progresso.
+
+Para mais detalhes veja `CHANGELOG.md`
+
 ## Contribuidores
 
 As seguintes pessoas contribuiram para este projeto:
