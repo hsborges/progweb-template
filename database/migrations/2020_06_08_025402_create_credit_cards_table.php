@@ -14,7 +14,6 @@ class CreateCreditCardsTable extends Migration
     public function up()
     {
         Schema::create('credit_cards', function (Blueprint $table) {
-            $table->bigIncrements('credit_card_id');
             $table->string('card_number');
             $table->bigInteger('payment_id')->unsigned();
             $table->integer('security_number');
