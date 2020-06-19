@@ -19,21 +19,19 @@ router.get('/about', (req, res) => {
         avatar: 'http://placebear.com/500/300'
     }]
 
-    res.render('pages/about', {
+    return res.render('pages/about', {
         usuarios: users
     })
 })
 
-
-
 router.get('/', auth, (req, res) => {
-    res.render('home.ejs');
+    return res.render('home.ejs');
 });
 
 router.get('/r/public/:id', auth, (req, res) => {
     try {
         rooms.check(req.params.id, req.session.user);
-        res.render('game.ejs');
+        return res.render('game.ejs');
     } catch (e) {
         if (e == "RoomDoesNotExistException") {
             res.status(404).render('error.ejs', {
