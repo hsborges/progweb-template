@@ -1,6 +1,6 @@
 
 const sqlite = require('sqlite-sync');
-sqlite.connect('./database/database.db3');
+sqlite.connect(__dirname + '/database.db3');
 
 
 const SQL_CREATE = `CREATE TABLE IF NOT EXISTS Users(
