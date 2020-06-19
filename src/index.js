@@ -1,66 +1,57 @@
-require('dotenv').config()
-
-const path = require('path');
 const express = require('express');
-const app = require('express')();
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
-const {ShipStruct} = require('./game/mapShips');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
+const bodyParser = require('body-parser');
+const config = require('./config/config');
+const path = require('path');
+const root = require('./routes/root');
+const routeLogin = require('./routes/login');
+const register = require('./routes/register');
 
-const PORT = process.env.PORT || '8080'
+const app = express();
+const server = require('http').createServer(app);
+const io = require('./events/socket')(server);
+const cookie = cookieParser(config.SECRET);
+const store = new expressSession.MemoryStore();
 
-let struct = new Map();
-
-function sink(ship, socket){
-  for(let i = 0; i < ship.length; i++){
-    socket.emit('sink', ship[i].position);
-  }
-}
-
-function verifyShips(id, socket){
-  let ship = struct.get(id).verifyShips()
-  if(ship){
-    sink(ship, socket);
-  }
-}
-
-app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+app.use(cookie);
+app.use(expressSession({
+    secret: config.SECRET,
+    name: config.KEY,
+    resave: true,
+    saveUninitialized: true,
+    store: store
+}));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.render('index', {title: 'Batalha Naval', score: 0})
-})
 
-/* Socket */
-io.on('connection', (socket) => {
-  let score = 0;
-  let multi = 1;
-  struct.set(socket.id, new ShipStruct());
-  console.log(`Usuário conectado: ${socket.id}`);
-  socket.on('click', (id) => {
-    if(struct.get(socket.id).shot(id)) {
-      score += multi++;
-      socket.emit('hit', id, score);
-      verifyShips(socket.id, socket);
-    } else {
-      multi = 1;
-      socket.emit('miss', id);
-    }
-    if(struct.get(socket.id).allDestroyed()){
-      socket.emit('won');
-      setTimeout(function(){
-        socket.disconnect();
-      }, 100);
-    }
-  });
-  socket.on('disconnect', ()=>{
-    console.log(`Usuário desconectado: ${socket.id}`);
-  });
+app.use('/login', routeLogin);
+app.use('/register', register);
+app.use('/', root);
+
+
+io.use((socket, next) => {
+    let data = socket.request;
+    cookie(data, {}, (err) => {
+        let sessionID = data.signedCookies[config.KEY];
+        store.get(sessionID, (err, session) => {
+            if (err || !session) {
+                return next(new Error('Acesso negado!'));
+            } else {
+                socket.handshake.session = session;
+                return next();
+            }
+        });
+    });
 });
 
-
-http.listen(PORT, () => {
-  console.log(`listening at http://localhost:${PORT}`);
-})
+server.listen(3000, () => {
+    console.log('Server rodando em http://localhost:3000');
+});
