@@ -1,9 +1,12 @@
 import customFetch from "./customFetch";
-import { apiPath } from "./apiPath";
+import {apiPath} from "./apiPath";
+import {CATEGORIES} from "./enums";
 
 export default class APIService {
-  static fetchAllProducts() {
-    return customFetch(apiPath().PRODUCTS);
+  static fetchAllProducts(category) {
+    return category === CATEGORIES.RECENTES
+      ? customFetch(apiPath().PRODUCTS)
+      : customFetch(apiPath().PRODUCTS, "GET", {}, null, category);
   }
 
   static fetchProduct(productId) {
@@ -27,7 +30,7 @@ export default class APIService {
       category: category,
       price: price,
       seller: nickname,
-      image: image
+      image: image,
     };
 
     return customFetch(apiPath().PRODUCTS, "POST", product);

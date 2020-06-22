@@ -2,7 +2,8 @@ export default async function customFetch(
   path,
   method = "GET",
   data = {},
-  formData = null
+  formData = null,
+  params = null
 ) {
   const headers = new Headers({
     Accept: "application/json",
@@ -22,7 +23,11 @@ export default async function customFetch(
   }
 
   const token = localStorage.getItem("token");
-  const queryParams = `?token=${token}`;
+  let queryParams = `?token=${token}`;
+
+  if (params) {
+    queryParams = queryParams.concat(`&${params}`);
+  }
 
   const res = await fetch(path + queryParams, init);
 
@@ -32,11 +37,11 @@ export default async function customFetch(
       return Promise.reject(errors);
     }
     if (res.status === 401 || res.status === 403) {
-      // window.location.href = '/';
+      window.location.href = "/erro";
       return Promise.reject();
     }
     if (res.status === 404) {
-      // window.location.href = '/notfound';
+      window.location.href = "/erro";
       return Promise.reject(res.status);
     }
     if (res.status === 405) {

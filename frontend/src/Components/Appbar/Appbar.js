@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { Badge, IconButton, Toolbar, Typography } from "@material-ui/core";
-import MailIcon from "@material-ui/icons/Mail";
+import React, {useState} from "react";
+import {IconButton, Toolbar, Typography} from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import { AppMenu } from "./AppMenu/AppMenu";
+import {AppMenu} from "./AppMenu/AppMenu";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
-import { useStyles } from "./styles";
+import {Link} from "react-router-dom";
+import {useHistory} from "react-router";
+import {useStyles} from "./styles";
 
 export const Appbar = () => {
   const classes = useStyles();
@@ -79,15 +78,6 @@ export const Appbar = () => {
                 </Typography>
               </Button>
             </div>
-            <IconButton
-              aria-label="show 4 new mails"
-              color="inherit"
-              style={{ color: "#000" }}
-            >
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               edge="end"
               aria-label="account of current user"

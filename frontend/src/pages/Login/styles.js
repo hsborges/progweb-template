@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
   paper: {
@@ -7,5 +7,13 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+  },
+  form: {
+    width: "100%",
+    marginRight: "200px",
+    marginTop: theme.spacing(1),
   },
 }));

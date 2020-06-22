@@ -37,7 +37,9 @@
       "last 1 safari version"
     ]
   },
+  "plugins": ["@babel/plugin-proposal-optional-chaining"],
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.10.3",
     "prettier": "^2.0.4"
   }
 }
