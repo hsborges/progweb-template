@@ -1,11 +1,11 @@
-import React, {useState} from "react";
-import {TextField} from "@material-ui/core";
-import {mdiMagnify} from "@mdi/js";
+import React, { useState } from "react";
+import { TextField } from "@material-ui/core";
+import { mdiMagnify } from "@mdi/js";
 import Icon from "@mdi/react";
-import {Categories} from "./Categories/Categories";
-import {CATEGORIES} from "../../utils/enums";
-import {ViewProducts} from "./ViewProduct/ViewProducts";
-import {inputStyles} from "./styles";
+import { Categories } from "./Categories/Categories";
+import { CATEGORIES } from "../../utils/enums";
+import { ViewProducts } from "./ViewProduct/ViewProducts";
+import { inputStyles } from "./styles";
 import IconButton from "@material-ui/core/IconButton";
 
 export const Home = ({

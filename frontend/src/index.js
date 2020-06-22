@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import AppHome from "./pages/AppHome/AppHome";
 import Products from "./pages/Product/Product";
 import "./root.css";
-import {Route, Router, Switch} from "react-router";
-import {createBrowserHistory} from "history";
-import {Login} from "./pages/Login/Login";
-import {ProductRegister} from "./pages/ProductRegister/ProductRegister";
-import {RegisterUser} from "./pages/RegisterUser/RegisterUser";
-import {Error} from "./pages/Error/Error";
+import { Route, Router, Switch } from "react-router";
+import { createBrowserHistory } from "history";
+import { Login } from "./pages/Login/Login";
+import { ProductRegister } from "./pages/ProductRegister/ProductRegister";
+import { RegisterUser } from "./pages/RegisterUser/RegisterUser";
+import { Error } from "./pages/Error/Error";
 
 const history = createBrowserHistory();
 

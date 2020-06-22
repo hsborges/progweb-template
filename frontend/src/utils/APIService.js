@@ -1,6 +1,6 @@
 import customFetch from "./customFetch";
-import {apiPath} from "./apiPath";
-import {CATEGORIES} from "./enums";
+import { apiPath } from "./apiPath";
+import { CATEGORIES } from "./enums";
 
 export default class APIService {
   static fetchAllProducts(category) {

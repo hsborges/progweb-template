@@ -1,19 +1,19 @@
 import IconButton from "@material-ui/core/IconButton";
 import Icon from "@mdi/react";
 import {
-    mdiBookshelf,
-    mdiCellphoneIphone,
-    mdiHammerScrewdriver,
-    mdiHanger,
-    mdiLaptop,
-    mdiTelevision,
-    mdiWashingMachine,
+  mdiBookshelf,
+  mdiCellphoneIphone,
+  mdiHammerScrewdriver,
+  mdiHanger,
+  mdiLaptop,
+  mdiTelevision,
+  mdiWashingMachine,
 } from "@mdi/js";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import {CATEGORIES} from "../../../utils/enums";
-import {useStyles} from "./styles";
-import {useHistory} from "react-router";
+import { CATEGORIES } from "../../../utils/enums";
+import { useStyles } from "./styles";
+import { useHistory } from "react-router";
 
 export const Categories = () => {
   const classes = useStyles();

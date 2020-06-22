@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
-import {CircularProgress, Grid, Typography} from "@material-ui/core";
-import {ProductCard} from "../ProductCard/ProductCard";
+import React, { useEffect, useState } from "react";
+import { CircularProgress, Grid, Typography } from "@material-ui/core";
+import { ProductCard } from "../ProductCard/ProductCard";
 import APIService from "../../../utils/APIService";
-import {useStyles} from "./styles";
-import {CATEGORIES} from "../../../utils/enums";
+import { useStyles } from "./styles";
+import { CATEGORIES } from "../../../utils/enums";
 
 const title = {
   [CATEGORIES.RECENTES]: "Anúncios recentes",
