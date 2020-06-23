@@ -23,13 +23,14 @@ export default class APIService {
   }
 
   static storeProduct(title, description, category, price, image) {
-    const { nickname } = JSON.parse(localStorage.getItem("userProfile"));
+    const { nickname, phone } = JSON.parse(localStorage.getItem("userProfile"));
     const product = {
       title: title,
       description: description,
       category: category,
       price: price,
       seller: nickname,
+      sellerPhone: phone,
       image: image,
     };
 
@@ -42,11 +43,12 @@ export default class APIService {
     return customFetch(apiPath().IMAGES, "POST", {}, blob);
   }
 
-  static registerUser(name, nickname, email, password) {
+  static registerUser(name, nickname, email, phone, password) {
     const user = {
       name,
       nickname,
       email,
+      phone,
       password,
     };
     return customFetch(apiPath().USERS, "POST", user);

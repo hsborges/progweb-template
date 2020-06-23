@@ -10,11 +10,17 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const logado = !!localStorage.getItem("token"); // pegar o token do localstore
 
   const logout = () => {
-    APIService.logout().then(() => {
-      localStorage.clear();
-      handleMenuClose();
-      history.push("/");
-    });
+    APIService.logout()
+      .then(() => {
+        localStorage.clear();
+        handleMenuClose();
+        history.push("/");
+      })
+      .catch(() => {
+        localStorage.clear();
+        handleMenuClose();
+        history.push("/");
+      });
   };
 
   const logar = () => {

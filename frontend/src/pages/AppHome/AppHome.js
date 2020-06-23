@@ -18,7 +18,7 @@ const AppHome = ({ match }) => {
       <CssBaseline />
       <Appbar />
       <div>
-        <Home category={match?.params?.category} busca={match?.params?.busca} />
+        <Home category={match?.params?.category} />
       </div>
     </div>
   );

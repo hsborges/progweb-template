@@ -10,7 +10,7 @@ import {
 import ProductSpec from "../ProductSpec/ProductSpec";
 import SellerInfo from "../SellerInfo/SellerInfo";
 import Icon from "@mdi/react";
-import { mdiCart } from "@mdi/js";
+import { mdiWhatsapp } from "@mdi/js";
 import { FILES_ROOT } from "../../utils/apiPath";
 import { useStyles } from "./styles";
 
@@ -74,11 +74,18 @@ export const ProductDetails = ({ data }) => {
                 <Grid item style={{ marginTop: "12px" }}>
                   <Button
                     variant="contained"
-                    color="white"
-                    className={classes.button}
-                    startIcon={<Icon path={mdiCart} size={1.5} />}
+                    color="primary"
+                    component="a"
+                    target="_blank"
+                    href={
+                      data?.sellerPhone &&
+                      `https://api.whatsapp.com/send?phone=${data.sellerPhone}&text=Olá, tenho interesse no produto ${data.title}`
+                    }
+                    style={{ backgroundColor: "#e33b5d" }}
+                    disableElevation
+                    startIcon={<Icon path={mdiWhatsapp} size={1.5} />}
                   >
-                    Comprar
+                    Tenho Interesse
                   </Button>
                 </Grid>
               </Grid>

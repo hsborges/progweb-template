@@ -42,6 +42,7 @@ module.exports = {
 
       return res.send({ message: "Image removed" });
     } catch (e) {
+      console.log(e);
       return res.status(500).send(e);
     }
   },
@@ -64,6 +65,7 @@ module.exports = {
           fileName: image.fileName,
         });
       } catch (e) {
+        console.log(e);
         return res.status(500).json(e);
       }
     });

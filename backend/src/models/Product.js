@@ -16,9 +16,13 @@ const ProductSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   seller: {
+    type: String,
+    required: true,
+  },
+  sellerPhone: {
     type: String,
     required: true,
   },
@@ -38,8 +42,8 @@ const ProductSchema = new mongoose.Schema({
     fileName: {
       type: String,
       required: true,
-    }
-  }
+    },
+  },
 });
 
 ProductSchema.plugin(mongoosePaginate);

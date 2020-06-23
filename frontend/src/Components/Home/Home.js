@@ -7,14 +7,18 @@ import { CATEGORIES } from "../../utils/enums";
 import { ViewProducts } from "./ViewProduct/ViewProducts";
 import { inputStyles } from "./styles";
 import IconButton from "@material-ui/core/IconButton";
+import { useHistory } from "react-router";
 
-export const Home = ({
-  category = CATEGORIES.RECENTES,
-  busca: search = "",
-}) => {
+export const Home = ({ category = CATEGORIES.RECENTES }) => {
   const [busca, setBusca] = useState("");
-  const [isBusca, setIsBusca] = useState(false);
+  const isBusca = window.location.pathname.includes("busca");
+  const history = useHistory();
   const inputClasses = inputStyles();
+
+  const handleSearch = () => {
+    if (busca === "") return;
+    history.push(`/busca?termo=${busca}`);
+  };
 
   const handleInput = (e) => setBusca(e.target.value);
 
@@ -29,7 +33,7 @@ export const Home = ({
           fullWidth
           InputProps={{
             endAdornment: (
-              <IconButton onClick={() => setIsBusca(true)}>
+              <IconButton onClick={handleSearch}>
                 <Icon path={mdiMagnify} size={1} />
               </IconButton>
             ),
@@ -41,7 +45,7 @@ export const Home = ({
       {!isBusca ? (
         <ViewProducts category={category} />
       ) : (
-        <ViewProducts category={busca} isBusca />
+        <ViewProducts isBusca />
       )}
     </div>
   );

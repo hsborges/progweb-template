@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  phone: {
+    type: String,
+    required: true,
+  },
   lastToken: {
     type: String,
     select: false,

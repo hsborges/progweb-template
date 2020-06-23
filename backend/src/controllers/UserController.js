@@ -54,6 +54,7 @@ module.exports = {
               name: user.name,
               email: user.email,
               nickname: user.nickname,
+              phone: user.phone,
             },
           });
         }

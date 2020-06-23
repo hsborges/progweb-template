@@ -21,22 +21,24 @@ export const ViewProducts = ({ category, isBusca = false }) => {
   const [loading, setLoading] = useState(true);
   const classes = useStyles();
 
+  const query = new URLSearchParams(window.location.search).get("termo");
+
   useEffect(() => {
     setLoading(true);
     const categoryParam =
       category === CATEGORIES.RECENTES ? `` : `category=${category}`;
-    const param = isBusca ? `search=${category}` : categoryParam;
-    console.log(isBusca);
+    const param = isBusca ? `search=${query}` : categoryParam;
+
     APIService.fetchAllProducts(param).then((products) => {
       setAllProducts(products.docs);
       setLoading(false);
     });
-  }, [category, isBusca]);
+  }, [category, isBusca, query]);
 
   return (
     <div className={classes.rootDiv}>
       <Typography className={classes.title} variant="h5">
-        {!isBusca ? title[category] : `Resultados para "${category}"`}
+        {!isBusca ? title[category] : `Resultados para "${query}"`}
       </Typography>
       <Grid container className={classes.displayFlex}>
         {!loading ? (
@@ -63,3 +65,4 @@ export const ViewProducts = ({ category, isBusca = false }) => {
     </div>
   );
 };
+

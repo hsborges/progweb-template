@@ -14,6 +14,7 @@ const isAuthenticated = async (req, res, next) => {
   if (token === user.lastToken) {
     next();
   } else {
+    console.log(`Forbidden! User: ${user.name} | Token: ${token}`);
     res.status(403).json({
       error: "You shall not pass!",
     });
