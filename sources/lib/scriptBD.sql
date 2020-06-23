@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Jun-2020 às 04:17
+-- Tempo de geração: 23-Jun-2020 às 23:05
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.5
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `photoroom`
 --
+CREATE DATABASE IF NOT EXISTS `photoroom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `photoroom`;
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,18 @@ CREATE TABLE `usuario` (
   `endfotoperfil` varchar(45) DEFAULT NULL,
   `idalbumprincipal` varchar(45) DEFAULT NULL,
   `idalbumfavorito` varchar(45) NOT NULL,
-  `dataNascimento` varchar(45) NOT NULL
+  `dataNascimento` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario_album`
+--
+
+CREATE TABLE `usuario_album` (
+  `idusuario` int(11) NOT NULL,
+  `idalbum` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -117,6 +130,13 @@ ALTER TABLE `midia_album`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idusuario`);
+
+--
+-- Índices para tabela `usuario_album`
+--
+ALTER TABLE `usuario_album`
+  ADD KEY `idusuario` (`idusuario`),
+  ADD KEY `idalbum` (`idalbum`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -162,6 +182,13 @@ ALTER TABLE `midia`
 ALTER TABLE `midia_album`
   ADD CONSTRAINT `fk_album` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_midia` FOREIGN KEY (`idmidia`) REFERENCES `midia` (`idmidia`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `usuario_album`
+--
+ALTER TABLE `usuario_album`
+  ADD CONSTRAINT `usuario_album_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`),
+  ADD CONSTRAINT `usuario_album_ibfk_2` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
