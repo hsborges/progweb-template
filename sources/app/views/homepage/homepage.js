@@ -142,3 +142,16 @@ function expandirImagem(nomeImagem){
 function minimizar(){
     document.getElementById('expansao').remove();
 }
+
+function exbirCompartilharAlbum($idCodigoAlbum){
+    novohtml = "    <div class=\"CompartilharAlbum\" id=\"CompartilharAlbum\">\n" +
+        "        <h1>Compartilhe usando o código:</h1>\n" +
+        "        <h2>"+$idCodigoAlbum+"</h2>\n" +
+        "        <button id=\"btnupload\" onclick=\"minimizarCompartilhar()\">Fechar</button>\n" +
+        "    </div>"
+    document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
+}
+
+function minimizarCompartilhar() {
+    document.getElementById('CompartilharAlbum').remove();
+}

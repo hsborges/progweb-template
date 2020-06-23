@@ -75,7 +75,7 @@ require_once 'app/controllers/MidiaController.php';
     $posicao = 0;
     foreach ($albunsUsuario as $album) {
         echo "<div class=\"Albuns\">";
-        echo "<p><strong>Descrição: </strong>" . $album['descricao'] . "</p>";
+        echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></button></span></div>";
         echo "<div class=\"imagens\">";
         echo "<div class=\"caixadeimagens\">";
         $imagens = MidiaController::buscarImagens($album['idalbum']);

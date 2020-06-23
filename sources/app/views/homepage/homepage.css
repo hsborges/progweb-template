@@ -22,7 +22,7 @@ body {
 }
 
 input[type=search] {
-    height: 40px;
+    height: 20px;
     border: none;
     outline: none;
     position: relative;
@@ -33,6 +33,10 @@ input[type=search] {
     border-radius: 25px;
     width: 25%;
     margin-right: -8px;
+}
+
+input #pesquisa{
+    padding: 1px;
 }
 
 .btnPesquisa {
@@ -93,8 +97,10 @@ article .menu-principal {
     position: inherit;
     background-color: black;
     color: white;
-    padding: 5px;
+    padding: 10px;
     border: none;
+    margin: 0.1px;
+    font-size: 14px;
 }
 
 article .menu-principal:focus {
@@ -368,6 +374,31 @@ form {
     border: solid 1px black;
 }
 
+article .CompartilharAlbum{
+    padding: 20px;
+    margin: unset;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    float: center;
+    background-color: white;
+    box-shadow: 0px 0px 1em #666;
+    -webkit-box-shadow: 0px 0px 1em #666;
+    -moz-box-shadow: 0px 0px 1em #666;
+}
+
+article .CompartilharAlbum h1{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+article .CompartilharAlbum h2{
+    text-align: center;
+    font-size: 20px ;
+    font-weight: normal;
+}
+
 /* Definições para expansao */
 #videoExpansao{
     align-content: center;
@@ -403,6 +434,32 @@ form {
     margin-left: auto;
     margin-right: auto;
     width: 30px;
+}
+/*--------------------------------------------------------------------------------------------------*/
+.divDescricao{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
+.Descricao{
+    text-align: center;
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 15px;
+    display: inline-flex;
+}
+.textoDescricao{
+    margin-top: 5px;
+    margin-right: 2px;
+    vertical-align: center;
+}
+
+.imgBtnCompartilhar{
+    position: inherit;
+    width: 30px;
+    height: 30px;
 }
 
 #btnMinimizar{
