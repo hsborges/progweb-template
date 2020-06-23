@@ -3,15 +3,59 @@
 
     class AlbumDAO{
         public static function create(Album $album){
-            $sql = 'INSERT INTO Album (nomealbum, datacriacao, usuario_idusuario, descricao, codCompartilhamento) VALUES(?, current_timestamp, ?, ?, ?)';
+            $sql = 'INSERT INTO Album (nomealbum, datacriacao, descricao, codCompartilhamento, usuario_idusuario) VALUES(?, current_timestamp, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$album->getNome());
-            $stmt->bindValue(2,$album->getDono());
-            $stmt->bindValue(3,$album->getDescricao());
-            $stmt->bindValue(4,$album->getCodCompartilhamento());
+            $stmt->bindValue(2,$album->getDescricao());
+            $stmt->bindValue(3,$album->getCodCompartilhamento());
+            $stmt->bindValue(4,$album->getDono());
 
             $stmt->execute();
+        }
+
+        public static function cadastrarEmUsuario($idUsuario, $idAlbum){
+            $sql = 'INSERT INTO usuario_album VALUES(?, ?)';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idUsuario);
+            $stmt->bindValue(2, $idAlbum);
+
+            $stmt->execute();
+        }
+
+        public static function readByCodComp($codigocompAlbum){
+            $sql = 'SELECT * FROM album WHERE codCompartilhamento = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $codigocompAlbum);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return []; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function readByIdDonoAndNome($nome, $idusuario){
+            $sql = 'SELECT * FROM album WHERE nomealbum = ? AND usuario_idusuario = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $nome);
+            $stmt->bindValue(2, $idusuario);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return []; // retorna um array vazio caso não tenha nenhum item
+            }
         }
 
         public function read(){
@@ -29,7 +73,7 @@
 
 
         public static function readById($idUsuario){
-            $sql = 'SELECT * FROM album WHERE usuario_idusuario = ?';
+            $sql = 'SELECT * FROM album as a JOIN usuario_album as ua ON a.idalbum = ua.idalbum WHERE ua.idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1, $idUsuario);
@@ -57,7 +101,7 @@
         }
 
         public function delete($idalbum){
-            $sql = 'SELECT * FROM midia WHERE idalbum = ?';
+            $sql = 'SELECT * FROM album as a JOIN usuario_album as ua ON a.idalbum = ua.idalbum WHERE ua.idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->bindValue(1, $idalbum);
             $stmt->execute();

@@ -336,6 +336,36 @@ form {
 }
 
 /*estilo do form de cadastro de albuns */
+.formAlbumComCodigo{
+    margin-top: 15px;
+    text-align: center;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.formAlbumComCodigo input{
+    width: 150px;
+    padding: 4px;
+    margin: 2px;
+    border: solid 1px black;
+}
+.formAlbumComCodigo input[type = submit]{
+    font-family: 'Roboto', sans-serif;
+    width: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+}
+
+.formAlbumComCodigo input[type = submit]:hover{
+    background-color: #ff00b7;
+}
+.formAlbumComCodigo input[type = submit]:focus{
+    background-color: #ff00b7;
+}
+
 .formCadastrarAlbum{
     text-align: center;
     padding: 2px;

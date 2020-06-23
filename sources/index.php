@@ -62,6 +62,8 @@ switch ($_GET['action']) {
     case 'criaralbum':
         $albumController->criarAlbum($_POST['nome_album'], $_POST['descricao_album']);
         break;
+    case 'addalbumcomcodigo':
+        $albumController->registrarAlbumComCodigo($_POST['codigocomp_album']);
     default:
         $controller->login();
 }

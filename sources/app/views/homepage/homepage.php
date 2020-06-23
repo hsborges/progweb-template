@@ -140,6 +140,12 @@ require_once 'app/controllers/MidiaController.php';
     </script>
 
     <div class="Albuns">
+        <form class="formAlbumComCodigo" id="formAlbumComCodigo" action="index.php?action=addalbumcomcodigo" method="post">
+            <label for="codigocomp_album"></label>
+            <input id="codigocomp_album" name="codigocomp_album" required="required" type="text" placeholder="Inserir com código">
+            <input type="submit" value="Validar Código">
+        </form>
+
         <form class="formCadastrarAlbum" id="formCadastrarAlbum" action="index.php?action=criaralbum" method="post">
             <?php
             if (isset($_SESSION['cadastroAlbumErro'])) {
