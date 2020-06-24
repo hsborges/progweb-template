@@ -50,12 +50,19 @@ export const RegisterUser = () => {
       .then(() => {
         setAlert({
           type: "success",
-          message: "Cadastrado com sucesso!",
+          message: "Cadastrado com sucesso! Redirecionando...",
         });
         setOpen(true);
         setTimeout(() => history.push("/login"), 3000);
       })
-      .catch((error) => console.log(error)); // TODO: Adicionar tratativa
+      .catch((error) => {
+        console.log(error);
+        setAlert({
+          type: "error",
+          message: error.message,
+        });
+        setOpen(true);
+      });
   };
 
   return (
@@ -67,19 +74,15 @@ export const RegisterUser = () => {
           container
           alignItems="center"
           justify="center"
-          style={{ maxWidth: "500px" }}
+          className={classes.gridMax}
         >
-          <Grid
-            item
-            xs={12}
-            style={{ marginBottom: "12px", justifyContent: "center" }}
-          >
+          <Grid item xs={12} className={classes.marginCenter}>
             <Typography variant="h5" align="center">
               Fazer Cadastro
             </Typography>
           </Grid>
-          <form style={{ width: "100%" }}>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+          <form className={classes.formWidth}>
+            <Grid item xs={12} className={classes.marginBottom}>
               <TextField
                 label="Nome Completo"
                 name="full-name"
@@ -90,7 +93,7 @@ export const RegisterUser = () => {
                 onChange={handleNameChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.marginBottom}>
               <TextField
                 label="Nickname"
                 fullWidth
@@ -101,7 +104,7 @@ export const RegisterUser = () => {
                 onChange={handleNickNameChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.marginBottom}>
               <TextField
                 required
                 label="Email"
@@ -112,7 +115,7 @@ export const RegisterUser = () => {
                 onChange={handleEmailChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.marginBottom}>
               <TextField
                 required
                 label="Telefone com DDD"
@@ -124,7 +127,7 @@ export const RegisterUser = () => {
                 onChange={handlePhoneChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.marginBottom}>
               <TextField
                 required
                 label="Senha"
@@ -143,9 +146,7 @@ export const RegisterUser = () => {
               onClick={handleSubmit}
               fullWidth
               disableElevation
-              style={{
-                backgroundColor: "#e33b5d",
-              }}
+              className={classes.buttonBg}
             >
               Fazer Cadastro
             </Button>

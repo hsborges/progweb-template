@@ -9,6 +9,8 @@ import { inputStyles } from "./styles";
 import IconButton from "@material-ui/core/IconButton";
 import { useHistory } from "react-router";
 
+const style = { backgroundColor: "#e33b5d", padding: "24px" };
+
 export const Home = ({ category = CATEGORIES.RECENTES }) => {
   const [busca, setBusca] = useState("");
   const isBusca = window.location.pathname.includes("busca");
@@ -24,7 +26,7 @@ export const Home = ({ category = CATEGORIES.RECENTES }) => {
 
   return (
     <div>
-      <div style={{ backgroundColor: "#e33b5d", padding: "24px" }}>
+      <div style={style}>
         <TextField
           variant="outlined"
           placeholder="Buscar nome do produto"

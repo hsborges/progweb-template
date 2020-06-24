@@ -9,6 +9,14 @@ import { mdiCheck, mdiClose, mdiPencil } from "@mdi/js";
 import React, { useState } from "react";
 import APIService from "../../utils/APIService";
 
+const containerRoot = {
+  marginBottom: "8px",
+  marginTop: "12px",
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+};
+
 export const UserTitle = ({ editable = false, name }) => {
   const [edicaoNome, setEdicaoNome] = useState(false);
   const [nome, setNome] = useState(name);
@@ -28,14 +36,7 @@ export const UserTitle = ({ editable = false, name }) => {
   };
 
   return (
-    <Container
-      style={{
-        margin: "12px 0 8px 0",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-      }}
-    >
+    <Container style={containerRoot}>
       {!edicaoNome ? (
         <Typography gutterBottom variant="h5">
           {nome}

@@ -32,7 +32,7 @@ const CATEGORIES_LIST = [
 
 export const ProductRegister = () => {
   const history = useHistory();
-  const logado = !!localStorage.getItem("token"); // pegar o token do localstore
+  const logado = !!localStorage.getItem("token");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -75,17 +75,22 @@ export const ProductRegister = () => {
         uploadImage
       );
 
-      setAlert({ type: "success", message: "Anúncio Cadastrado com sucesso!" });
+      setAlert({
+        type: "success",
+        message: "Anúncio Cadastrado com sucesso! Redirecionando...",
+      });
       setOpen(true);
 
-      setTimeout(() => history.push("/"), 3000);
+      setTimeout(() => history.push("/conta"), 3000);
     } catch (e) {
       console.log(e);
+      setAlert({ type: "error", message: e.message });
+      setOpen(true);
     }
   };
 
   if (!logado) {
-    window.location.href = "/erro";
+    window.location.href = "/login";
   }
 
   return (
@@ -93,14 +98,10 @@ export const ProductRegister = () => {
       <Appbar />
       <CssBaseline />
       <div className={classes.paper}>
-        <Grid
-          container
-          alignItems="center"
-          style={{ maxWidth: "500px", justifyContent: "center" }}
-        >
+        <Grid container alignItems="center" className={classes.gridCenter}>
           <Typography variant="h5">Cadastrar Anúncio</Typography>
-          <form style={{ width: "100%", padding: "3px" }}>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+          <form className={classes.formWidth}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <TextField
                 label="Titulo"
                 name="title"
@@ -111,7 +112,7 @@ export const ProductRegister = () => {
                 onChange={handleTitleChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <TextField
                 fullWidth
                 multiline
@@ -124,7 +125,7 @@ export const ProductRegister = () => {
                 onChange={handleDescriptionChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <FormControl
                 variant="outlined"
                 fullWidth
@@ -148,7 +149,7 @@ export const ProductRegister = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <TextField
                 label="Preço"
                 name="price"
@@ -161,7 +162,7 @@ export const ProductRegister = () => {
                 InputProps={{
                   startAdornment: (
                     <Icon
-                      style={{ marginRight: "8px" }}
+                      className={classes.iconMargin}
                       path={mdiCashUsdOutline}
                       size={1}
                       color="#a0a0a0"
@@ -170,16 +171,7 @@ export const ProductRegister = () => {
                 }}
               />
             </Grid>
-            <Grid
-              item
-              xs={12}
-              style={{
-                marginBottom: "12px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+            <Grid item xs={12} className={classes.gridBetween}>
               <TextField
                 style={{ width: "70%" }}
                 disabled
@@ -190,7 +182,7 @@ export const ProductRegister = () => {
                 InputProps={{
                   startAdornment: (
                     <Icon
-                      style={{ marginRight: "8px" }}
+                      className={classes.iconMargin}
                       path={mdiImageSizeSelectActual}
                       size={1}
                       color="#a0a0a0"
@@ -223,11 +215,7 @@ export const ProductRegister = () => {
               type="submit"
               variant="contained"
               color="primary"
-              style={{
-                backgroundColor: "#e33b5d",
-                marginTop: "12px",
-                height: "40px",
-              }}
+              className={classes.submitButton}
               onClick={handleSubmit}
               disableElevation
               fullWidth

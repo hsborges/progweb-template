@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import AppHome from "./pages/AppHome/AppHome";
 import Products from "./pages/Product/Product";
 import "./root.css";
-import { Redirect, Route, Router, Switch } from "react-router";
+import { Route, Router, Switch } from "react-router";
 import { createBrowserHistory } from "history";
 import { Login } from "./pages/Login/Login";
 import { ProductRegister } from "./pages/ProductRegister/ProductRegister";
@@ -27,7 +27,6 @@ ReactDOM.render(
     <Route path="/cadastro" component={RegisterUser} exact={true} />
     <Route path="/busca" component={AppHome} exact={true} />
     <Route path="/erro" component={Error} exact={true} />
-    <Redirect to="/erro" />
   </Router>,
   document.getElementById("root")
 );

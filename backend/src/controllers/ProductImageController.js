@@ -40,17 +40,19 @@ module.exports = {
       await fs.remove(`${FILE_PATH}/${image.fileName}`);
       await image.remove();
 
-      return res.send({ message: "Image removed" });
+      return res.send({ success: true, message: "Imagem removida" });
     } catch (e) {
       console.log(e);
-      return res.status(500).send(e);
+      return res
+        .status(500)
+        .send({ success: false, message: "Erro ao excluir imagem" });
     }
   },
 
   async upload(req, res) {
     upload(req, res, async (err) => {
       if (err || err instanceof multer.MulterError) {
-        return res.status(500).json({ error: err });
+        return res.status(500).json({ success: false, message: err });
       }
 
       try {
@@ -66,7 +68,9 @@ module.exports = {
         });
       } catch (e) {
         console.log(e);
-        return res.status(500).json(e);
+        return res
+          .status(500)
+          .json({ success: false, message: "Erro ao fazer upload da imagem" });
       }
     });
   },

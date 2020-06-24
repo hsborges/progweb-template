@@ -29,4 +29,20 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textDecoration: "none",
   },
+  appBar: {
+    margin: "0px",
+    backgroundColor: "#fff",
+    borderBottom: "1px solid #e8e8e8",
+  },
+  registerButton: {
+    width: "115px",
+    borderRadius: "50px",
+    backgroundColor: "#234099",
+  },
+  productButton: {
+    fontWeight: "500",
+    color: "#fff",
+    fontSize: "16px",
+    textTransform: "capitalize",
+  },
 }));

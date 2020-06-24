@@ -32,15 +32,7 @@ export const Appbar = () => {
 
   return (
     <>
-      <AppBar
-        position="static"
-        style={{
-          margin: "0px",
-          backgroundColor: "#fff",
-          borderBottom: "1px solid #e8e8e8",
-        }}
-        elevation={0}
-      >
+      <AppBar position="static" className={classes.appBar} elevation={0}>
         <Toolbar>
           <Link to="/" className={classes.link}>
             <img
@@ -56,24 +48,12 @@ export const Appbar = () => {
           <div className={classes.sectionDesktop}>
             <div style={{ padding: "15px" }}>
               <Button
-                style={{
-                  width: "115px",
-                  borderRadius: "50px",
-                  backgroundColor: "#234099",
-                }}
+                className={classes.registerButton}
                 variant="contained"
                 disableElevation
                 onClick={registerProduct}
               >
-                <Typography
-                  variant="body2"
-                  style={{
-                    fontWeight: "500",
-                    color: "#fff",
-                    fontSize: "16px",
-                    textTransform: "capitalize",
-                  }}
-                >
+                <Typography variant="body2" className={classes.productButton}>
                   Anunciar
                 </Typography>
               </Button>

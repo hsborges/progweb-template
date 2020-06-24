@@ -10,9 +10,18 @@ module.exports = {
         "-password"
       );
 
-      return res.json(user);
+      if (user) {
+        return res.json(user);
+      }
+
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao buscar usuário" });
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao buscar usuário" });
     }
   },
 
@@ -22,9 +31,16 @@ module.exports = {
         new: true,
       });
 
-      return res.json({ message: "User updated!", userId: user.id });
+      return res.json({
+        success: true,
+        message: "Usuário atualizado",
+        userId: user.id,
+      });
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao atualizar usuário" });
     }
   },
 
@@ -32,9 +48,16 @@ module.exports = {
     try {
       const user = await User.create(req.body);
 
-      return res.json({ message: "User created!", userId: user.id });
+      return res.json({
+        success: true,
+        message: "Usuário criado",
+        userId: user.id,
+      });
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao criar usuário" });
     }
   },
 
@@ -59,27 +82,42 @@ module.exports = {
           });
         }
 
-        return res.status(500).json({ error: "Error saving token" });
+        return res
+          .status(500)
+          .json({ success: false, message: "Erro ao gerar token" });
       }
 
-      return res.json({ error: "Invalid password" }); // TODO: Devo retornar 403?
+      return res
+        .status(403)
+        .json({ success: false, message: "Senha inválida" });
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Email ou senha incorreta" });
     }
   },
 
   async logout(req, res) {
     try {
       const user = await User.findOne({ email: req.body.email });
-      const tokenUpdate = user.update({ lastToken: null });
+      const tokenUpdate = await user.update({ lastToken: "" });
 
       if (tokenUpdate.ok) {
-        return res.json({ message: "Logout successful" });
+        return res.json({
+          success: true,
+          message: "Logout efetuado com sucesso",
+        });
       }
 
-      return res.status(500).json({ error: "Error removing token" });
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao encerrar sessão" });
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao encerrar sessão" });
     }
   },
 };

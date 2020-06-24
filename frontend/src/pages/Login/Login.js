@@ -4,6 +4,7 @@ import {
   Button,
   CssBaseline,
   Grid,
+  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -11,8 +12,11 @@ import { Appbar } from "../../components/Appbar/Appbar";
 import APIService from "../../utils/APIService";
 import { useHistory } from "react-router";
 import { useStyles } from "./styles";
+import MuiAlert from "@material-ui/lab/Alert";
 
 export const Login = () => {
+  const [alert, setAlert] = useState({ type: "", message: "" });
+  const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -23,12 +27,29 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    APIService.login(email, password).then((response) => {
-      const { token, profile } = response;
-      localStorage.setItem("token", token);
-      localStorage.setItem("userProfile", JSON.stringify(profile));
-      history.push("/");
-    });
+    if (email === "" || password === "") {
+      setAlert({ type: "error", message: "Há um ou mais campos vazios!" });
+      setOpen(true);
+      return;
+    }
+
+    APIService.login(email, password)
+      .then((response) => {
+        const { token, profile } = response;
+        localStorage.setItem("token", token);
+        localStorage.setItem("userProfile", JSON.stringify(profile));
+        setAlert({
+          type: "success",
+          message: "Logado com sucesso! Redirecionando...",
+        });
+        setOpen(true);
+        setTimeout(() => history.push("/"), 3000);
+      })
+      .catch((e) => {
+        console.log(e);
+        setAlert({ type: "error", message: e.message });
+        setOpen(true);
+      });
   };
 
   return (
@@ -48,7 +69,7 @@ export const Login = () => {
         </Typography>
         <Grid style={{ maxWidth: "500px" }}>
           <form className={classes.form}>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <TextField
                 margin="normal"
                 required
@@ -61,7 +82,7 @@ export const Login = () => {
                 onChange={handleEmailChange}
               />
             </Grid>
-            <Grid item xs={12} style={{ marginBottom: "12px" }}>
+            <Grid item xs={12} className={classes.gridMargin}>
               <TextField
                 margin="normal"
                 required
@@ -75,9 +96,7 @@ export const Login = () => {
               />
             </Grid>
             <Button
-              style={{
-                backgroundColor: "#e33b5d",
-              }}
+              className={classes.buttonBg}
               type="submit"
               fullWidth
               disableElevation
@@ -90,6 +109,22 @@ export const Login = () => {
           </form>
         </Grid>
       </div>
+      <Snackbar
+        open={open}
+        color="error"
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        autoHideDuration={5000}
+        onClose={() => setOpen(false)}
+      >
+        <MuiAlert
+          elevation={5}
+          variant="filled"
+          severity={alert.type}
+          onClose={() => setOpen(false)}
+        >
+          {alert.message}
+        </MuiAlert>
+      </Snackbar>
     </>
   );
 };

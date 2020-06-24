@@ -21,7 +21,8 @@ module.exports = {
 
       return res.json(products);
     } catch (e) {
-      return res.json(e);
+      console.log(e);
+      return res.json({ success: false, message: "Erro ao buscar produtos" });
     }
   },
 
@@ -31,7 +32,10 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao buscar produtos" });
     }
   },
 
@@ -43,7 +47,10 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao atualizar produto" });
     }
   },
 
@@ -51,9 +58,12 @@ module.exports = {
     try {
       await Product.findByIdAndRemove(req.params.id);
 
-      return res.send({ message: "Product removed" });
+      return res.send({ success: true, message: "Produto removido" });
     } catch (e) {
-      return res.status(500).send(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao remover produto" });
     }
   },
 
@@ -63,7 +73,10 @@ module.exports = {
 
       return res.json(product);
     } catch (e) {
-      return res.status(500).json(e);
+      console.log(e);
+      return res
+        .status(500)
+        .json({ success: false, message: "Erro ao criar produto" });
     }
   },
 };

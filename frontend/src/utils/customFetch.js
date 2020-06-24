@@ -37,8 +37,9 @@ export default async function customFetch(
       return Promise.reject(errors);
     }
     if (res.status === 401 || res.status === 403) {
-      window.location.href = "/erro";
-      return Promise.reject();
+      //window.location.href = "/erro";
+      const errors = await res.json();
+      return Promise.reject(errors);
     }
     if (res.status === 404) {
       window.location.href = "/erro";

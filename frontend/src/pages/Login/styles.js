@@ -16,4 +16,8 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "200px",
     marginTop: theme.spacing(1),
   },
+  gridMargin: { marginBottom: "12px" },
+  buttonBg: {
+    backgroundColor: "#e33b5d",
+  },
 }));
