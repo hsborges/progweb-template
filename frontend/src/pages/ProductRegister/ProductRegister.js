@@ -32,6 +32,7 @@ const CATEGORIES_LIST = [
 
 export const ProductRegister = () => {
   const history = useHistory();
+  const logado = !!localStorage.getItem("token"); // pegar o token do localstore
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -82,6 +83,10 @@ export const ProductRegister = () => {
       console.log(e);
     }
   };
+
+  if (!logado) {
+    window.location.href = "/erro";
+  }
 
   return (
     <>

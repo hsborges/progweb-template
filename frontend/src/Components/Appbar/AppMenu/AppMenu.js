@@ -50,7 +50,9 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
       )}
       {logado && (
         <div>
-          <MenuItem onClick={handleMenuClose}>Minha conta</MenuItem>
+          <MenuItem onClick={() => history.push("/conta")}>
+            Minha conta
+          </MenuItem>
           <MenuItem onClick={logout}>Sair</MenuItem>
         </div>
       )}

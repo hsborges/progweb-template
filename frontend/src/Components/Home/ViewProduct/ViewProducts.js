@@ -65,4 +65,3 @@ export const ViewProducts = ({ category, isBusca = false }) => {
     </div>
   );
 };
-

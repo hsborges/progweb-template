@@ -5,9 +5,14 @@ const Product = mongoose.model("Product");
 module.exports = {
   async index(req, res) {
     try {
-      const { page = 1, category = null, search = "" } = req.query;
+      const { page = 1, category = null, search = "", user = "" } = req.query;
       const products = await Product.paginate(
-        category ? { category } : { title: { $regex: search, $options: "i" } },
+        category
+          ? { category }
+          : {
+              title: { $regex: search, $options: "i" },
+              seller: { $regex: user, $options: "i" },
+            },
         {
           page,
           limit: 10,

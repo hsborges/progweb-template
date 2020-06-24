@@ -9,8 +9,21 @@ export default class APIService {
       : customFetch(apiPath().PRODUCTS, "GET", {}, null, category);
   }
 
+  static fetchProductsFromUser(user) {
+    return customFetch(apiPath().PRODUCTS, "GET", {}, null, `user=${user}`);
+  }
+
   static fetchProduct(productId) {
     return customFetch(apiPath(productId).SINGLE_PRODUCT);
+  }
+
+  static updateUser(data) {
+    const { id } = JSON.parse(localStorage.getItem("userProfile"));
+    return customFetch(apiPath(id).SINGLE_USER, "PUT", data);
+  }
+
+  static fetchUser(nick) {
+    return customFetch(apiPath(nick).SINGLE_USER);
   }
 
   static login(email, password) {

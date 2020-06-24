@@ -11,7 +11,10 @@ const isAuthenticated = async (req, res, next) => {
   const [token, userId] = req.query.token.split(".");
   const user = await User.findById(userId).select("+lastToken");
 
-  if (token === user.lastToken) {
+  if (
+    token === user.lastToken &&
+    (userId === req.params.id || user.nickname === req.body.seller)
+  ) {
     next();
   } else {
     console.log(`Forbidden! User: ${user.name} | Token: ${token}`);
