@@ -43,10 +43,46 @@ module.exports = {
   },
 
   async update(req, res) {
+    const {
+      title: titleUpdated,
+      description: descriptionUpdated,
+      price: priceUpdated,
+      category: categoryUpdated,
+    } = req.body;
+
     try {
-      const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
+      const currentProduct = await Product.findById(req.params.id);
+
+      let title = titleUpdated;
+      let description = descriptionUpdated;
+      let price = priceUpdated;
+      let category = categoryUpdated;
+
+      if (!titleUpdated) {
+        title = currentProduct.title;
+      }
+      if (!descriptionUpdated) {
+        description = currentProduct.description;
+      }
+      if (!priceUpdated) {
+        price = currentProduct.price;
+      }
+      if (!categoryUpdated) {
+        category = currentProduct.category;
+      }
+
+      const product = await Product.findByIdAndUpdate(
+        req.params.id,
+        {
+          title,
+          description,
+          price,
+          category,
+        },
+        {
+          new: true,
+        }
+      );
 
       return res.json(product);
     } catch (e) {

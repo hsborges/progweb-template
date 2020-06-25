@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { v1: uuidv1 } = require("uuid");
 
 const User = mongoose.model("User");
+const Product = mongoose.model("Product");
 
 module.exports = {
   async show(req, res) {
@@ -26,10 +27,32 @@ module.exports = {
   },
 
   async update(req, res) {
+    const { phone: phoneUpdated, name: nameUpdated } = req.body;
     try {
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
+      const currentUser = await User.findById(req.params.id);
+
+      let phone = phoneUpdated;
+      let name = nameUpdated;
+
+      if (!phoneUpdated) {
+        phone = currentUser.phone;
+      }
+      if (!nameUpdated) {
+        name = currentUser.name;
+      }
+
+      const user = await User.findByIdAndUpdate(
+        req.params.id,
+        { phone, name },
+        {
+          new: true,
+        }
+      );
+
+      await Product.update(
+        { seller: user.nickname },
+        { sellerPhone: phoneUpdated }
+      );
 
       return res.json({
         success: true,

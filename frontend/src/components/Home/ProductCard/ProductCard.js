@@ -20,9 +20,13 @@ export const ProductCard = ({
     _id,
     title,
     description,
+    price,
+    category,
     image: { fileName = "1592335000782-write.png" } = {},
   },
   editable = false,
+  setRefresh,
+  refresh,
 }) => {
   const classes = useStyles();
   const history = useHistory();
@@ -37,6 +41,7 @@ export const ProductCard = ({
         setOpenDialog(false);
         setAlert({ type: "success", message: "Produto removido com sucesso!" });
         setOpen(true);
+        setRefresh(!refresh);
       })
       .catch((e) => {
         console.log(e);
@@ -68,14 +73,15 @@ export const ProductCard = ({
           title={title}
           onClick={() => history.push("/produto/" + _id)}
         />
-        <CardContent onClick={() => history.push("/produto/" + _id)}>
+        <CardContent
+          onClick={() => history.push("/produto/" + _id)}
+          style={{ paddingBottom: "0px" }}
+        >
           <Typography
             gutterBottom
             variant="h5"
             style={{
               overflow: "hidden",
-              //textOverflow: "ellipsis",
-              //whiteSpace: "nowrap",
               maxHeight: 65,
             }}
           >
@@ -90,7 +96,7 @@ export const ProductCard = ({
           </Typography>
         </CardContent>
         <CardActions style={{ justifyContent: "center" }}>
-          {editable && (
+          {editable ? (
             <>
               <Button
                 size="small"
@@ -111,16 +117,32 @@ export const ProductCard = ({
                 Apagar
               </Button>
             </>
+          ) : (
+            <Button
+              color="secondary"
+              size="large"
+              style={{ padding: "0px 6px" }}
+              onClick={() => history.push("/produto/" + _id)}
+            >
+              R$ {price}
+            </Button>
           )}
         </CardActions>
       </CardActionArea>
       {editable && (
         <>
           <DialogAlert
+            id={_id}
+            productTitle={title}
+            productDescription={description}
+            productCategory={category}
+            productPrice={price}
             handleDelete={() => handleDelete(_id)}
             openDialog={openDialog}
             setOpenDialog={handleCloseDialog}
             edicao={edicao}
+            refresh={refresh}
+            setRefresh={setRefresh}
           />
           <SnackAlert open={open} alert={alert} setOpen={setOpen} />
         </>

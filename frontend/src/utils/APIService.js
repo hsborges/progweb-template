@@ -9,8 +9,14 @@ export default class APIService {
       : customFetch(apiPath().PRODUCTS, "GET", {}, null, category);
   }
 
-  static fetchProductsFromUser(user) {
-    return customFetch(apiPath().PRODUCTS, "GET", {}, null, `user=${user}`);
+  static fetchProductsFromUser(user, page) {
+    return customFetch(
+      apiPath().PRODUCTS,
+      "GET",
+      {},
+      null,
+      `user=${user}&page=${page}`
+    );
   }
 
   static fetchProduct(productId) {
@@ -24,6 +30,10 @@ export default class APIService {
 
   static deleteProduct(id) {
     return customFetch(apiPath(id).SINGLE_PRODUCT, "DELETE");
+  }
+
+  static updateProduct(id, data) {
+    return customFetch(apiPath(id).SINGLE_PRODUCT, "PUT", data);
   }
 
   static fetchUser(nick) {

@@ -13,22 +13,41 @@ import React, { useState } from "react";
 import Icon from "@mdi/react";
 import { mdiCheck, mdiClose, mdiPencil } from "@mdi/js";
 import APIService from "../../utils/APIService";
+import { SnackAlert } from "../SnackAlert/SnackAlert";
 
 export const UserInfo = ({ user, editable = false }) => {
+  const [alert, setAlert] = useState({ type: "", message: "" });
+  const [open, setOpen] = useState(false);
+
   const [edicaoPhone, setEdicaoPhone] = useState(false);
   const [phone, setPhone] = useState(user.phone);
   const [phoneField, setPhoneField] = useState(user.phone);
 
   const handleSave = () => {
-    if (phoneField === "") return;
+    if (phoneField === "") {
+      setAlert({ type: "error", message: "Campo não pode estar vazio!" });
+      setOpen(true);
+      return;
+    }
+
     APIService.updateUser({ phone: phoneField })
       .then((res) => {
         setPhone(phoneField);
+        setAlert({
+          type: "success",
+          message: "Editado com sucesso!",
+        });
+        setOpen(true);
         setEdicaoPhone(false);
       })
       .catch((e) => {
-        setEdicaoPhone(false);
         console.log(e);
+        setAlert({
+          type: "error",
+          message: `${e.message}`,
+        });
+        setOpen(true);
+        setEdicaoPhone(false);
       });
   };
 
@@ -94,6 +113,7 @@ export const UserInfo = ({ user, editable = false }) => {
           </TableBody>
         </Table>
       </TableContainer>
+      <SnackAlert open={open} alert={alert} setOpen={setOpen} />
     </>
   );
 };

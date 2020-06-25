@@ -4,6 +4,7 @@ import { ProductCard } from "../ProductCard/ProductCard";
 import APIService from "../../../utils/APIService";
 import { useStyles } from "./styles";
 import { CATEGORIES } from "../../../utils/enums";
+import Pagination from "@material-ui/lab/Pagination";
 
 const title = {
   [CATEGORIES.RECENTES]: "Anúncios recentes",
@@ -19,6 +20,8 @@ const title = {
 export const ViewProducts = ({ category, isBusca = false }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [pages, setPages] = useState(1);
   const classes = useStyles();
 
   const query = new URLSearchParams(window.location.search).get("termo");
@@ -29,11 +32,12 @@ export const ViewProducts = ({ category, isBusca = false }) => {
       category === CATEGORIES.RECENTES ? `` : `category=${category}`;
     const param = isBusca ? `search=${query}` : categoryParam;
 
-    APIService.fetchAllProducts(param).then((products) => {
+    APIService.fetchAllProducts(`${param}&page=${page}`).then((products) => {
+      setPages(products.pages);
       setAllProducts(products.docs);
       setLoading(false);
     });
-  }, [category, isBusca, query]);
+  }, [category, isBusca, query, page]);
 
   return (
     <div className={classes.rootDiv}>
@@ -54,14 +58,25 @@ export const ViewProducts = ({ category, isBusca = false }) => {
             </Grid>
           ))
         ) : (
-          <CircularProgress />
+          <div className={classes.loading}>
+            <CircularProgress />
+          </div>
         )}
         {!loading && allProducts.length < 1 && (
-          <Typography variant="h5" style={{ marginTop: "60px" }}>
+          <Typography variant="h5" className={classes.marginTop}>
             Parece que não tem nada aqui ainda :(
           </Typography>
         )}
       </Grid>
+      {pages > 1 && (
+        <div className={classes.pagination}>
+          <Pagination
+            count={pages}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+          />
+        </div>
+      )}
     </div>
   );
 };

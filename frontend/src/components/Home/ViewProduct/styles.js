@@ -11,4 +11,11 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
   },
+  loading: { height: "300px", display: "flex", alignItems: "center" },
+  marginTop: { marginTop: "60px" },
+  pagination: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "24px",
+  },
 }));

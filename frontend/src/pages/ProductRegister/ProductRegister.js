@@ -13,33 +13,25 @@ import {
 import { useHistory } from "react-router";
 import { Appbar } from "../../components/Appbar/Appbar";
 import APIService from "../../utils/APIService";
-import { CATEGORIES } from "../../utils/enums";
 import Icon from "@mdi/react";
 import { mdiCashUsdOutline, mdiImageSizeSelectActual } from "@mdi/js";
 import { useStyles } from "./styles";
 import { SnackAlert } from "../../components/SnackAlert/SnackAlert";
-
-const CATEGORIES_LIST = [
-  { label: "Celulares", value: CATEGORIES.CELULARES },
-  { label: "Informática", value: CATEGORIES.INFORMATICA },
-  { label: "Áudio e Video", value: CATEGORIES.AUDIO_VIDEO },
-  { label: "Vestuário", value: CATEGORIES.VESTUARIO },
-  { label: "Eletrodomésticos", value: CATEGORIES.ELETRODOMESTICOS },
-  { label: "Ferramentas", value: CATEGORIES.FERRAMENTAS },
-  { label: "Livros", value: CATEGORIES.LIVROS },
-];
+import { CATEGORIES_LIST } from "../../utils/enums";
 
 export const ProductRegister = () => {
   const history = useHistory();
   const logado = !!localStorage.getItem("token");
   const classes = useStyles();
+
   const [open, setOpen] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "" });
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  const [alert, setAlert] = useState({ type: "", message: "" });
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
