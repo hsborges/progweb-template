@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const Product = mongoose.model("Product");
+const ProductImage = mongoose.model("ProductImage");
+const FILE_PATH = "./public/files";
+const fs = require("fs-extra");
 
 module.exports = {
   async index(req, res) {
@@ -56,7 +59,11 @@ module.exports = {
 
   async destroy(req, res) {
     try {
-      await Product.findByIdAndRemove(req.params.id);
+      const product = await Product.findById(req.params.id);
+      const image = await ProductImage.findById(product.image.id);
+      await fs.remove(`${FILE_PATH}/${product.image.fileName}`);
+      await image.remove();
+      await product.remove();
 
       return res.send({ success: true, message: "Produto removido" });
     } catch (e) {

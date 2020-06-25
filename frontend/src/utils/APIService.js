@@ -22,6 +22,10 @@ export default class APIService {
     return customFetch(apiPath(id).SINGLE_USER, "PUT", data);
   }
 
+  static deleteProduct(id) {
+    return customFetch(apiPath(id).SINGLE_PRODUCT, "DELETE");
+  }
+
   static fetchUser(nick) {
     return customFetch(apiPath(nick).SINGLE_USER);
   }

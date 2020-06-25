@@ -69,7 +69,7 @@ export const User = ({ match }) => {
                 <div className={classes.flexJustify}>
                   {products?.map((item) => (
                     <Grid item xs={12} sm={3} key={item.title}>
-                      <ProductCard data={item} />
+                      <ProductCard data={item} editable={userPanel} />
                     </Grid>
                   ))}
                   {!loading && products.length < 1 && (

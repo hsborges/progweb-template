@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
-const fs = require("fs-extra");
 
 const ProductImage = mongoose.model("ProductImage");
 const FILE_PATH = "./public/files";
@@ -34,21 +33,6 @@ const upload = multer({
 }).single("image");
 
 module.exports = {
-  async destroy(req, res) {
-    try {
-      const image = await ProductImage.findById(req.params.id);
-      await fs.remove(`${FILE_PATH}/${image.fileName}`);
-      await image.remove();
-
-      return res.send({ success: true, message: "Imagem removida" });
-    } catch (e) {
-      console.log(e);
-      return res
-        .status(500)
-        .send({ success: false, message: "Erro ao excluir imagem" });
-    }
-  },
-
   async upload(req, res) {
     upload(req, res, async (err) => {
       if (err || err instanceof multer.MulterError) {

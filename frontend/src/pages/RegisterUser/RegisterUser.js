@@ -3,7 +3,6 @@ import {
   Button,
   CssBaseline,
   Grid,
-  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -11,7 +10,7 @@ import { Appbar } from "../../components/Appbar/Appbar";
 import APIService from "../../utils/APIService";
 import { useHistory } from "react-router";
 import { useStyles } from "./styles";
-import MuiAlert from "@material-ui/lab/Alert";
+import { SnackAlert } from "../../components/SnackAlert/SnackAlert";
 
 export const RegisterUser = () => {
   const [alert, setAlert] = useState({ type: "", message: "" });
@@ -153,22 +152,7 @@ export const RegisterUser = () => {
           </form>
         </Grid>
       </div>
-      <Snackbar
-        open={open}
-        color="error"
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        autoHideDuration={5000}
-        onClose={() => setOpen(false)}
-      >
-        <MuiAlert
-          elevation={5}
-          variant="filled"
-          severity={alert.type}
-          onClose={() => setOpen(false)}
-        >
-          {alert.message}
-        </MuiAlert>
-      </Snackbar>
+      <SnackAlert open={open} alert={alert} setOpen={setOpen} />
     </>
   );
 };

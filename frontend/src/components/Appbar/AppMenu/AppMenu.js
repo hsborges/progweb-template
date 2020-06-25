@@ -3,8 +3,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { useHistory } from "react-router";
 import APIService from "../../../utils/APIService";
-import MuiAlert from "@material-ui/lab/Alert";
-import { Snackbar } from "@material-ui/core";
+import { SnackAlert } from "../../SnackAlert/SnackAlert";
 
 export const AppMenu = ({ anchorEl, handleMenuClose }) => {
   const [alert, setAlert] = useState({ type: "", message: "" });
@@ -69,22 +68,7 @@ export const AppMenu = ({ anchorEl, handleMenuClose }) => {
           </div>
         )}
       </Menu>
-      <Snackbar
-        open={open}
-        color="error"
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        autoHideDuration={5000}
-        onClose={() => setOpen(false)}
-      >
-        <MuiAlert
-          elevation={5}
-          variant="filled"
-          severity={alert.type}
-          onClose={() => setOpen(false)}
-        >
-          {alert.message}
-        </MuiAlert>
-      </Snackbar>
+      <SnackAlert open={open} alert={alert} setOpen={setOpen} />
     </>
   );
 };

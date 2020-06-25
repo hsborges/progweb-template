@@ -7,7 +7,6 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -17,8 +16,8 @@ import APIService from "../../utils/APIService";
 import { CATEGORIES } from "../../utils/enums";
 import Icon from "@mdi/react";
 import { mdiCashUsdOutline, mdiImageSizeSelectActual } from "@mdi/js";
-import MuiAlert from "@material-ui/lab/Alert";
 import { useStyles } from "./styles";
+import { SnackAlert } from "../../components/SnackAlert/SnackAlert";
 
 const CATEGORIES_LIST = [
   { label: "Celulares", value: CATEGORIES.CELULARES },
@@ -226,22 +225,7 @@ export const ProductRegister = () => {
           </form>
         </Grid>
       </div>
-      <Snackbar
-        open={open}
-        color="error"
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        autoHideDuration={5000}
-        onClose={() => setOpen(false)}
-      >
-        <MuiAlert
-          elevation={5}
-          variant="filled"
-          severity={alert.type}
-          onClose={() => setOpen(false)}
-        >
-          {alert.message}
-        </MuiAlert>
-      </Snackbar>
+      <SnackAlert open={open} alert={alert} setOpen={setOpen} />
     </>
   );
 };
