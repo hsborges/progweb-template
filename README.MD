@@ -34,7 +34,7 @@ ou<br>
 `npm run start`<br>
 
 Após instalar as dependências e rodar o server, game estará rodando em <br><br>
-[http://localhost:8080](http://localhost:8080)
+[http://localhost:3000](http://localhost:3000)
 ## Usando Batalha Naval
 
 Para usar Batalha Naval, siga os seguintes passos:
