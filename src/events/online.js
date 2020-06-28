@@ -10,16 +10,16 @@ exports.use = (io) => {
         try {
             redis.set(username, client.id)
         }catch(err) {
-            console.error(err.message)
+            console.error('redis error', err.message)
         }
 
         if (!online.check(username)) {
             client.broadcast.emit('newUser', username);
-            console.log(`User online: ${username}`);
         }
         online.set(username);
+        let users = online.list().filter(user => user !== username);
 
-        client.emit('listOnline', online.list().filter(user => user !== username));
+        client.emit('listOnline', users);
 
         client.on("disconnect", () => {
             online.remove(username);

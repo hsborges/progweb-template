@@ -28,7 +28,6 @@ module.exports = {
         } else {
             user.insert(usr);
             req.session.user = usr.username
-            console.log(usr)
             res.status(200).send("OK");
         }
     },

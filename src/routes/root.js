@@ -1,7 +1,9 @@
 express = require('express');
 router = express.Router();
+
 const rooms = require('../controller/room');
 const auth = require('../middleware/authenticator');
+const online = require('../controller/online');
 
 
 router.get('/about', (req, res) => {
