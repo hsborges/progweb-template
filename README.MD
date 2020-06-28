@@ -19,6 +19,8 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 
 - yarn ou npm
 
+- Possuir Redis instalado e rodando na port padrão(6379)
+
 ## Como executar
 
 Execute os comandos<br>
