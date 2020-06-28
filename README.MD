@@ -50,7 +50,6 @@ As seguintes pessoas contribuiram para este projeto:
 - [Altair Aquino Alves Junior](https://github.com/Zaltair-alves)
 - [Cleriston Nantes Petrikic](http://github.com/petrikic)
 - [Anna Carollyne Pereira da Silva](http://github.com/MoshGirl)
-
 - [Kemer Wander Souza Tomas](https://github.com/Kemer-Souza)
 
 
